@@ -1,18 +1,22 @@
-const revealElements = document.querySelectorAll(".reveal");
+// mobile menu
 
-function revealOnScroll(){
+const burger = document.querySelector(".hamburger");
+const menu = document.querySelector(".nav-menu");
 
-revealElements.forEach(el => {
-
-const windowHeight = window.innerHeight;
-const elementTop = el.getBoundingClientRect().top;
-
-if(elementTop < windowHeight - 100){
-el.classList.add("active");
-}
-
+burger.addEventListener("click", () => {
+  menu.classList.toggle("active");
 });
 
-}
+// simple scroll animation
 
-window.addEventListener("scroll", revealOnScroll);
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+document.querySelectorAll("section").forEach((sec) => {
+  observer.observe(sec);
+});

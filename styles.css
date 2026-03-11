@@ -809,7 +809,7 @@ h3 {
 
 /* BUTTON */
 
-.primary-btn {
+.primary-btn-cta {
   background: var(--accent1);
 
   padding: 14px 270px;

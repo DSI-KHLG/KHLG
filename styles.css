@@ -421,7 +421,7 @@ h3 {
 
   bottom: 20px;
 
-  left: 40px;
+  left: 60px;
 
   right: 40px;
 
@@ -458,9 +458,8 @@ h3 {
 /* HEADER (aligned with site content) */
 
 .diff-header {
-  max-width: 1400px;
   margin: auto;
-  padding: 0 112px;
+  padding: 0 160px;
   text-align: center;
 }
 
@@ -507,7 +506,7 @@ h3 {
 
   align-items: center;
 
-  padding: 50px;
+  padding: 112px;
 
   color: white;
 }
@@ -679,13 +678,83 @@ h3 {
   color: #39a8ff;
   cursor: pointer;
 }
+/* INNOVATION SECTION */
+
+/* INNOVATION SECTION */
+
+.innovation-section {
+  width: 100%;
+
+  padding: 50px 0;
+
+  position: relative;
+
+  background: url("images/learning.png") center/cover no-repeat;
+
+  overflow: hidden;
+}
+
+/* DARK OVERLAY */
+
+.innovation-section::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(5, 20, 35, 0.92) 0%,
+    rgba(5, 20, 35, 0.8) 40%,
+    rgba(5, 20, 35, 0) 75%
+  );
+}
+
+/* CONTENT */
+
+.innovation-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 600px;
+
+  margin-left: 112px;
+
+  color: white;
+}
+
+/* TITLE */
+
+.innovation-content h3 {
+  font-family: Oswald;
+
+  font-size: 48px;
+
+  margin: 15px 0;
+
+  line-height: 1.1;
+}
+
+/* TEXT */
+
+.innovation-content p {
+  font-size: 15px;
+
+  line-height: 1.7;
+
+  color: #d1d9e2;
+
+  margin-bottom: 16px;
+}
+/* MENTORSHIP SECTION */
 
 /* MENTORSHIP SECTION */
 
 .mentorship {
+  padding: 120px 0;
   background: #f2f2f2;
-
-  padding: 50px;
 }
 
 /* CONTAINER */
@@ -693,7 +762,7 @@ h3 {
 .mentorship-container {
   margin: auto;
 
-  padding: 0 160px;
+  padding: 0 112px;
 
   display: grid;
 

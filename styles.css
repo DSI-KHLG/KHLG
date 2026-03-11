@@ -470,9 +470,6 @@ h3 {
   display: grid;
 
   grid-template-columns: repeat(2, 1fr);
-
-  width: 100vw;
-
   margin-left: calc(50% - 50vw);
 
   gap: 0;
@@ -813,7 +810,7 @@ h3 {
 /* BUTTON */
 
 .primary-btn {
-  background:var(--accent1);
+  background: var(--accent1);
 
   padding: 14px 270px;
 
@@ -832,7 +829,7 @@ h3 {
 /* FOOTER */
 
 .footer {
-  background: linear-gradient(180deg, #081a2d, #030c16);
+  background: #171717;
 
   color: white;
 
@@ -849,4 +846,8 @@ h3 {
   grid-template-columns: repeat(3, 1fr);
 
   gap: 40px;
+}
+.footer-logo img {
+  height: 100px;
+  width: auto;
 }

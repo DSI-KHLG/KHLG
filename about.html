@@ -10,6 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
   </head>
   <body class="about-page">
     <!-- NAVBAR -->
@@ -21,10 +25,10 @@
           </div>
 
           <nav class="nav-menu">
-            <a class="active">HOME</a>
+            <a href="index.html">HOME</a>
             <a href="services.html">SERVICES</a>
             <a href="projects.html">PROJECTS</a>
-            <a href="about.html">ABOUT</a>
+            <a class="active" href="about.html">ABOUT</a>
           </nav>
         </div>
 
@@ -32,7 +36,10 @@
           <a class="contact-btn">CONTACT</a>
 
           <div class="search-box">
-            <span class="search-icon">🔍</span>
+            <i
+              class="fa-solid fa-magnifying-glass search-icon"
+              aria-hidden="true"
+            ></i>
 
             <input type="text" placeholder="Search" />
           </div>
@@ -44,11 +51,17 @@
       <div class="overlay"></div>
 
       <div class="about-hero-content">
-        <h1>ABOUT US</h1>
-        <p>
-          At KHLG, we deliver high-quality engineering and construction
-          management services through innovation, structured governance, and
-          disciplined execution.
+        <h1 class="section-title">ABOUT US</h1>
+        <p class="section-subtitle">
+          At KHLG, we are committed to delivering high-quality Engineering and
+          Construction Management services built on integrity, technical
+          excellence, and disciplined execution. We understand the complex
+          demands of public infrastructure programs and provide structured
+          governance, strong program controls, and collaborative leadership to
+          ensure successful project delivery. Our team integrates innovation,
+          accountability, and workforce development to strengthen institutional
+          capacity while delivering results that serve communities for the long
+          term. 
         </p>
       </div>
     </section>
@@ -57,88 +70,152 @@
     <section class="mission">
       <div class="mission-grid">
         <div>
-          <h2>MISSION & VISION</h2>
-          <p>
-            To be the leading engineering partner in Guam, Marianas and
-            Micronesia. We focus on innovation, accountability, and excellence.
+          <h2 class="section-title">MISSION & VISION</h2>
+          <p class="section-subtitle">
+            To be the leading engineering partner in Guam, Marianas and
+            Micronesia, focusing in project & construction management, civil
+            engineering, and environmental engineering and consulting services.
+            Our goal is to be recognized for technical excellence, reliability,
+            and innovative solutions with an emphasis on accountability,
+            diversity, teamwork, and excellence for our Clients.  <br />
+            KHLG is committed to delivering high-quality, value-driven services
+            with integrity, excellence, innovation, collaboration and
+            partnership. 
           </p>
         </div>
 
-        <img src="images/mission.jpg" />
+        <img src="images/giaa.png" />
       </div>
     </section>
 
     <!-- LEADERSHIP -->
     <section class="leadership">
       <div class="leadership-grid">
-        <img src="images/leader.jpg" />
+        <img src="images/hero.jpeg" />
 
         <div>
-          <h2>OUR LEADERSHIP</h2>
-          <p>
-            KHLG is comprised of highly skilled professionals with extensive
-            experience in engineering, construction management, and
-            environmental consulting.
+          <h2 class="section-title">OUR LEADERSHIP</h2>
+          <p class="section-subtitle">
+            KHLG is comprised of a highly skilled and multidisciplinary team
+            with extensive experience in environmental services, civil
+            engineering, and construction management. Our professionals
+            collectively bring over 100 years of combined expertise in
+            engineering design, construction oversight, environmental
+            consulting, construction claims analysis, and technology-driven
+            project solutions. This depth and diversity of experience enable us
+            to deliver comprehensive, innovative, and results-driven
+            infrastructure services across every phase of project delivery. 
           </p>
         </div>
       </div>
     </section>
 
-    <!-- CORE VALUES -->
     <section class="core-values">
-      <h2>CORE VALUES</h2>
-      <p>
-        Safety is our foundation, supported by innovation, sustainability,
-        partnership, integrity, and excellence.
+      <h2 class="section-title">CORE VALUES</h2>
+      <p class="section-subtitle">
+        At KHLG, <strong>SAFETY</strong> is not a priority—it is a core value
+        and a zero-tolerance standard embedded in everything we do. We are
+        unwavering in our commitment to protecting our people, partners,
+        clients, and the public through rigorous safety protocols, proactive
+        risk management, and a culture of accountability at every level of our
+        organization. Every project begins and ends with safety as the
+        foundation.
       </p>
 
       <div class="values-grid">
-        <div class="value-card">SAFETY</div>
-        <div class="value-card">INNOVATION</div>
-        <div class="value-card">SUSTAINABILITY</div>
-        <div class="value-card">PARTNERSHIP</div>
-        <div class="value-card">INTEGRITY</div>
-        <div class="value-card">EXCELLENCE</div>
+        <div
+          class="value-card"
+          style="background-image: url(images/gphtlf.png)"
+        >
+          <span>SAFETY</span>
+        </div>
+        <div
+          class="value-card"
+          style="background-image: url(images/gphtlf.png)"
+        >
+          <span>INNOVATION</span>
+        </div>
+        <div
+          class="value-card"
+          style="background-image: url(images/gphtlf.png)"
+        >
+          <span>SUSTAINABILITY</span>
+        </div>
+        <div
+          class="value-card"
+          style="background-image: url(images/gphtlf.png)"
+        >
+          <span>PARTNERSHIP</span>
+        </div>
+        <div
+          class="value-card"
+          style="background-image: url(images/gphtlf.png)"
+        >
+          <span>INTEGRITY</span>
+        </div>
+        <div
+          class="value-card"
+          style="background-image: url(images/gphtlf.png)"
+        >
+          <span>EXCELLENCE</span>
+        </div>
       </div>
     </section>
-
-    <!-- TEAM -->
     <section class="team">
-      <h2 class="section-title">OUR TEAM</h2>
+      <div class="section-title-container">
+        <h2 class="section-title">OUR TEAM</h2>
+      </div>
 
-      <div class="team-groups">
+      <div class="team-wrapper">
         <!-- PRINCIPALS -->
-        <div class="team-column">
+        <div class="team-column principals">
           <h3>PRINCIPALS</h3>
 
-          <div class="team-card">
+          <div class="team-card large">
             <img src="images/person1.jpg" />
-            <span>Kent Hislen</span>
+            <div class="name-tag">Kent Hsien, P.E.</div>
           </div>
 
-          <div class="team-card">
+          <div class="team-card large">
             <img src="images/person2.jpg" />
-            <span>Vicente Ada</span>
+            <div class="name-tag">Vicente Ada II, P.E., CES</div>
           </div>
         </div>
 
         <!-- ASSOCIATES -->
-        <div class="team-column">
+        <div class="team-column associates">
           <h3>ASSOCIATES</h3>
 
-          <div class="team-card">
-            <img src="images/person3.jpg" />
-            <span>Alfred Guerrero</span>
-          </div>
+          <div class="associates-grid">
+            <div class="team-card">
+              <img src="images/person3.jpg" />
+              <div class="name-tag">Alfred Leon Guerrero</div>
+            </div>
 
-          <div class="team-card">
-            <img src="images/person4.jpg" />
-            <span>Amelia Guerrero</span>
-          </div>
+            <div class="team-card">
+              <img src="images/person4.jpg" />
+              <div class="name-tag">Amelia Leon Guerrero</div>
+            </div>
 
-          <div class="team-card">
-            <img src="images/person5.jpg" />
-            <span>Phil Dela Cruz</span>
+            <div class="team-card">
+              <img src="images/person5.jpg" />
+              <div class="name-tag">Phil Dela Cruz</div>
+            </div>
+
+            <div class="team-card">
+              <img src="images/person6.jpg" />
+              <div class="name-tag">Herbert Chock</div>
+            </div>
+
+            <div class="team-card">
+              <img src="images/person7.jpg" />
+              <div class="name-tag">Jason Remoket</div>
+            </div>
+
+            <div class="team-card">
+              <img src="images/person8.jpg" />
+              <div class="name-tag">Ranie Jay Ubaldo</div>
+            </div>
           </div>
         </div>
       </div>

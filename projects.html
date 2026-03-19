@@ -10,8 +10,12 @@
       href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
   </head>
-  <body class="projects-page">
+  <body>
     <!-- NAVBAR (same as homepage) -->
     <header class="navbar">
       <div class="nav-container">
@@ -21,9 +25,9 @@
           </div>
 
           <nav class="nav-menu">
-            <a class="active">HOME</a>
+            <a href="index.html">HOME</a>
             <a href="services.html">SERVICES</a>
-            <a href="projects.html">PROJECTS</a>
+            <a class="active" href="projects.html">PROJECTS</a>
             <a href="about.html">ABOUT</a>
           </nav>
         </div>
@@ -32,42 +36,46 @@
           <a class="contact-btn">CONTACT</a>
 
           <div class="search-box">
-            <span class="search-icon">🔍</span>
+            <i
+              class="fa-solid fa-magnifying-glass search-icon"
+              aria-hidden="true"
+            ></i>
 
             <input type="text" placeholder="Search" />
           </div>
         </div>
       </div>
     </header>
-
     <!-- HERO -->
     <section class="projects-hero">
-      <div class="hero-left">
-        <h1>PROJECTS</h1>
-        <p>
-          KHLG’s successful project experience is built upon decades of
-          engineering excellence, delivering impactful solutions across Guam,
-          Marianas, and Micronesia.
+      <div class="projects-hero-content">
+        <h1 class="section-title projects-title">OUR PROJECTS</h1>
+        <p class="section-subtitle">
+          KHLG’s successful project experience is built upon more than 100 years
+          of combined expertise and decades of technical development among our
+          professionals. Our team brings deep knowledge, practical insight, and
+          disciplined execution to every engagement. We partner with clients to
+          address their most complex challenges, delivering innovative solutions
+          that create meaningful and lasting impact across Guam, Marianas, and
+          Micronesia. 
         </p>
 
-        <div class="hero-stats">
-          <div>
+        <div class="divider"></div>
+
+        <div class="projects-stats">
+          <div class="stat-item">
             <h2>100+</h2>
             <span>YEARS EXPERTISE</span>
           </div>
-          <div>
+          <div class="stat-item">
             <h2>3</h2>
             <span>REGIONS SERVED</span>
           </div>
         </div>
       </div>
 
-      <div class="hero-right">
-        <img src="images/project-hero.jpg" />
-        <div class="hero-card">
-          <h4>Regional Leadership</h4>
-          <p>Serving Guam, Marianas, and Micronesia.</p>
-        </div>
+      <div class="projects-hero-image-container">
+        <img src="images/client-solutions.png" alt="Construction Site" />
       </div>
     </section>
 
@@ -75,30 +83,48 @@
     <section class="project-tabs">
       <span>Expanded Project Experience</span>
       <span class="active">Project and Construction Management</span>
-      <span>Environmental Services</span>
+      <span>Environmental projects</span>
       <span>Civil Engineering Support</span>
     </section>
 
     <!-- PROJECT GRID -->
     <section class="projects-main">
-      <h2 class="section-title">PROJECT AND CONSTRUCTION MANAGEMENT</h2>
+      <div class="project-construction-container">
+        <h2 class="section-title">PROJECT AND CONSTRUCTION MANAGEMENT</h2>
+        <p class="section-subtitle">
+          Disciplined oversight from planning to completion. We ensure projects
+          are delivered on time, within budget, and to the highest quality
+          standards.
+        </p>
+      </div>
 
       <div class="project-grid">
         <div class="project-card">
-          <img src="images/project1.jpg" />
+          <img src="images/giaa.png" />
           <div class="project-info">
-            <h3>GIAA ARFF Facility Phase II</h3>
-            <p>Security directives, FAA compliance.</p>
-            <a>View Details</a>
+            <h3>
+              GIAA Aircraft Rescue and Fire Fighting (ARFF) Facility Phase II
+            </h3>
+            <p>
+              This project was performed in full compliance with GIAA's Airport
+              Security Program, Security directives, Emergency Amendments, and
+              FAA regulations.
+            </p>
+            <a class="learnmore-btn">Learn More</a>
           </div>
         </div>
 
         <div class="project-card">
-          <img src="images/project2.jpg" />
+          <img src="images/gphtlf.png" />
           <div class="project-info">
-            <h3>Guam National Tennis Center</h3>
-            <p>Multi-sized tennis courts facility.</p>
-            <a>View Details</a>
+            <h3>
+              Department of Public Works - Guam National Tennis Center (GNTC)
+            </h3>
+            <p>
+              A USTA-designed facility featuring 11 full-sized and 4 mini-sized
+              tennis courts.
+            </p>
+            <a class="learnmore-btn">Learn More</a>
           </div>
         </div>
       </div>
@@ -106,22 +132,54 @@
 
     <!-- ENVIRONMENTAL -->
     <section class="environmental">
-      <div class="env-left">
-        <h2>ENVIRONMENTAL SERVICES</h2>
-        <p>
-          Navigating complex regulatory landscapes while protecting ecosystems.
-        </p>
+      <div class="environmental-container">
+        <div class="env-left">
+          <h2 class="section-title">ENVIRONMENTAL SERVICES</h2>
+          <p class="section-subtitle">
+            Navigating complex regulatory landscapes while protecting our
+            region's unique ecosystems. We provide comprehensive environmental
+            assessment, mitigation, and compliance strategies.
+          </p>
+          <div class="environmental-list">
+            <ul>
+              <li>
+                <h3 class="environmental-list-title">
+                  Quality Assurance MCBCB Environmental Support (Jan 2024 –
+                  Present)
+                </h3>
+                <p>
+                  Conducts regulatory-compliant design reviews, site
+                  inspections, and technical documentation per the 2006
+                  Guam/CNMI Stormwater Management Manual.
+                </p>
+              </li>
+              <li>
+                <h3 class="environmental-list-title">
+                  Life Support Area Environmental Design Support (May 2022)
+                </h3>
+                <p>
+                  Revises erosion control plans, develops SWPPP, and redesigns
+                  post-construction BMPs and sediment basins.
+                </p>
+              </li>
+              <li>
+                <h3 class="environmental-list-title">
+                  Environmental Condition of Property Report - Guam Army
+                  National Guard (Sep 2022)
+                </h3>
+                <p>
+                  Fieldwork and development of an ECP/PCA report in accordance
+                  with National Guard, Army, and ASTM standards.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-        <ul>
-          <li>Quality Assurance MCBCB</li>
-          <li>Life Support Area Design Support</li>
-          <li>Environmental Condition Reports</li>
-        </ul>
-      </div>
-
-      <div class="env-right">
-        <img src="images/env1.jpg" />
-        <img src="images/env2.jpg" />
+        <div class="env-right">
+          <img src="images/multidisciplinary.png" />
+          <img src="images/palau.png" />
+        </div>
       </div>
     </section>
 
@@ -130,44 +188,76 @@
       <h2 class="section-title">US MILITARY PROJECTS</h2>
 
       <div class="military-card">
-        <img src="images/dod-logo.png" />
+        <img src="images/department of defense.png" />
 
         <div>
-          <h3>Interdisciplinary Environmental Engineering</h3>
-          <p>Developing Guam’s future engineering workforce.</p>
-          <button>LEARN MORE</button>
+          <h3>Interdisciplinary Environmental Engineering Support</h3>
+          <p>
+            Through this Program, KHLG is building a pathway for the growth and
+            development of future leaders in the construction industry. The
+            stakeholders will have direct access to recruit and hire locally
+            educated engineers with experience in large-scale construction and
+            working with the Government of Guam following their graduation from
+            the university. This model ensures that operational and regulatory
+            knowledge is transferred, while simultaneously expanding Guam’s pool
+            of qualified engineering experts.
+          </p>
+          <button class="primary-btn">LEARN MORE</button>
         </div>
       </div>
 
       <div class="military-card light">
-        <img src="images/airforce-logo.png" />
+        <img src="images/department of airforce.png" />
 
         <div>
-          <h3>Environmental Coordinator Program</h3>
-          <p>Supporting large-scale construction programs.</p>
-          <button>LEARN MORE</button>
+          <h3>Environmental Coordinator and Program Management Support</h3>
+          <p>
+            Through this Program, KHLG is building a pathway for the growth and
+            development of future leaders in the construction industry. The
+            stakeholders will have direct access to recruit and hire locally
+            educated engineers with experience in large-scale construction and
+            working with the Government of Guam following their graduation from
+            the university. This model ensures that operational and regulatory
+            knowledge is transferred, while simultaneously expanding Guam’s pool
+            of qualified engineering experts.
+          </p>
+          <button class="primary-btn">LEARN MORE</button>
         </div>
       </div>
     </section>
 
     <!-- CIVIL -->
     <section class="civil">
-      <h2>Civil Engineering Support</h2>
+      <h2 class="section-title">CIVIL ENGINEERING SUPPORT</h2>
+      <p class="section-subtitle">
+        Technical precision meets practical application. We provide robust
+        engineering support services that form the backbone of successful
+        infrastructure projects.
+      </p>
 
       <div class="civil-grid">
         <div class="civil-card">
-          <h4>Island Girl Coffee</h4>
-          <p>Site layout, grading, utilities.</p>
+          <h4>ISLAND GIRL COFFEE N’ QUENCHERS</h4>
+          <p>
+            KHLG delivered civil design services including site layout, grading,
+            drainage, utilities, and traffic planning, ensuring regulatory
+            compliance and seamless environmental integration.
+          </p>
         </div>
 
         <div class="civil-card">
-          <h4>Naval Base Guam</h4>
-          <p>Wastewater treatment upgrades.</p>
+          <h4>ENGINEERING ASSESSMENT SERVICES (NAVAL BASE GUAM)</h4>
+          <p>
+            KHLG conducted post-Typhoon Mawar facility assessments at Naval Base
+            Guam, inspecting structures and utilities, guiding repairs, ensuring
+            regulatory compliance, and supporting recovery efforts.
+          </p>
         </div>
 
         <div class="civil-cta">
           <h3>Need Technical Expertise?</h3>
-          <button>Get in Touch</button>
+          <p>Contact our engineering support team for your next project.</p>
+          <a class="primary-btn-projects">Get in Touch</a>
         </div>
       </div>
     </section>

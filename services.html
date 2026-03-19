@@ -10,8 +10,12 @@
       href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
   </head>
-  <body class="services-page">
+  <body>
     <header class="navbar">
       <div class="nav-container">
         <div class="nav-left">
@@ -20,8 +24,8 @@
           </div>
 
           <nav class="nav-menu">
-            <a class="active">HOME</a>
-            <a href="services.html">SERVICES</a>
+            <a href="index.html">HOME</a>
+            <a class="active" href="services.html">SERVICES</a>
             <a href="projects.html">PROJECTS</a>
             <a href="about.html">ABOUT</a>
           </nav>
@@ -31,7 +35,10 @@
           <a class="contact-btn">CONTACT</a>
 
           <div class="search-box">
-            <span class="search-icon">🔍</span>
+            <i
+              class="fa-solid fa-magnifying-glass search-icon"
+              aria-hidden="true"
+            ></i>
 
             <input type="text" placeholder="Search" />
           </div>
@@ -42,25 +49,31 @@
     <!-- HERO -->
     <section class="services-hero">
       <div class="services-hero-content">
-        <h1>OUR SERVICES</h1>
-        <p>
-          At KHLG, we stand out through innovation, safety, and environmental
-          excellence in engineering and construction management.
+        <h1 class="section-title services-title">OUR SERVICES</h1>
+        <p class="section-subtitle">
+          At KHLG, we stand out from our competitors through our unique blend of
+          regional expertise, advanced technology, safety’s zero tolerance and
+          strong environmental compliance practices related to project and
+          construction management 
         </p>
 
+        <div class="divider"></div>
+
         <div class="services-stats">
-          <div>
+          <div class="stat-item">
             <h2>7+</h2>
             <span>SERVICE AREAS</span>
           </div>
-          <div>
+          <div class="stat-item">
             <h2>10+</h2>
             <span>SPECIALIZED SERVICES</span>
           </div>
         </div>
       </div>
 
-      <img src="images/services-hero.jpg" />
+      <div class="services-hero-image-container">
+        <img src="images/client-solutions.png" alt="Construction Site" />
+      </div>
     </section>
 
     <!-- SERVICES TABS -->
@@ -69,96 +82,377 @@
         <span>Project & Construction Management</span>
         <span>Environmental Services</span>
         <span>Civil & Engineering Support</span>
+        <span>Scheduling & Project Controls</span>
+        <span>Construction Claims and Dispute Resolution</span>
         <span>Special Inspection</span>
         <span>Technology Solutions</span>
+        <span>Additional Services</span>
       </div>
     </section>
 
     <!-- EXPERTISE -->
     <section class="expertise">
-      <h2 class="section-title">OUR EXPERTISE</h2>
-
-      <div class="expertise-grid">
-        <div class="expertise-card">
-          <h3>Environmental Compliance</h3>
-          <p>Regulatory compliance across all phases.</p>
+      <div class="expertise-container">
+        <div class="section-title-container">
+          <h2 class="section-title">OUR EXPERTISE</h2>
+          <p class="section-subtitle">
+            We deliver innovation and technical excellence across Guam, the
+            Marianas, and Micronesia, navigating complex logistical and
+            environmental challenges.
+          </p>
         </div>
 
-        <div class="expertise-card">
-          <h3>Environmental Planning</h3>
-          <p>Strategic and sustainable development planning.</p>
-        </div>
+        <div class="expertise-grid">
+          <div class="expertise-card">
+            <i
+              class="fa-solid fa-clipboard-check expertise-icon"
+              aria-hidden="true"
+            ></i>
+            <h3>Environmental Compliance and Permitting</h3>
+            <p>
+              Identifying regulations, permit requirements, and compliance
+              obligations across all project phases.
+            </p>
+          </div>
 
-        <div class="expertise-card">
-          <h3>Remediation</h3>
-          <p>Hazard mitigation and restoration.</p>
-        </div>
+          <div class="expertise-card">
+            <i
+              class="fa-solid fa-map-location-dot expertise-icon"
+              aria-hidden="true"
+            ></i>
+            <h3>Environmental Management Planning</h3>
+            <p>
+              Developing tailored pollution prevention, waste management, spill
+              response, and monitoring programs.
+            </p>
+          </div>
 
-        <div class="expertise-card">
-          <h3>Natural Resources</h3>
-          <p>Protection and preservation strategies.</p>
-        </div>
+          <div class="expertise-card">
+            <i
+              class="fa-solid fa-screwdriver-wrench expertise-icon"
+              aria-hidden="true"
+            ></i>
+            <h3>Remediation and Restoration Planning</h3>
+            <p>
+              Assesses impacts, manages hazards, ensures compliance, and
+              restores safe, sustainable sites.
+            </p>
+          </div>
 
-        <div class="expertise-card">
-          <h3>Sustainability</h3>
-          <p>Efficient and sustainable solutions.</p>
-        </div>
+          <div class="expertise-card">
+            <i
+              class="fa-solid fa-seedling expertise-icon"
+              aria-hidden="true"
+            ></i>
+            <h3>Natural and Cultural Resources</h3>
+            <p>
+              Protects and manages natural habitats and cultural sites to ensure
+              sustainability and preservation.
+            </p>
+          </div>
 
-        <div class="expertise-card">
-          <h3>Risk Assessment</h3>
-          <p>Risk evaluation and mitigation strategies.</p>
+          <div class="expertise-card">
+            <i
+              class="fa-solid fa-recycle expertise-icon"
+              aria-hidden="true"
+            ></i>
+            <h3>Sustainability & Resource Efficiency Advisory</h3>
+            <p>
+              Integrating energy efficiency, waste reduction, and sustainable
+              materials practices into project strategies.
+            </p>
+          </div>
+
+          <div class="expertise-card">
+            <i
+              class="fa-solid fa-triangle-exclamation expertise-icon"
+              aria-hidden="true"
+            ></i>
+            <h3>
+              Environmental Risk Assessment & Mitigation Strategy Development
+            </h3>
+            <p>
+              Evaluating potential impacts and preparing proactive mitigation
+              and monitoring plans.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ADDITIONAL -->
     <section class="additional">
-      <h2 class="section-title">ADDITIONAL SERVICES</h2>
+      <div class="section-title-container">
+        <h2 class="section-title">ADDITIONAL SERVICES</h2>
+      </div>
 
       <div class="additional-grid">
-        <span>Mechanical Engineering</span>
-        <span>Electrical Engineering</span>
-        <span>Structural Engineering</span>
-        <span>Energy Consulting</span>
-        <span>3rd Party XTE</span>
-        <span>Community Planning</span>
-        <span>Development Services</span>
-        <span>Forensic Evaluations</span>
+        <div class="additional-item">
+          <span><i class="fa-solid fa-gears"></i> Mechanical Engineering</span>
+        </div>
+
+        <div class="additional-item">
+          <span><i class="fa-solid fa-bolt"></i> Electrical Engineering</span>
+        </div>
+
+        <div class="additional-item">
+          <span
+            ><i class="fa-solid fa-building"></i> Structural Engineering</span
+          >
+        </div>
+
+        <div class="additional-item">
+          <span><i class="fa-solid fa-lightbulb"></i> Energy Consulting</span>
+        </div>
+
+        <div class="additional-item">
+          <span
+            ><i class="fa-solid fa-magnifying-glass-chart"></i> 3rd Party
+            XTE</span
+          >
+        </div>
+
+        <div class="additional-item">
+          <span><i class="fa-solid fa-map"></i> Community Planning</span>
+        </div>
+
+        <div class="additional-item">
+          <span
+            ><i class="fa-solid fa-diagram-project"></i> Development
+            Services</span
+          >
+        </div>
+
+        <div class="additional-item">
+          <span
+            ><i class="fa-solid fa-scale-balanced"></i> Forensic
+            Evaluations</span
+          >
+        </div>
       </div>
     </section>
 
     <!-- TECHNOLOGY -->
     <section class="tech">
-      <h2 class="section-title">TECHNOLOGY SOLUTIONS</h2>
+      <div class="section-title-container-tech">
+        <h2 class="section-title">TECHNOLOGY SOLUTIONS</h2>
+        <p class="section-subtitle">
+          Integrating advanced cloud systems and project controls software to
+          drive efficiency and transparency.
+        </p>
+      </div>
 
       <div class="tech-grid">
-        <div class="tech-card">
-          <h3>Server & Computer Systems</h3>
-          <p>Configuration and management solutions.</p>
+        <!-- LEFT -->
+        <div class="tech-column">
+          <div class="tech-card">
+            <h3>Server & Computer Systems</h3>
+            <p>
+              Provision, configuration, and maintenance of servers and computing
+              hardware.
+            </p>
+          </div>
+
+          <div class="tech-card">
+            <h3>Network Systems</h3>
+            <p>
+              Implementation and management of secure, high-performance network
+              infrastructure.
+            </p>
+          </div>
         </div>
 
-        <div class="tech-card">
-          <h3>Network Systems</h3>
-          <p>Secure infrastructure implementation.</p>
+        <!-- CENTER -->
+        <div class="tech-center">
+          <div class="tech-circle">
+            <span>Integration</span>
+          </div>
         </div>
 
-        <div class="tech-card">
-          <h3>Camera Security Systems</h3>
-          <p>Real-time monitoring systems.</p>
+        <!-- RIGHT -->
+        <div class="tech-column">
+          <div class="tech-card">
+            <h3>IP Camera Security Systems</h3>
+            <p>
+              Installation of surveillance systems for real-time monitoring and
+              safety.
+            </p>
+          </div>
+
+          <div class="tech-card">
+            <h3>IT Services and Support</h3>
+            <p>
+              Ongoing technical support and maintenance to ensure smooth IT
+              operations.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="procore-section">
+        <div>
+          <h2 class="section-title">
+            POWERED BY PROCORE:<br />
+            SMARTER CONSTRUCTION MANAGEMENT
+          </h2>
+
+          <ul class="procore-list">
+            <li>
+              Industry-Leading Procore Platform Leveraging advanced construction
+              management technology to deliver smarter, safer, and more
+              efficient projects.
+            </li>
+            <li>
+              Technology-Driven & Sustainable Solutions Transforming project
+              delivery through innovation and digital integration.
+            </li>
+            <li>
+              Centralized & Data-Driven Project Management Managing projects
+              through transparent workflows and real-time data insights.
+            </li>
+            <li>
+              End-to-End Lifecycle Coverage From design coordination and
+              construction management to final closeout.
+            </li>
+          </ul>
         </div>
 
-        <div class="tech-card">
-          <h3>IT Services & Support</h3>
-          <p>Ongoing maintenance and support.</p>
+        <div class="procore-image">PROCORE</div>
+      </div>
+      <div class="procore-section">
+        <div class="procore-image">PROCORE</div>
+
+        <div>
+          <h2 class="section-title">OUR DIGITAL PROJECT PLATFORM</h2>
+          <p class="section-subtitle">
+            Transparent. Real-Time. Fully Integrated.
+          </p>
+
+          <ul class="procore-list">
+            <li>Real-time progress monitoring</li>
+            <li>Budget & cost tracking</li>
+            <li>Document control & approvals</li>
+            <li>Field-to-office synchronization</li>
+            <li>Paperless reporting system</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta">
-      <div class="cta-content">
-        <h2>READY TO BUILD THE FUTURE?</h2>
-        <a class="primary-btn-cta">CONTACT US</a>
+    <section class="claims">
+      <div class="claims-container">
+        <!-- LEFT SIDE -->
+        <div class="claims-left">
+          <h2 class="section-title">
+            CONSTRUCTION<br />
+            CLAIMS &<br />
+            DISPUTE<br />
+            RESOLUTION
+          </h2>
+
+          <p class="section-subtitle">
+            KHLG’s Construction Claims Services provide analytical and advisory
+            support to contractors, project owners, and government agencies
+            throughout the claims process. Our team assists from the early
+            identification and evaluation of potential claims through the
+            development of well-supported claim strategies.
+          </p>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="claims-right">
+          <h3 class="claims-subtitle">SCHEDULING AND PROJECT CONTROL</h3>
+
+          <!-- STEPS -->
+          <div class="claims-steps">
+            <div class="step active">
+              <div class="circle">01</div>
+              <p>Claims Development and Management</p>
+            </div>
+
+            <div class="step">
+              <div class="circle">02</div>
+              <p>Claims Scheduling</p>
+            </div>
+
+            <div class="step">
+              <div class="circle">03</div>
+              <p>Construction Mediation & Dispute Resolution</p>
+            </div>
+
+            <div class="step">
+              <div class="circle">04</div>
+              <p>Reporting and Cost Control</p>
+            </div>
+          </div>
+
+          <p class="claims-description">
+            KHLG conducts detailed reviews of project documentation, contracts,
+            schedules, and project correspondence to assess claim merit,
+            identify contributing factors, and support informed decision-making.
+            Our structured approach helps clients understand claim exposure,
+            strengthen documentation, and determine the most appropriate course
+            of action.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="inspection">
+      <div class="section-title-container">
+        <h2 class="section-title">SPECIAL INSPECTION</h2>
+        <p class="section-subtitle">
+          Structured Inspection and Testing to Maintain Quality, Safety, and
+          Compliance.
+        </p>
+      </div>
+
+      <div class="features">
+        <div class="feature">
+          <div class="icon">🔍</div>
+          <p>
+            Comprehensive Special Inspections and construction materials testing
+            services
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="icon">📄</div>
+          <p>
+            In-depth knowledge of local jurisdictional requirements for special
+            inspections
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="icon">👷</div>
+          <p>Highly experienced engineering staff with proven expertise</p>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <div class="info-left">
+          <h3>
+            Efficient, internet-based reporting system for real-time
+            documentation
+          </h3>
+          <p>
+            KHLO offers Special Inspection services by qualified inspectors,
+            ensuring materials, installations, and structural connections comply
+            with approved plans and the International Building Code (IBC).
+          </p>
+
+          <div class="tags">
+            <span>☁ Cloud Access</span>
+            <span>📊 Instant Analytics</span>
+          </div>
+        </div>
+
+        <div class="info-right">
+          <p class="status">STATUS: PASS <span>ID: 7488291</span></p>
+          <div class="progress-bar">
+            <div class="progress"></div>
+          </div>
+          <button class="verified">Verified</button>
+        </div>
       </div>
     </section>
 

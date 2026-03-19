@@ -3,14 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-
     <title>KHLG Engineering</title>
-
     <link rel="stylesheet" href="styles.css" />
-
     <link
       href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     />
   </head>
 
@@ -23,7 +24,7 @@
           </div>
 
           <nav class="nav-menu">
-            <a class="active">HOME</a>
+            <a class="active" href="index.html">HOME</a>
             <a href="services.html">SERVICES</a>
             <a href="projects.html">PROJECTS</a>
             <a href="about.html">ABOUT</a>
@@ -34,7 +35,10 @@
           <a class="contact-btn">CONTACT</a>
 
           <div class="search-box">
-            <span class="search-icon">🔍</span>
+            <i
+              class="fa-solid fa-magnifying-glass search-icon"
+              aria-hidden="true"
+            ></i>
 
             <input type="text" placeholder="Search" />
           </div>
@@ -96,14 +100,19 @@
     </section>
 
     <section class="services">
-      <h2 class="section-title">CORE SERVICES</h2>
-      <p class="section-subtitle services-subtitle">
-        Comprehensive engineering and management disciplines supporting
-        infrastructure development across the Pacific.
-      </p>
+      <div class="section-title-container">
+        <h2 class="section-title">CORE SERVICES</h2>
+        <p class="section-subtitle services-subtitle">
+          Comprehensive engineering and management disciplines supporting
+          infrastructure development across the Pacific.
+        </p>
+      </div>
 
       <div class="services-grid">
         <div class="service-card">
+          <div class="service-icon">
+            <i class="fa-solid fa-helmet-safety" aria-hidden="true"></i>
+          </div>
           <h3>Project and Construction Management</h3>
           <p>
             KHLG provides end-to-end Project and Construction Management
@@ -115,6 +124,9 @@
           <a class="learnmore-btn">Learn More</a>
         </div>
         <div class="service-card">
+          <div class="service-icon">
+            <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+          </div>
           <h3>Environmental Services</h3>
           <p>
             KHLG provides Environmental Services to help clients meet regulatory
@@ -126,6 +138,9 @@
         </div>
 
         <div class="service-card">
+          <div class="service-icon">
+            <i class="fa-solid fa-compass-drafting" aria-hidden="true"></i>
+          </div>
           <h3>Civil & Engineering Support</h3>
           <p>
             KHLG provides civil and engineering support for planning and
@@ -137,6 +152,9 @@
         </div>
 
         <div class="service-card">
+          <div class="service-icon">
+            <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+          </div>
           <h3>Scheduling & Project Controls</h3>
           <p>
             KHLG uses advanced scheduling and project control tools, including
@@ -148,6 +166,9 @@
         </div>
 
         <div class="service-card">
+          <div class="service-icon">
+            <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i>
+          </div>
           <h3>Construction Claims and Dispute Resolution</h3>
           <p>
             KHLG provides claims analysis and advisory services for contractors,
@@ -158,6 +179,9 @@
         </div>
 
         <div class="service-card">
+          <div class="service-icon">
+            <i class="fa-solid fa-clipboard-check" aria-hidden="true"></i>
+          </div>
           <h3>Special Inspection</h3>
           <p>
             KHLG provides special inspections and materials testing in
@@ -169,6 +193,9 @@
         </div>
 
         <div class="service-card">
+          <div class="service-icon">
+            <i class="fa-solid fa-microchip" aria-hidden="true"></i>
+          </div>
           <h3>Technology Solutions</h3>
           <p>
             KHLG delivers technology-driven solutions that enhance customer
@@ -179,6 +206,9 @@
           <a class="learnmore-btn">Learn More</a>
         </div>
         <div class="service-card">
+          <div class="service-icon">
+            <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+          </div>
           <h3>Additional Services</h3>
           <p>
             KHLG provides specialized technical and consulting services through
@@ -191,12 +221,14 @@
     </section>
 
     <section class="safety">
-      <h2 class="section-title">SAFETY EXCELLENCE</h2>
+      <div class="section-title-container">
+        <h2 class="section-title">SAFETY EXCELLENCE</h2>
 
-      <p class="section-subtitle">
-        Our commitment to safety is absolute. We maintain rigorous standards to
-        protect our people, partners, and the public.
-      </p>
+        <p class="section-subtitle">
+          Our commitment to safety is absolute. We maintain rigorous standards
+          to protect our people, partners, and the public.
+        </p>
+      </div>
 
       <div class="safety-grid">
         <div class="safety-card">
@@ -244,15 +276,16 @@
     </section>
 
     <section class="differentiators">
-      <h2 class="section-title">KEY DIFFERENTIATORS</h2>
-      <p class="section-subtitle">
-        What sets KHLG apart in delivering complex projects
-      </p>
+      <div class="section-title-container">
+        <h2 class="section-title">KEY DIFFERENTIATORS</h2>
+        <p class="section-subtitle">
+          What sets KHLG apart in delivering complex projects
+        </p>
+      </div>
 
       <div class="diff-grid">
         <div class="diff-card">
           <img src="images/regional.png" />
-
           <div class="diff-overlay blue">
             <div class="diff-content">
               <h3>REGIONAL EXPERTISE</h3>
@@ -337,11 +370,13 @@
     </section>
 
     <section class="projects">
-      <h2 class="section-title">FEATURED PROJECTS</h2>
-      <p class="section-subtitle">
-        Delivering infrastructure excellence across Guam, Marianas and
-        Micronesia.
-      </p>
+      <div class="section-title-container">
+        <h2 class="section-title">FEATURED PROJECTS</h2>
+        <p class="section-subtitle">
+          Delivering infrastructure excellence across Guam, Marianas and
+          Micronesia.
+        </p>
+      </div>
       <!-- PROJECT 1 -->
 
       <div class="project">
@@ -416,11 +451,11 @@
         </div>
       </div>
     </section>
-    <section class="innovation-section">
+    <section class="innovation">
       <div class="innovation-content">
         <span class="project-type">OUR COMMITMENT</span>
 
-        <h3>Continuously Evolving</h3>
+        <h3>CONTINUOUSLY EVOLVING</h3>
 
         <p>
           We don't just build; we evolve. Through rigorous post-project
@@ -429,27 +464,27 @@
         </p>
       </div>
     </section>
+
     <section class="mentorship">
       <div class="mentorship-container">
         <!-- LEFT CONTENT -->
         <div class="mentorship-text">
-          <h2 class="mentorship-title">KHLG & UNIVERSITY OF GUAM:</h2>
+          <h2 class="section-title">KHLG & UNIVERSITY OF GUAM:</h2>
 
           <h3 class="mentorship-subtitle">
             Academic Partnership & Professional Program
           </h3>
-
           <p>
             KHLG in collaboration with the University of Guam (UOG) Triton
             Advising Center and endorsed by the UOG School of Engineering has
             its Professional Mentorship Program that formalized academic
-            partnerships.
-          </p>
-
-          <p>
-            UOG School of Engineering students into KHLG project team for the
-            execution of project and construction management projects. This
-            program offers invaluable hands-on experience.
+            partnerships. The KHLG team and its clients have a partnership with
+            the University that will integrate UOG School of Engineering
+            students into KHLG project team for the execution of project and
+            construction management projects. This program offers invaluable
+            hands-on experience to the students and fosters a collaborative
+            environment where seasoned professionals mentor and guide the next
+            generation of engineers.
           </p>
         </div>
 
@@ -467,13 +502,20 @@
         <div class="highlight-content">
           <p>
             Through this Program, KHLG is building a pathway for the growth and
-            development of future leaders in the construction industry.
+            development of future leaders in the construction industry. The
+            stakeholders will have direct access to recruit and hire locally
+            educated engineers with experience in large-scale construction and
+            working with the Government of Guam following their graduation from
+            the university. This model ensures that operational and regulatory
+            knowledge is transferred, while simultaneously expanding Guam’s pool
+            of qualified engineering experts.
           </p>
 
           <a class="primary-btn">LEARN MORE</a>
         </div>
       </div>
     </section>
+
     <section class="insights">
       <h2 class="section-title">PARTNER & INDUSTRY INSIGHTS</h2>
 

@@ -1,0 +1,145 @@
+:root {
+  --titles: #171717;
+  --subtitles: #525252;
+  --border1: #4b5563;
+  --accent1: #2563eb;
+  --accent2: #102a43;
+  --white1: #ffffff;
+  --card-color: #1f2937;
+  --tabs-color: #e2e8f0;
+}
+/* HERO SPLIT */
+
+.environmental-hero-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 80px;
+  height: auto;
+  max-height: 530px;
+}
+
+.environmental-hero-left {
+  background: var(--accent2);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  padding: 80px 0;
+  padding-left: 160px;
+}
+
+.environmental-hero-right {
+  background: var(--accent2);
+  height: 530px;
+  max-height: 530px;
+}
+.environmental-hero-img-container {
+  padding-left: 50px;
+  padding-right: 160px;
+}
+.environmental-hero-img-container img {
+  padding: 50px 0;
+  width: 100%;
+  height: 530px;
+  object-fit: cover;
+  max-height: 530px;
+  border-radius: 0px 100px 0px 100px;
+}
+
+/* SERVICES */
+.environmental-services {
+  background: var(--tabs-color);
+  padding: 50px 160px;
+}
+
+.environmental-services-container {
+  max-width: 1600px;
+  margin: auto;
+}
+
+.environmental-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.environmental-services-card {
+  background: linear-gradient(135deg, #1e3fa3, #2f63d6);
+  color: white;
+  padding: 20px;
+  border-radius: 16px;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.environmental-services-card h3 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.environmental-services-card p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.environmental-services-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .environmental-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .environmental-services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* CTA IMAGE */
+
+.environmental-cta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: auto;
+  background: var(--accent2);
+}
+.environmental-cta-img-container {
+  border-radius: 16px;
+  padding: 50px;
+  padding-left: 160px;
+}
+.environmental-cta-img-container img {
+  width: 100%;
+  height: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.environmental-cta-right {
+  background: var(--accent2);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  padding: 80px 0;
+  padding-left: 80px;
+  padding-right: 160px;
+  max-height: 500px;
+}
+
+.environmental-cta-overlay h2 {
+  font-family: Oswald;
+  font-size: 28px;
+  margin-bottom: 10px;
+}

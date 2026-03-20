@@ -9,7 +9,15 @@ body {
   color: #333;
   line-height: 1.6;
 }
-
+:root {
+  --titles: #171717;
+  --subtitles: #525252;
+  --border1: #4b5563;
+  --accent1: #2563eb;
+  --accent2: #102a43;
+  --white1: #ffffff;
+  --card-color: #1f2937;
+}
 h1,
 h2,
 h3 {
@@ -30,15 +38,6 @@ h3 {
 }
 .section-title-container {
   text-align: center;
-}
-:root {
-  --titles: #171717;
-  --subtitles: #525252;
-  --border1: #4b5563;
-  --accent1: #2563eb;
-  --accent2: #102a43;
-  --white1: #ffffff;
-  --card-color: #1f2937;
 }
 .learnmore-btn {
   display: inline-block;
@@ -866,7 +865,6 @@ h3 {
 .insight-text h4 {
   font-size: 16px;
   font-weight: 700;
-  
 }
 
 .insight-text span {

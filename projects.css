@@ -841,7 +841,6 @@
     font-size: 14px;
   }
 }
-
 /* MILITARY */
 .military {
   padding: 50px 160px;
@@ -850,6 +849,8 @@
 .military-card {
   display: flex;
   gap: 20px;
+  padding: 30px;
+  margin-bottom: 20px;
   background:
     radial-gradient(
       circle at top left,
@@ -858,8 +859,6 @@
     ),
     linear-gradient(135deg, #0f2f4a 0%, var(--accent2) 55%, #153d5f 100%);
   color: white;
-  padding: 30px;
-  margin-bottom: 20px;
 }
 
 .military-card.light {
@@ -871,18 +870,21 @@
   width: 150px;
   height: auto;
   object-fit: contain;
+  flex-shrink: 0;
 }
-.military-card h3,
-.military-card.light h3 {
+
+.military-card h3 {
   font-size: 36px;
+  line-height: 1.2;
+  margin: 0 0 8px;
+}
+
+.military-card p {
+  font-size: 18px;
+  line-height: 1.6;
   margin: 0;
 }
 
-.military-card p,
-.military-card.light p {
-  font-size: 18px;
-  margin: 0;
-}
 .military-card button {
   margin-top: 15px;
   padding: 10px 20px;
@@ -890,7 +892,137 @@
   color: white;
   border: none;
   cursor: pointer;
-  float: right;
+  align-self: flex-start;
+}
+
+/* =========================
+   1400
+========================= */
+@media (max-width: 1400px) {
+  .military {
+    padding: 50px 100px;
+  }
+
+  .military-card {
+    padding: 28px;
+  }
+
+  .military-card h3 {
+    font-size: 32px;
+  }
+
+  .military-card p {
+    font-size: 18px;
+  }
+}
+
+/* =========================
+   1200
+========================= */
+@media (max-width: 1200px) {
+  .military {
+    padding: 50px 60px;
+  }
+
+  .military-card {
+    padding: 26px;
+    gap: 18px;
+  }
+
+  .military-card img {
+    width: 130px;
+  }
+
+  .military-card h3 {
+    font-size: 28px;
+  }
+
+  .military-card p {
+    font-size: 16px;
+  }
+}
+
+/* =========================
+   1024
+========================= */
+@media (max-width: 1024px) {
+  .military {
+    padding: 36px 40px;
+  }
+
+  .military-card {
+    padding: 24px;
+    gap: 16px;
+  }
+
+  .military-card img {
+    width: 120px;
+  }
+
+  .military-card h3 {
+    font-size: 24px;
+  }
+
+  .military-card p {
+    font-size: 16px;
+  }
+}
+
+/* =========================
+   768
+========================= */
+@media (max-width: 768px) {
+  .military {
+    padding: 28px 20px;
+  }
+
+  .military-card {
+    flex-direction: column;
+    padding: 22px;
+    gap: 14px;
+  }
+
+  .military-card img {
+    width: 100px;
+  }
+
+  .military-card h3 {
+    font-size: 20px;
+  }
+
+  .military-card p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .military-card button {
+    align-self: flex-start;
+  }
+}
+
+/* =========================
+   480
+========================= */
+@media (max-width: 480px) {
+  .military {
+    padding: 28px 16px;
+  }
+
+  .military-card {
+    padding: 20px;
+  }
+
+  .military-card img {
+    width: 90px;
+  }
+
+  .military-card h3 {
+    font-size: 18px;
+  }
+
+  .military-card p {
+    font-size: 14px;
+  }
 }
 /* CIVIL */
 .civil {

@@ -24,25 +24,30 @@
             <img src="images/khlg-logo.png" alt="KHLG Logo" />
           </div>
 
-          <nav class="nav-menu">
-            <a href="index.html">HOME</a>
+          <nav class="nav-menu" id="navMenu">
+            <a class="active" href="index.html">HOME</a>
             <a href="services.html">SERVICES</a>
-            <a class="active" href="projects.html">PROJECTS</a>
+            <a href="projects.html">PROJECTS</a>
             <a href="about.html">ABOUT</a>
           </nav>
         </div>
 
         <div class="nav-right">
-          <a class="contact-btn">CONTACT</a>
+          <a class="contact-btn" href="#">CONTACT</a>
 
           <div class="search-box">
             <i
               class="fa-solid fa-magnifying-glass search-icon"
               aria-hidden="true"
             ></i>
-
             <input type="text" placeholder="Search" />
           </div>
+
+          <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </div>
     </header>
@@ -105,7 +110,9 @@
           <!-- Center Big cae-capabilities-card -->
           <div class="cae-capabilities-card-highlight">
             <div class="icon">🤝</div>
-            <h3 class="highlight-section-title">DRAINAGE, STORMWATER, & EROSION CONTROL SUPPORT</h3>
+            <h3 class="highlight-section-title">
+              DRAINAGE, STORMWATER, & EROSION CONTROL SUPPORT
+            </h3>
             <p class="highlight-section-subtitle">
               Review of hydrologic analysis, BMP selection, and erosion and
               sediment control measures to manage runoff and protect natural
@@ -155,26 +162,39 @@
       </div>
     </section>
     <!-- FOOTER -->
-
     <footer class="footer">
-      <div class="footer-grid">
-        <div class="footer-logo">
-          <img src="images/khlg-logo.png" alt="KHLG Logo" />
+      <div class="footer-main">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="images/khlg-logo.png" alt="KHLG Logo" />
+          </div>
+
+          <p class="footer-description">
+            Engineering excellence and construction management integrity for
+            Guam, Marianas and Micronesia. Building resilient infrastructure for
+            tomorrow.
+          </p>
+
+          <div class="footer-socials">
+            <a href="#">LINKEDIN</a>
+            <a href="#">FACEBOOK</a>
+            <a href="#">INSTAGRAM</a>
+          </div>
         </div>
 
-        <div>
+        <div class="footer-links">
           <h4>Quick Links</h4>
 
           <ul>
-            <li>Home</li>
-            <li>Services</li>
-            <li>Projects</li>
-            <li>Contact</li>
-            <li>About Us</li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Safety</a></li>
+            <li><a href="#">Careers</a></li>
           </ul>
         </div>
 
-        <div>
+        <div class="footer-contact">
           <h4>Contact</h4>
 
           <p>
@@ -185,6 +205,16 @@
           <p>Email: info@khlgassociates.com</p>
         </div>
       </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 KHLG & Associates, Inc. All rights reserved.</p>
+
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>

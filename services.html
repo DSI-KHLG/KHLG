@@ -23,25 +23,30 @@
             <img src="images/khlg-logo.png" alt="KHLG Logo" />
           </div>
 
-          <nav class="nav-menu">
-            <a href="index.html">HOME</a>
-            <a class="active" href="services.html">SERVICES</a>
+          <nav class="nav-menu" id="navMenu">
+            <a class="active" href="index.html">HOME</a>
+            <a href="services.html">SERVICES</a>
             <a href="projects.html">PROJECTS</a>
             <a href="about.html">ABOUT</a>
           </nav>
         </div>
 
         <div class="nav-right">
-          <a class="contact-btn">CONTACT</a>
+          <a class="contact-btn" href="#">CONTACT</a>
 
           <div class="search-box">
             <i
               class="fa-solid fa-magnifying-glass search-icon"
               aria-hidden="true"
             ></i>
-
             <input type="text" placeholder="Search" />
           </div>
+
+          <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </div>
     </header>
@@ -49,12 +54,15 @@
     <!-- HERO -->
     <section class="services-hero">
       <div class="services-hero-content">
+        <span class="services-eyebrow">WHAT WE DO</span>
+
         <h1 class="section-title services-title">OUR SERVICES</h1>
-        <p class="section-subtitle">
-          At KHLG, we stand out from our competitors through our unique blend of
-          regional expertise, advanced technology, safety’s zero tolerance and
-          strong environmental compliance practices related to project and
-          construction management 
+
+        <p class="section-subtitle services-hero-subtitle">
+          At KHLG, we stand out through our unique blend of regional expertise,
+          advanced technology, zero-tolerance safety standards, and strong
+          environmental compliance practices in project and construction
+          management.
         </p>
 
         <div class="divider"></div>
@@ -64,6 +72,7 @@
             <h2>7+</h2>
             <span>SERVICE AREAS</span>
           </div>
+
           <div class="stat-item">
             <h2>10+</h2>
             <span>SPECIALIZED SERVICES</span>
@@ -79,10 +88,16 @@
     <!-- SERVICES TABS -->
     <section class="services-tabs">
       <div class="tabs-container">
-        <a href="project-and-construction-management.html">Project & Construction Management</a>
+        <a href="project-and-construction-management.html"
+          >Project & Construction Management</a
+        >
         <a href="environmental-services.html">Environmental Services</a>
-        <a href="civil-and-engineering-support.css">Civil & Engineering Support</a>
-        <a href="scheduling-and-project-controls.css">Scheduling & Project Controls</a>
+        <a href="civil-and-engineering-support.html"
+          >Civil & Engineering Support</a
+        >
+        <a href="scheduling-and-project-controls.html"
+          >Scheduling & Project Controls</a
+        >
         <a href="#claims">Construction Claims and Dispute Resolution</a>
         <a href="#inspection">Special Inspection</a>
         <a href="#technology">Technology Solutions</a>
@@ -343,10 +358,7 @@
         <!-- LEFT SIDE -->
         <div class="claims-left">
           <h2 class="section-title">
-            CONSTRUCTION<br />
-            CLAIMS &<br />
-            DISPUTE<br />
-            RESOLUTION
+            CONSTRUCTION CLAIMS & DISPUTE RESOLUTION
           </h2>
 
           <p class="section-subtitle">
@@ -457,26 +469,39 @@
     </section>
 
     <!-- FOOTER -->
-
     <footer class="footer">
-      <div class="footer-grid">
-        <div class="footer-logo">
-          <img src="images/khlg-logo.png" alt="KHLG Logo" />
+      <div class="footer-main">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="images/khlg-logo.png" alt="KHLG Logo" />
+          </div>
+
+          <p class="footer-description">
+            Engineering excellence and construction management integrity for
+            Guam, Marianas and Micronesia. Building resilient infrastructure for
+            tomorrow.
+          </p>
+
+          <div class="footer-socials">
+            <a href="#">LINKEDIN</a>
+            <a href="#">FACEBOOK</a>
+            <a href="#">INSTAGRAM</a>
+          </div>
         </div>
 
-        <div>
+        <div class="footer-links">
           <h4>Quick Links</h4>
 
           <ul>
-            <li>Home</li>
-            <li>Services</li>
-            <li>Projects</li>
-            <li>Contact</li>
-            <li>About Us</li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Safety</a></li>
+            <li><a href="#">Careers</a></li>
           </ul>
         </div>
 
-        <div>
+        <div class="footer-contact">
           <h4>Contact</h4>
 
           <p>
@@ -487,6 +512,16 @@
           <p>Email: info@khlgassociates.com</p>
         </div>
       </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 KHLG & Associates, Inc. All rights reserved.</p>
+
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>

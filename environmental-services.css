@@ -13,37 +13,166 @@
 .environmental-hero-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin-top: 80px;
   height: auto;
   max-height: 530px;
+  margin-top: 81px;
 }
 
 .environmental-hero-left {
-  background: var(--accent2);
-  color: white;
   display: flex;
   flex-direction: column;
-  justify-content: left;
-  padding: 80px 0;
-  padding-left: 160px;
+  justify-content: center;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.06),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #0f2f4a 0%, var(--accent2) 55%, #153d5f 100%);
+  color: white;
+  padding: 50px 40px 50px 160px;
 }
 
 .environmental-hero-right {
-  background: var(--accent2);
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.06),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #0f2f4a 0%, var(--accent2) 55%, #153d5f 100%);
   height: 530px;
   max-height: 530px;
 }
+
 .environmental-hero-img-container {
-  padding-left: 50px;
-  padding-right: 160px;
+  height: 100%;
+  padding: 50px 160px 50px 50px;
 }
+
 .environmental-hero-img-container img {
-  padding: 50px 0;
   width: 100%;
-  height: 530px;
-  object-fit: cover;
+  height: 100%;
   max-height: 530px;
-  border-radius: 0px 100px 0px 100px;
+  display: block;
+  object-fit: cover;
+  border-radius: 0 100px 0 100px;
+}
+
+/* =========================
+   1400
+========================= */
+@media (max-width: 1400px) {
+  .environmental-hero-left {
+    padding: 50px 40px 50px 100px;
+  }
+
+  .environmental-hero-right {
+    height: 500px;
+    max-height: 500px;
+  }
+
+  .environmental-hero-img-container {
+    padding: 50px 100px 50px 40px;
+  }
+
+  .environmental-hero-img-container img {
+    max-height: 500px;
+    border-radius: 0 84px 0 84px;
+  }
+}
+
+/* =========================
+   1200
+========================= */
+@media (max-width: 1200px) {
+  .environmental-hero-split {
+    max-height: 480px;
+  }
+
+  .environmental-hero-left {
+    padding: 50px 32px 50px 60px;
+  }
+
+  .environmental-hero-right {
+    height: 480px;
+    max-height: 480px;
+  }
+
+  .environmental-hero-img-container {
+    padding: 50px 60px 50px 32px;
+  }
+
+  .environmental-hero-img-container img {
+    max-height: 480px;
+    border-radius: 0 72px 0 72px;
+  }
+}
+
+/* =========================
+   1024
+========================= */
+@media (max-width: 1024px) {
+  .environmental-hero-split {
+    grid-template-columns: 1fr;
+    max-height: none;
+    margin-top: 76px;
+  }
+
+  .environmental-hero-left {
+    padding: 36px 40px;
+  }
+
+  .environmental-hero-right {
+    height: auto;
+    max-height: none;
+  }
+
+  .environmental-hero-img-container {
+    padding: 0 40px 36px;
+  }
+
+  .environmental-hero-img-container img {
+    height: 360px;
+    max-height: none;
+    border-radius: 0 56px 0 56px;
+  }
+}
+
+/* =========================
+   768
+========================= */
+@media (max-width: 768px) {
+  .environmental-hero-left {
+    padding: 28px 20px;
+  }
+
+  .environmental-hero-img-container {
+    padding: 0 20px 28px;
+  }
+
+  .environmental-hero-img-container img {
+    height: 280px;
+    border-radius: 0 40px 0 40px;
+  }
+}
+
+/* =========================
+   480
+========================= */
+@media (max-width: 480px) {
+  .environmental-hero-left {
+    padding: 28px 16px;
+  }
+
+  .environmental-hero-img-container {
+    padding: 0 16px 28px;
+  }
+
+  .environmental-hero-img-container img {
+    height: 220px;
+    border-radius: 0 28px 0 28px;
+  }
 }
 
 /* SERVICES */
@@ -53,8 +182,7 @@
 }
 
 .environmental-services-container {
-  max-width: 1600px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .environmental-services-grid {
@@ -64,14 +192,14 @@
 }
 
 .environmental-services-card {
-  background: linear-gradient(135deg, #1e3fa3, #2f63d6);
-  color: white;
-  padding: 20px;
-  border-radius: 16px;
   min-height: 180px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 20px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #1e3fa3, #2f63d6);
+  color: white;
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -79,6 +207,7 @@
 
 .environmental-services-card h3 {
   font-size: 24px;
+  line-height: 1.2;
   font-weight: 800;
   margin-bottom: 10px;
 }
@@ -93,16 +222,116 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive */
-@media (max-width: 992px) {
-  .environmental-services-grid {
-    grid-template-columns: repeat(2, 1fr);
+/* =========================
+   1400
+========================= */
+@media (max-width: 1400px) {
+  .environmental-services {
+    padding: 50px 100px;
+  }
+
+  .environmental-services-card h3 {
+    font-size: 22px;
+  }
+
+  .environmental-services-card p {
+    font-size: 18px;
   }
 }
 
-@media (max-width: 600px) {
+/* =========================
+   1200
+========================= */
+@media (max-width: 1200px) {
+  .environmental-services {
+    padding: 50px 60px;
+  }
+
+  .environmental-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .environmental-services-card h3 {
+    font-size: 20px;
+  }
+
+  .environmental-services-card p {
+    font-size: 16px;
+  }
+}
+
+/* =========================
+   1024
+========================= */
+@media (max-width: 1024px) {
+  .environmental-services {
+    padding: 36px 40px;
+  }
+
+  .environmental-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .environmental-services-card {
+    min-height: 170px;
+  }
+
+  .environmental-services-card h3 {
+    font-size: 20px;
+  }
+
+  .environmental-services-card p {
+    font-size: 16px;
+  }
+}
+
+/* =========================
+   768
+========================= */
+@media (max-width: 768px) {
+  .environmental-services {
+    padding: 28px 20px;
+  }
+
   .environmental-services-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .environmental-services-card {
+    min-height: auto;
+    padding: 18px;
+  }
+
+  .environmental-services-card h3 {
+    font-size: 18px;
+  }
+
+  .environmental-services-card p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+}
+
+/* =========================
+   480
+========================= */
+@media (max-width: 480px) {
+  .environmental-services {
+    padding: 28px 16px;
+  }
+
+  .environmental-services-card {
+    padding: 16px;
+  }
+
+  .environmental-services-card h3 {
+    font-size: 16px;
+  }
+
+  .environmental-services-card p {
+    font-size: 14px;
   }
 }
 /* CTA IMAGE */
@@ -111,35 +340,136 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: auto;
-  background: var(--accent2);
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.06),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #0f2f4a 0%, var(--accent2) 55%, #153d5f 100%);
 }
+
 .environmental-cta-img-container {
-  border-radius: 16px;
-  padding: 50px;
-  padding-left: 160px;
+  padding: 50px 50px 50px 160px;
 }
+
 .environmental-cta-img-container img {
   width: 100%;
   height: 100%;
   max-height: 500px;
+  display: block;
   object-fit: cover;
   border-radius: 16px;
 }
 
 .environmental-cta-right {
-  background: var(--accent2);
-  color: white;
   display: flex;
   flex-direction: column;
-  justify-content: left;
-  padding: 80px 0;
-  padding-left: 80px;
-  padding-right: 160px;
-  max-height: 500px;
+  justify-content: center;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.06),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #0f2f4a 0%, var(--accent2) 55%, #153d5f 100%);
+  color: white;
+  padding: 50px 160px 50px 80px;
 }
 
 .environmental-cta-overlay h2 {
-  font-family: Oswald;
+  font-family: "Oswald", sans-serif;
   font-size: 28px;
+  line-height: 1.2;
   margin-bottom: 10px;
+}
+
+/* =========================
+   1400
+========================= */
+@media (max-width: 1400px) {
+  .environmental-cta-img-container {
+    padding: 50px 40px 50px 100px;
+  }
+
+  .environmental-cta-right {
+    padding: 50px 100px 50px 40px;
+  }
+
+  .environmental-cta-overlay h2 {
+    font-size: 26px;
+  }
+}
+
+/* =========================
+   1200
+========================= */
+@media (max-width: 1200px) {
+  .environmental-cta-img-container {
+    padding: 50px 32px 50px 60px;
+  }
+
+  .environmental-cta-right {
+    padding: 50px 60px 50px 32px;
+  }
+
+  .environmental-cta-overlay h2 {
+    font-size: 24px;
+  }
+}
+
+/* =========================
+   1024
+========================= */
+@media (max-width: 1024px) {
+  .environmental-cta {
+    grid-template-columns: 1fr;
+  }
+
+  .environmental-cta-img-container {
+    padding: 36px 40px 0;
+  }
+
+  .environmental-cta-right {
+    max-height: none;
+    padding: 36px 40px;
+  }
+
+  .environmental-cta-overlay h2 {
+    font-size: 22px;
+  }
+}
+
+/* =========================
+   768
+========================= */
+@media (max-width: 768px) {
+  .environmental-cta-img-container {
+    padding: 28px 20px 0;
+  }
+
+  .environmental-cta-right {
+    padding: 28px 20px;
+  }
+
+  .environmental-cta-overlay h2 {
+    font-size: 20px;
+  }
+}
+
+/* =========================
+   480
+========================= */
+@media (max-width: 480px) {
+  .environmental-cta-img-container {
+    padding: 28px 16px 0;
+  }
+
+  .environmental-cta-right {
+    padding: 28px 16px;
+  }
+
+  .environmental-cta-overlay h2 {
+    font-size: 18px;
+  }
 }

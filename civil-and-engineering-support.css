@@ -9,49 +9,155 @@
   --tabs-color: #e2e8f0;
 }
 /* HERO SPLIT */
-
 .cae-hero-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: auto;
-  margin-top: 80px;
+  margin-top: 81px;
 }
 
 .cae-hero-left {
-  background: var(--accent2);
-  color: white;
   display: flex;
   flex-direction: column;
-  justify-content: left;
-  padding: 80px 0;
+  justify-content: center;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.06),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #0f2f4a 0%, var(--accent2) 55%, #153d5f 100%);
+  color: white;
+  padding: 50px 0;
   padding-left: 160px;
+  padding-right: 40px;
 }
 
 .cae-hero-right {
-  background: var(--accent2);
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.06),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #0f2f4a 0%, var(--accent2) 55%, #153d5f 100%);
 }
+
 .cae-hero-img-container {
-  padding: 80px 0;
-  padding-left: 50px;
-  padding-right: 160px;
+  height: 100%;
+  padding: 50px 160px 50px 50px;
 }
+
 .cae-hero-img-container img {
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: cover;
-  border-radius: 0px 100px 0px 100px;
+  border-radius: 0 100px 0 100px;
+}
+
+/* =========================
+   1400
+========================= */
+@media (max-width: 1400px) {
+  .cae-hero-split {
+    margin-top: 81px;
+  }
+
+  .cae-hero-left {
+    padding: 50px 40px 50px 100px;
+  }
+
+  .cae-hero-img-container {
+    padding: 50px 100px 50px 40px;
+  }
+
+  .cae-hero-img-container img {
+    border-radius: 0 84px 0 84px;
+  }
+}
+
+/* =========================
+   1200
+========================= */
+@media (max-width: 1200px) {
+  .cae-hero-left {
+    padding: 50px 32px 50px 60px;
+  }
+
+  .cae-hero-img-container {
+    padding: 50px 60px 50px 32px;
+  }
+
+  .cae-hero-img-container img {
+    border-radius: 0 72px 0 72px;
+  }
+}
+
+/* =========================
+   1024
+========================= */
+@media (max-width: 1024px) {
+  .cae-hero-split {
+    grid-template-columns: 1fr;
+    margin-top: 76px;
+  }
+
+  .cae-hero-left {
+    padding: 36px 40px;
+  }
+
+  .cae-hero-img-container {
+    padding: 0 40px 36px;
+  }
+
+  .cae-hero-img-container img {
+    border-radius: 0 56px 0 56px;
+  }
+}
+
+/* =========================
+   768
+========================= */
+@media (max-width: 768px) {
+  .cae-hero-left {
+    padding: 28px 20px;
+  }
+
+  .cae-hero-img-container {
+    padding: 0 20px 28px;
+  }
+
+  .cae-hero-img-container img {
+    border-radius: 0 40px 0 40px;
+  }
+}
+
+/* =========================
+   480
+========================= */
+@media (max-width: 480px) {
+  .cae-hero-left {
+    padding: 28px 16px;
+  }
+
+  .cae-hero-img-container {
+    padding: 0 16px 28px;
+  }
+
+  .cae-hero-img-container img {
+    border-radius: 0 28px 0 28px;
+  }
 }
 
 /* SERVICES */
-
 .cae-capabilities {
   background: #f4f4f4;
   padding: 50px 160px;
 }
 
 .cae-capabilities-container {
-  max-width: 1600px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 /* GRID LAYOUT */
@@ -64,18 +170,19 @@
 
 /* CARDS */
 .cae-capabilities-card {
-  background: linear-gradient(135deg, #1e3fa3, #2f63d6);
-  color: white;
-  padding: 20px;
-  border-radius: 16px;
   min-height: 180px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 20px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #1e3fa3, #2f63d6);
+  color: white;
 }
 
 .cae-capabilities-card h3 {
   font-size: 36px;
+  line-height: 1.2;
   font-weight: 800;
   margin-bottom: 10px;
 }
@@ -91,80 +198,363 @@
   grid-row: 1 / span 2;
   text-align: center;
   padding: 30px 20px;
-  background: linear-gradient(135deg, #1e3fa3, #2f63d6);
   border-radius: 16px;
+  background: linear-gradient(135deg, #1e3fa3, #2f63d6);
 }
+
 .cae-capabilities-card-highlight .highlight-section-title {
   color: var(--white1);
   font-size: 60px;
+  line-height: 1.1;
   margin-bottom: 15px;
 }
+
 .cae-capabilities-card-highlight .highlight-section-subtitle {
   color: var(--white1);
   font-size: 24px;
   line-height: 1.5;
 }
+
 .cae-capabilities-card-highlight .icon {
   font-size: 60px;
+  line-height: 1;
   margin-bottom: 15px;
 }
 
-/* RESPONSIVE */
-@media (max-width: 992px) {
+/* =========================
+   1400
+========================= */
+@media (max-width: 1400px) {
+  .cae-capabilities {
+    padding: 50px 100px;
+  }
+
+  .cae-capabilities-card h3 {
+    font-size: 32px;
+  }
+
+  .cae-capabilities-card p {
+    font-size: 18px;
+  }
+
+  .cae-capabilities-card-highlight .highlight-section-title {
+    font-size: 52px;
+  }
+
+  .cae-capabilities-card-highlight .highlight-section-subtitle {
+    font-size: 22px;
+  }
+
+  .cae-capabilities-card-highlight .icon {
+    font-size: 52px;
+  }
+}
+
+/* =========================
+   1200
+========================= */
+@media (max-width: 1200px) {
+  .cae-capabilities {
+    padding: 50px 60px;
+  }
+
   .cae-capabilities-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .cae-capabilities-card {
+    min-height: 170px;
+  }
+
+  .cae-capabilities-card h3 {
+    font-size: 28px;
+  }
+
+  .cae-capabilities-card p {
+    font-size: 16px;
   }
 
   .cae-capabilities-card-highlight {
     grid-column: span 2;
     grid-row: auto;
+    padding: 28px 20px;
+  }
+
+  .cae-capabilities-card-highlight .highlight-section-title {
+    font-size: 44px;
+  }
+
+  .cae-capabilities-card-highlight .highlight-section-subtitle {
+    font-size: 20px;
+  }
+
+  .cae-capabilities-card-highlight .icon {
+    font-size: 44px;
   }
 }
 
-@media (max-width: 600px) {
+/* =========================
+   1024
+========================= */
+@media (max-width: 1024px) {
+  .cae-capabilities {
+    padding: 36px 40px;
+  }
+
+  .cae-capabilities-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .cae-capabilities-card {
+    min-height: 160px;
+    padding: 18px;
+  }
+
+  .cae-capabilities-card h3 {
+    font-size: 24px;
+  }
+
+  .cae-capabilities-card p {
+    font-size: 16px;
+  }
+
+  .cae-capabilities-card-highlight {
+    grid-column: span 2;
+    grid-row: auto;
+    padding: 24px 18px;
+  }
+
+  .cae-capabilities-card-highlight .highlight-section-title {
+    font-size: 38px;
+  }
+
+  .cae-capabilities-card-highlight .highlight-section-subtitle {
+    font-size: 18px;
+  }
+
+  .cae-capabilities-card-highlight .icon {
+    font-size: 38px;
+  }
+}
+
+/* =========================
+   768
+========================= */
+@media (max-width: 768px) {
+  .cae-capabilities {
+    padding: 28px 20px;
+  }
+
   .cae-capabilities-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .cae-capabilities-card {
+    min-height: auto;
+    padding: 18px;
+  }
+
+  .cae-capabilities-card h3 {
+    font-size: 20px;
+  }
+
+  .cae-capabilities-card p {
+    font-size: 15px;
+    line-height: 1.6;
   }
 
   .cae-capabilities-card-highlight {
     grid-column: span 1;
+    padding: 22px 18px;
+  }
+
+  .cae-capabilities-card-highlight .highlight-section-title {
+    font-size: 32px;
+  }
+
+  .cae-capabilities-card-highlight .highlight-section-subtitle {
+    font-size: 16px;
+  }
+
+  .cae-capabilities-card-highlight .icon {
+    font-size: 32px;
   }
 }
-/* CTA IMAGE */
 
+/* =========================
+   480
+========================= */
+@media (max-width: 480px) {
+  .cae-capabilities {
+    padding: 28px 16px;
+  }
+
+  .cae-capabilities-card {
+    padding: 16px;
+  }
+
+  .cae-capabilities-card h3 {
+    font-size: 18px;
+  }
+
+  .cae-capabilities-card p {
+    font-size: 14px;
+  }
+
+  .cae-capabilities-card-highlight {
+    padding: 20px 16px;
+  }
+
+  .cae-capabilities-card-highlight .highlight-section-title {
+    font-size: 28px;
+  }
+
+  .cae-capabilities-card-highlight .highlight-section-subtitle {
+    font-size: 14px;
+  }
+
+  .cae-capabilities-card-highlight .icon {
+    font-size: 28px;
+  }
+}
+
+/* CTA IMAGE */
 .cae-cta {
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: auto;
-  background: var(--accent2);
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.06),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #0f2f4a 0%, var(--accent2) 55%, #153d5f 100%);
 }
+
 .cae-cta-img-container {
-  border-radius: 16px;
-  padding: 50px;
-  padding-left: 160px;
+  padding: 50px 50px 50px 160px;
 }
+
 .cae-cta-img-container img {
   width: 100%;
   height: 100%;
   max-height: 500px;
+  display: block;
   object-fit: cover;
   border-radius: 16px;
 }
 
 .cae-cta-right {
-  background: var(--accent2);
-  color: white;
   display: flex;
   flex-direction: column;
-  justify-content: left;
-  padding: 80px 0;
-  padding-left: 80px;
-  padding-right: 160px;
-  max-height: 500px;
+  justify-content: center;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.06),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #0f2f4a 0%, var(--accent2) 55%, #153d5f 100%);
+  color: white;
+  padding: 50px 160px 50px 80px;
 }
 
 .cae-cta-overlay h2 {
-  font-family: Oswald;
+  font-family: "Oswald", sans-serif;
   font-size: 28px;
+  line-height: 1.2;
   margin-bottom: 10px;
+}
+
+/* =========================
+   1400
+========================= */
+@media (max-width: 1400px) {
+  .cae-cta-img-container {
+    padding: 50px 40px 50px 100px;
+  }
+
+  .cae-cta-right {
+    padding: 50px 100px 50px 40px;
+  }
+
+  .cae-cta-overlay h2 {
+    font-size: 26px;
+  }
+}
+
+/* =========================
+   1200
+========================= */
+@media (max-width: 1200px) {
+  .cae-cta-img-container {
+    padding: 50px 32px 50px 60px;
+  }
+
+  .cae-cta-right {
+    padding: 50px 60px 50px 32px;
+  }
+
+  .cae-cta-overlay h2 {
+    font-size: 24px;
+  }
+}
+
+/* =========================
+   1024
+========================= */
+@media (max-width: 1024px) {
+  .cae-cta {
+    grid-template-columns: 1fr;
+  }
+
+  .cae-cta-img-container {
+    padding: 36px 40px 0;
+  }
+
+  .cae-cta-right {
+    max-height: none;
+    padding: 36px 40px;
+  }
+
+  .cae-cta-overlay h2 {
+    font-size: 22px;
+  }
+}
+
+/* =========================
+   768
+========================= */
+@media (max-width: 768px) {
+  .cae-cta-img-container {
+    padding: 28px 20px 0;
+  }
+
+  .cae-cta-right {
+    padding: 28px 20px;
+  }
+
+  .cae-cta-overlay h2 {
+    font-size: 20px;
+  }
+}
+
+/* =========================
+   480
+========================= */
+@media (max-width: 480px) {
+  .cae-cta-img-container {
+    padding: 28px 16px 0;
+  }
+
+  .cae-cta-right {
+    padding: 28px 16px;
+  }
+
+  .cae-cta-overlay h2 {
+    font-size: 18px;
+  }
 }

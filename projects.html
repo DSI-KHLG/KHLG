@@ -24,40 +24,48 @@
             <img src="images/khlg-logo.png" alt="KHLG Logo" />
           </div>
 
-          <nav class="nav-menu">
-            <a href="index.html">HOME</a>
+          <nav class="nav-menu" id="navMenu">
+            <a class="active" href="index.html">HOME</a>
             <a href="services.html">SERVICES</a>
-            <a class="active" href="projects.html">PROJECTS</a>
+            <a href="projects.html">PROJECTS</a>
             <a href="about.html">ABOUT</a>
           </nav>
         </div>
 
         <div class="nav-right">
-          <a class="contact-btn">CONTACT</a>
+          <a class="contact-btn" href="#">CONTACT</a>
 
           <div class="search-box">
             <i
               class="fa-solid fa-magnifying-glass search-icon"
               aria-hidden="true"
             ></i>
-
             <input type="text" placeholder="Search" />
           </div>
+
+          <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </div>
     </header>
     <!-- HERO -->
     <section class="projects-hero">
       <div class="projects-hero-content">
+        <span class="projects-eyebrow">OUR WORK</span>
+
         <h1 class="section-title projects-title">OUR PROJECTS</h1>
-        <p class="section-subtitle">
-          KHLG’s successful project experience is built upon more than 100 years
-          of combined expertise and decades of technical development among our
+
+        <p class="section-subtitle projects-hero-subtitle">
+          KHLG’s successful project experience is built upon more than 100 years
+          of combined expertise and decades of technical development among our
           professionals. Our team brings deep knowledge, practical insight, and
           disciplined execution to every engagement. We partner with clients to
           address their most complex challenges, delivering innovative solutions
           that create meaningful and lasting impact across Guam, Marianas, and
-          Micronesia. 
+          Micronesia.
         </p>
 
         <div class="divider"></div>
@@ -67,6 +75,7 @@
             <h2>100+</h2>
             <span>YEARS EXPERTISE</span>
           </div>
+
           <div class="stat-item">
             <h2>3</h2>
             <span>REGIONS SERVED</span>
@@ -81,10 +90,15 @@
 
     <!-- TABS -->
     <section class="project-tabs">
-      <span>Expanded Project Experience</span>
-      <span class="active">Project and Construction Management</span>
-      <span>Environmental projects</span>
-      <span>Civil Engineering Support</span>
+      <div class="project-tabs-container">
+        <a href="#">Expanded Project Experience</a>
+
+        <a href="#" class="active"> Project and Construction Management </a>
+
+        <a href="#">Environmental Projects</a>
+
+        <a href="#">Civil Engineering Support</a>
+      </div>
     </section>
 
     <!-- PROJECT GRID -->
@@ -263,26 +277,39 @@
     </section>
 
     <!-- FOOTER -->
-
     <footer class="footer">
-      <div class="footer-grid">
-        <div class="footer-logo">
-          <img src="images/khlg-logo.png" alt="KHLG Logo" />
+      <div class="footer-main">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="images/khlg-logo.png" alt="KHLG Logo" />
+          </div>
+
+          <p class="footer-description">
+            Engineering excellence and construction management integrity for
+            Guam, Marianas and Micronesia. Building resilient infrastructure for
+            tomorrow.
+          </p>
+
+          <div class="footer-socials">
+            <a href="#">LINKEDIN</a>
+            <a href="#">FACEBOOK</a>
+            <a href="#">INSTAGRAM</a>
+          </div>
         </div>
 
-        <div>
+        <div class="footer-links">
           <h4>Quick Links</h4>
 
           <ul>
-            <li>Home</li>
-            <li>Services</li>
-            <li>Projects</li>
-            <li>Contact</li>
-            <li>About Us</li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Safety</a></li>
+            <li><a href="#">Careers</a></li>
           </ul>
         </div>
 
-        <div>
+        <div class="footer-contact">
           <h4>Contact</h4>
 
           <p>
@@ -293,6 +320,16 @@
           <p>Email: info@khlgassociates.com</p>
         </div>
       </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 KHLG & Associates, Inc. All rights reserved.</p>
+
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>

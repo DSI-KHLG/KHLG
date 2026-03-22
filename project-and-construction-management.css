@@ -8,33 +8,15 @@
   --card-color: #1f2937;
   --tabs-color: #e2e8f0;
 }
-/* HERO SPLIT */
-
-.pagm-hero-split {
+/* HERO */
+.pagm-hero {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: auto;
+  grid-template-columns: 1.15fr 1fr;
+  min-height: 620px;
+  align-items: center;
   margin-top: 81px;
-}
-
-.pagm-hero-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background:
-    radial-gradient(
-      circle at top left,
-      rgba(255, 255, 255, 0.06),
-      transparent 35%
-    ),
-    linear-gradient(135deg, #0f2f4a 0%, var(--accent2) 55%, #153d5f 100%);
-  color: white;
   padding: 50px 0;
-  padding-left: 160px;
-  padding-right: 40px;
-}
-
-.pagm-hero-right {
+  overflow: hidden;
   background:
     radial-gradient(
       circle at top left,
@@ -44,37 +26,65 @@
     linear-gradient(135deg, #0f2f4a 0%, var(--accent2) 55%, #153d5f 100%);
 }
 
-.pagm-hero-img-container {
-  height: 100%;
-  padding: 50px 160px 50px 50px;
+/* CONTENT */
+.pagm-hero-content {
+  padding-left: 160px;
+  padding-right: 60px;
 }
 
-.pagm-hero-img-container img {
+.pagm-hero-content h1 {
+  margin-bottom: 20px;
+  color: var(--accent1);
+  letter-spacing: -1px;
+  font-weight: 800;
+}
+
+.pagm-hero-subtitle {
+  margin-bottom: 34px;
+  font-size: 24px;
+  line-height: 1.7;
+  color: var(--white1);
+}
+
+/* DIVIDER */
+.divider {
+  width: 100%;
+  max-width: 120px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--accent1);
+}
+
+/* IMAGE */
+.pagm-hero-image-container {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.pagm-hero-image-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
-  border-radius: 0 100px 0 100px;
+  border-top-left-radius: 80px;
+  border-bottom-left-radius: 80px;
 }
 
 /* =========================
    1400
 ========================= */
 @media (max-width: 1400px) {
-  .pagm-hero-split {
-    margin-top: 81px;
+  .pagm-hero-content {
+    padding-left: 100px;
+    padding-right: 40px;
   }
 
-  .pagm-hero-left {
-    padding: 50px 40px 50px 100px;
-  }
-
-  .pagm-hero-img-container {
-    padding: 50px 100px 50px 40px;
-  }
-
-  .pagm-hero-img-container img {
-    border-radius: 0 84px 0 84px;
+  .pagm-hero-image-container img {
+    border-top-left-radius: 70px;
+    border-bottom-left-radius: 70px;
   }
 }
 
@@ -82,16 +92,26 @@
    1200
 ========================= */
 @media (max-width: 1200px) {
-  .pagm-hero-left {
-    padding: 50px 32px 50px 60px;
+  .pagm-hero {
+    grid-template-columns: 1fr 1fr;
   }
 
-  .pagm-hero-img-container {
-    padding: 50px 60px 50px 32px;
+  .pagm-hero-content {
+    padding-left: 60px;
+    padding-right: 32px;
   }
 
-  .pagm-hero-img-container img {
-    border-radius: 0 72px 0 72px;
+  .pagm-hero-subtitle {
+    font-size: 16px;
+  }
+
+  .pagm-hero-image-container {
+    min-height: 420px;
+  }
+
+  .pagm-hero-image-container img {
+    border-top-left-radius: 56px;
+    border-bottom-left-radius: 56px;
   }
 }
 
@@ -99,21 +119,26 @@
    1024
 ========================= */
 @media (max-width: 1024px) {
-  .pagm-hero-split {
+  .pagm-hero {
     grid-template-columns: 1fr;
-    margin-top: 76px;
-  }
-
-  .pagm-hero-left {
+    gap: 32px;
     padding: 36px 40px;
   }
 
-  .pagm-hero-img-container {
-    padding: 0 40px 36px;
+  .pagm-hero-content {
+    padding: 0;
   }
 
-  .pagm-hero-img-container img {
-    border-radius: 0 56px 0 56px;
+  .pagm-hero-subtitle {
+    margin-bottom: 28px;
+  }
+
+  .pagm-hero-image-container {
+    min-height: 360px;
+  }
+
+  .pagm-hero-image-container img {
+    border-radius: 50px;
   }
 }
 
@@ -121,16 +146,20 @@
    768
 ========================= */
 @media (max-width: 768px) {
-  .pagm-hero-left {
+  .pagm-hero {
     padding: 28px 20px;
   }
 
-  .pagm-hero-img-container {
-    padding: 0 20px 28px;
+  .pagm-hero-subtitle {
+    font-size: 15px;
   }
 
-  .pagm-hero-img-container img {
-    border-radius: 0 40px 0 40px;
+  .pagm-hero-image-container {
+    min-height: 280px;
+  }
+
+  .pagm-hero-image-container img {
+    border-radius: 36px;
   }
 }
 
@@ -138,16 +167,20 @@
    480
 ========================= */
 @media (max-width: 480px) {
-  .pagm-hero-left {
+  .pagm-hero {
     padding: 28px 16px;
   }
 
-  .pagm-hero-img-container {
-    padding: 0 16px 28px;
+  .pagm-hero-subtitle {
+    font-size: 14px;
   }
 
-  .pagm-hero-img-container img {
-    border-radius: 0 28px 0 28px;
+  .pagm-hero-image-container {
+    min-height: 220px;
+  }
+
+  .pagm-hero-image-container img {
+    border-radius: 28px;
   }
 }
 

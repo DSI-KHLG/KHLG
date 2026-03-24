@@ -33,8 +33,12 @@
         </div>
 
         <div class="nav-right">
-          <a class="contact-btn" href="#">CONTACT</a>
-
+          <button
+            class="contact-btn contact-modal-open-btn"
+            id="openContactModal"
+          >
+            CONTACT
+          </button>
           <div class="search-box">
             <i
               class="fa-solid fa-magnifying-glass search-icon"
@@ -103,7 +107,7 @@
 
     <!-- PROJECT GRID -->
     <section class="projects-main">
-      <div class="project-construction-container">
+      <div class="project-construction-container reveal reveal-up">
         <h2 class="section-title">PROJECT AND CONSTRUCTION MANAGEMENT</h2>
         <p class="section-subtitle">
           Disciplined oversight from planning to completion. We ensure projects
@@ -113,7 +117,7 @@
       </div>
 
       <div class="project-grid">
-        <div class="project-card">
+        <div class="project-card reveal reveal-up delay-1">
           <img src="images/giaa.png" />
           <div class="project-info">
             <h3>
@@ -128,7 +132,7 @@
           </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card reveal reveal-up delay-2">
           <img src="images/gntc project image.png" />
           <div class="project-info">
             <h3>
@@ -147,16 +151,18 @@
     <!-- ENVIRONMENTAL -->
     <section class="environmental">
       <div class="environmental-container">
-        <div class="env-left">
+        <div class="env-left reveal reveal-left">
           <h2 class="section-title">ENVIRONMENTAL SERVICES</h2>
+
           <p class="section-subtitle">
             Navigating complex regulatory landscapes while protecting our
             region's unique ecosystems. We provide comprehensive environmental
             assessment, mitigation, and compliance strategies.
           </p>
+
           <div class="environmental-list">
             <ul>
-              <li>
+              <li class="reveal reveal-up delay-1">
                 <h3 class="environmental-list-title">
                   Quality Assurance MCBCB Environmental Support (Jan 2024 –
                   Present)
@@ -167,7 +173,8 @@
                   Guam/CNMI Stormwater Management Manual.
                 </p>
               </li>
-              <li>
+
+              <li class="reveal reveal-up delay-2">
                 <h3 class="environmental-list-title">
                   Life Support Area Environmental Design Support (May 2022)
                 </h3>
@@ -176,7 +183,8 @@
                   post-construction BMPs and sediment basins.
                 </p>
               </li>
-              <li>
+
+              <li class="reveal reveal-up delay-3">
                 <h3 class="environmental-list-title">
                   Environmental Condition of Property Report - Guam Army
                   National Guard (Sep 2022)
@@ -191,17 +199,23 @@
         </div>
 
         <div class="env-right">
-          <img src="images/ENVIRONMENTAL SERVICES1.JPG" />
-          <img src="images/ENVIRONMENTAL SERVICES3.JPG" />
+          <img
+            src="images/ENVIRONMENTAL SERVICES1.JPG"
+            class="reveal reveal-right delay-1"
+          />
+          <img
+            src="images/ENVIRONMENTAL SERVICES3.JPG"
+            class="reveal reveal-right delay-2"
+          />
         </div>
       </div>
     </section>
 
     <!-- MILITARY -->
     <section class="military">
-      <h2 class="section-title">US MILITARY PROJECTS</h2>
+      <h2 class="section-title reveal reveal-up">US MILITARY PROJECTS</h2>
 
-      <div class="military-card">
+      <div class="military-card reveal reveal-up delay-1">
         <img src="images/department of defense.png" />
 
         <div>
@@ -220,7 +234,7 @@
         </div>
       </div>
 
-      <div class="military-card light">
+      <div class="military-card light reveal reveal-up delay-2">
         <img src="images/department of airforce.png" />
 
         <div>
@@ -242,15 +256,16 @@
 
     <!-- CIVIL -->
     <section class="civil">
-      <h2 class="section-title">CIVIL ENGINEERING SUPPORT</h2>
-      <p class="section-subtitle">
+      <h2 class="section-title reveal reveal-up">CIVIL ENGINEERING SUPPORT</h2>
+
+      <p class="section-subtitle reveal reveal-up delay-1">
         Technical precision meets practical application. We provide robust
         engineering support services that form the backbone of successful
         infrastructure projects.
       </p>
 
       <div class="civil-grid">
-        <div class="civil-card">
+        <div class="civil-card reveal reveal-up delay-1">
           <h4>ISLAND GIRL COFFEE N’ QUENCHERS</h4>
           <p>
             KHLG delivered civil design services including site layout, grading,
@@ -259,7 +274,7 @@
           </p>
         </div>
 
-        <div class="civil-card">
+        <div class="civil-card reveal reveal-up delay-2">
           <h4>ENGINEERING ASSESSMENT SERVICES (NAVAL BASE GUAM)</h4>
           <p>
             KHLG conducted post-Typhoon Mawar facility assessments at Naval Base
@@ -268,13 +283,136 @@
           </p>
         </div>
 
-        <div class="civil-cta">
+        <div class="civil-cta reveal reveal-up delay-3">
           <h3>Need Technical Expertise?</h3>
           <p>Contact our engineering support team for your next project.</p>
-          <a class="primary-btn-projects">Get in Touch</a>
+          <button
+            class="primary-btn-projects contact-modal-open-btn"
+            id="openContactModal"
+          >
+            CONTACT
+          </button>
         </div>
       </div>
     </section>
+
+    <!-- CONTACT MODAL -->
+    <div class="contact-modal-overlay" id="contactModal">
+      <div class="contact-modal-box">
+        <button
+          class="contact-modal-close"
+          id="closeContactModal"
+          aria-label="Close modal"
+        >
+          &times;
+        </button>
+
+        <div class="contact-modal-left">
+          <div class="contact-modal-content">
+            <h2 class="contact-modal-title">GET IN TOUCH</h2>
+
+            <p class="contact-modal-subtitle">
+              Let’s discuss how KHLG &amp; Associates, Inc. can provide the
+              engineering expertise and construction management services your
+              project requires. Contact us today for a consultation.
+            </p>
+
+            <div class="contact-modal-info">
+              <div class="contact-modal-info-item">
+                <span class="contact-modal-icon">◎</span>
+                <div>
+                  <h4>Office Location</h4>
+                  <p>
+                    Address: 718 N. Marine Corps Dr., Suite 305, Tamuning, Guam
+                    96913
+                  </p>
+                </div>
+              </div>
+
+              <div class="contact-modal-info-item">
+                <span class="contact-modal-icon">◔</span>
+                <div>
+                  <h4>Phone</h4>
+                  <p>671-478-5454</p>
+                </div>
+              </div>
+
+              <div class="contact-modal-info-item">
+                <span class="contact-modal-icon">✉</span>
+                <div>
+                  <h4>Email</h4>
+                  <p>info@khlg.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-modal-right">
+          <form class="contact-modal-form">
+            <div class="contact-form-row two-col">
+              <div class="contact-form-group">
+                <label for="firstName">FIRST NAME</label>
+                <input type="text" id="firstName" placeholder="John" />
+              </div>
+
+              <div class="contact-form-group">
+                <label for="lastName">LAST NAME</label>
+                <input type="text" id="lastName" placeholder="Doe" />
+              </div>
+            </div>
+
+            <div class="contact-form-group">
+              <label for="contactNumber">CONTACT NUMBER</label>
+              <input
+                type="text"
+                id="contactNumber"
+                placeholder="671-478-5454"
+              />
+            </div>
+
+            <div class="contact-form-group">
+              <label for="emailAddress">EMAIL ADDRESS</label>
+              <input
+                type="email"
+                id="emailAddress"
+                placeholder="john@company.com"
+              />
+            </div>
+
+            <div class="contact-form-group">
+              <label for="company">COMPANY</label>
+              <input type="text" id="company" placeholder="Company Name" />
+            </div>
+
+            <div class="contact-form-group">
+              <label for="serviceInterest">SERVICE INTEREST</label>
+              <select id="serviceInterest">
+                <option value="">Select a service...</option>
+                <option>Project & Construction Management</option>
+                <option>Environmental Services</option>
+                <option>Civil & Engineering Support</option>
+                <option>Scheduling & Project Controls</option>
+                <option>Special Inspection</option>
+                <option>Technology Solutions</option>
+              </select>
+            </div>
+
+            <div class="contact-form-group">
+              <label for="message">MESSAGE</label>
+              <textarea
+                id="message"
+                placeholder="Tell us about your request..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="contact-submit-btn">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
 
     <!-- FOOTER -->
     <footer class="footer">

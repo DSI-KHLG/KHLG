@@ -6,12 +6,14 @@ menuToggle.addEventListener("click", function () {
 });
 
 const contactModal = document.getElementById("contactModal");
-const openContactModal = document.getElementById("openContactModal");
+const openContactModal = document.querySelectorAll(".contact-modal-open-btn");
 const closeContactModal = document.getElementById("closeContactModal");
 
-openContactModal.addEventListener("click", () => {
-  contactModal.classList.add("active");
-  document.body.style.overflow = "hidden";
+openContactModal.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    contactModal.classList.add("active");
+    document.body.style.overflow = "hidden";
+  });
 });
 
 closeContactModal.addEventListener("click", () => {
@@ -31,4 +33,23 @@ document.addEventListener("keydown", (e) => {
     contactModal.classList.remove("active");
     document.body.style.overflow = "";
   }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const reveals = document.querySelectorAll(".reveal");
+
+  const revealOnScroll = () => {
+    const triggerBottom = window.innerHeight - 100;
+
+    reveals.forEach((item) => {
+      const rect = item.getBoundingClientRect();
+
+      if (rect.top < triggerBottom) {
+        item.classList.add("active");
+      }
+    });
+  };
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll();
 });

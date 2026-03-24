@@ -33,8 +33,12 @@
         </div>
 
         <div class="nav-right">
-          <a class="contact-btn" href="#">CONTACT</a>
-
+          <button
+            class="contact-btn contact-modal-open-btn"
+            id="openContactModal"
+          >
+            CONTACT
+          </button>
           <div class="search-box">
             <i
               class="fa-solid fa-magnifying-glass search-icon"
@@ -51,6 +55,125 @@
         </div>
       </div>
     </header>
+
+    <!-- CONTACT MODAL -->
+    <div class="contact-modal-overlay" id="contactModal">
+      <div class="contact-modal-box">
+        <button
+          class="contact-modal-close"
+          id="closeContactModal"
+          aria-label="Close modal"
+        >
+          &times;
+        </button>
+
+        <div class="contact-modal-left">
+          <div class="contact-modal-content">
+            <h2 class="contact-modal-title">GET IN TOUCH</h2>
+
+            <p class="contact-modal-subtitle">
+              Let’s discuss how KHLG &amp; Associates, Inc. can provide the
+              engineering expertise and construction management services your
+              project requires. Contact us today for a consultation.
+            </p>
+
+            <div class="contact-modal-info">
+              <div class="contact-modal-info-item">
+                <span class="contact-modal-icon">◎</span>
+                <div>
+                  <h4>Office Location</h4>
+                  <p>
+                    Address: 718 N. Marine Corps Dr., Suite 305, Tamuning, Guam
+                    96913
+                  </p>
+                </div>
+              </div>
+
+              <div class="contact-modal-info-item">
+                <span class="contact-modal-icon">◔</span>
+                <div>
+                  <h4>Phone</h4>
+                  <p>671-478-5454</p>
+                </div>
+              </div>
+
+              <div class="contact-modal-info-item">
+                <span class="contact-modal-icon">✉</span>
+                <div>
+                  <h4>Email</h4>
+                  <p>info@khlg.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-modal-right">
+          <form class="contact-modal-form">
+            <div class="contact-form-row two-col">
+              <div class="contact-form-group">
+                <label for="firstName">FIRST NAME</label>
+                <input type="text" id="firstName" placeholder="John" />
+              </div>
+
+              <div class="contact-form-group">
+                <label for="lastName">LAST NAME</label>
+                <input type="text" id="lastName" placeholder="Doe" />
+              </div>
+            </div>
+
+            <div class="contact-form-group">
+              <label for="contactNumber">CONTACT NUMBER</label>
+              <input
+                type="text"
+                id="contactNumber"
+                placeholder="671-478-5454"
+              />
+            </div>
+
+            <div class="contact-form-group">
+              <label for="emailAddress">EMAIL ADDRESS</label>
+              <input
+                type="email"
+                id="emailAddress"
+                placeholder="john@company.com"
+              />
+            </div>
+
+            <div class="contact-form-group">
+              <label for="company">COMPANY</label>
+              <input type="text" id="company" placeholder="Company Name" />
+            </div>
+
+            <div class="contact-form-group">
+              <label for="serviceInterest">SERVICE INTEREST</label>
+              <select id="serviceInterest">
+                <option value="">Select a service...</option>
+                <option>Project & Construction Management</option>
+                <option>Environmental Services</option>
+                <option>Civil & Engineering Support</option>
+                <option>Scheduling & Project Controls</option>
+                <option>Special Inspection</option>
+                <option>Technology Solutions</option>
+              </select>
+            </div>
+
+            <div class="contact-form-group">
+              <label for="message">MESSAGE</label>
+              <textarea
+                id="message"
+                placeholder="Tell us about your request..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="contact-submit-btn">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <!-- HERO -->
     <section class="about-hero">
       <div class="about-hero-content">
@@ -73,96 +196,100 @@
         <img src="images/aboutbg.jpeg" alt="About KHLG" />
       </div>
     </section>
-
     <!-- MISSION -->
     <section class="mission">
       <div class="mission-grid">
-        <div>
+        <div class="reveal reveal-left">
           <h2 class="section-title">MISSION & VISION</h2>
           <p class="section-subtitle">
-            To be the leading engineering partner in Guam, Marianas and
-            Micronesia, focusing in project & construction management, civil
-            engineering, and environmental engineering and consulting services.
+            To be the leading engineering partner in Guam, Marianas and
+            Micronesia, focusing in project & construction management, civil
+            engineering, and environmental engineering and consulting services.
             Our goal is to be recognized for technical excellence, reliability,
-            and innovative solutions with an emphasis on accountability,
-            diversity, teamwork, and excellence for our Clients.  <br />
+            and innovative solutions with an emphasis on accountability,
+            diversity, teamwork, and excellence for our Clients. <br />
             KHLG is committed to delivering high-quality, value-driven services
-            with integrity, excellence, innovation, collaboration and
-            partnership. 
+            with integrity, excellence, innovation, collaboration and
+            partnership.
           </p>
         </div>
 
-        <img src="images/mission4.JPG" />
+        <img src="images/mission4.JPG" class="reveal reveal-right" />
       </div>
     </section>
 
     <!-- LEADERSHIP -->
     <section class="leadership">
       <div class="leadership-grid">
-        <img src="images/giaa2/leadership.jpg" />
+        <img src="images/giaa2/leadership.jpg" class="reveal reveal-left" />
 
-        <div>
+        <div class="reveal reveal-right">
           <h2 class="section-title">OUR LEADERSHIP</h2>
           <p class="section-subtitle">
-            KHLG is comprised of a highly skilled and multidisciplinary team
+            KHLG is comprised of a highly skilled and multidisciplinary team
             with extensive experience in environmental services, civil
             engineering, and construction management. Our professionals
-            collectively bring over 100 years of combined expertise in
+            collectively bring over 100 years of combined expertise in
             engineering design, construction oversight, environmental
             consulting, construction claims analysis, and technology-driven
             project solutions. This depth and diversity of experience enable us
             to deliver comprehensive, innovative, and results-driven
-            infrastructure services across every phase of project delivery. 
+            infrastructure services across every phase of project delivery.
           </p>
         </div>
       </div>
     </section>
 
     <section class="core-values">
-      <h2 class="section-title">CORE VALUES</h2>
-      <p class="section-subtitle">
-        At KHLG, SAFETY is not a priority—it is a core value
-        and a zero-tolerance standard embedded in everything we do. We are
-        unwavering in our commitment to protecting our people, partners,
-        clients, and the public through rigorous safety protocols, proactive
-        risk management, and a culture of accountability at every level of our
-        organization. Every project begins and ends with safety as the
-        foundation.
+      <h2 class="section-title reveal reveal-up">CORE VALUES</h2>
+
+      <p class="section-subtitle reveal reveal-up delay-1">
+        At KHLG, SAFETY is not a priority—it is a core value and a
+        zero-tolerance standard embedded in everything we do. We are unwavering
+        in our commitment to protecting our people, partners, clients, and the
+        public through rigorous safety protocols, proactive risk management, and
+        a culture of accountability at every level of our organization. Every
+        project begins and ends with safety as the foundation.
       </p>
 
       <div class="values-grid">
         <div
-          class="value-card"
+          class="value-card reveal reveal-up delay-1"
           style="background-image: url(images/safety.jpg)"
         >
           <span>SAFETY</span>
         </div>
+
         <div
-          class="value-card"
+          class="value-card reveal reveal-up delay-2"
           style="background-image: url(images/INNOVATION.jpg)"
         >
           <span>INNOVATION</span>
         </div>
+
         <div
-          class="value-card"
+          class="value-card reveal reveal-up delay-3"
           style="background-image: url(images/SUSTAINABILITY.jpg)"
         >
           <span>SUSTAINABILITY</span>
         </div>
+
         <div
-          class="value-card"
+          class="value-card reveal reveal-up delay-1"
           style="background-image: url(images/GPHTLF/PARTNERSHIP.jpeg)"
         >
           <span>PARTNERSHIP</span>
         </div>
+
         <div
-          class="value-card"
+          class="value-card reveal reveal-up delay-2"
           style="background-image: url(images/integrity.JPG)"
         >
           <span>INTEGRITY</span>
         </div>
+
         <div
-          class="value-card"
+          class="value-card reveal reveal-up delay-3"
           style="background-image: url(images/EXCELLENCe.jpeg)"
         >
           <span>EXCELLENCE</span>
@@ -170,55 +297,55 @@
       </div>
     </section>
     <section class="team">
-      <h2 class="section-title">OUR TEAM</h2>
+      <h2 class="section-title reveal reveal-up">OUR TEAM</h2>
 
       <div class="team-wrapper">
         <!-- PRINCIPALS -->
-        <div class="team-column principals">
+        <div class="team-column principals reveal reveal-left">
           <h3>PRINCIPALS</h3>
 
-          <div class="team-card large">
+          <div class="team-card large reveal reveal-up delay-1">
             <img src="images/org chart/Kent-Hsieh-r2-sm.jpeg" />
             <div class="name-tag">Kent Hsieh, P.E.</div>
           </div>
 
-          <div class="team-card large">
+          <div class="team-card large reveal reveal-up delay-2">
             <img src="images/org chart/vicente-ada-1.jpg" />
             <div class="name-tag">Vicente Ada II, P.E., CES</div>
           </div>
         </div>
 
         <!-- ASSOCIATES -->
-        <div class="team-column associates">
+        <div class="team-column associates reveal reveal-right">
           <h3>ASSOCIATES</h3>
 
           <div class="associates-grid">
-            <div class="team-card">
+            <div class="team-card reveal reveal-up delay-1">
               <img src="images/org chart/alfred-leon-guerrero.webp" />
               <div class="name-tag">Alfred Leon Guerrero</div>
             </div>
 
-            <div class="team-card">
+            <div class="team-card reveal reveal-up delay-2">
               <img src="images/org chart/amelia-millie-leon-guerrero.webp" />
               <div class="name-tag">Amelia Leon Guerrero</div>
             </div>
 
-            <div class="team-card">
+            <div class="team-card reveal reveal-up delay-3">
               <img src="images/org chart/Phil-Dela-Cruz.jpg" />
               <div class="name-tag">Phil Dela Cruz</div>
             </div>
 
-            <div class="team-card">
+            <div class="team-card reveal reveal-up delay-1">
               <img src="images/org chart/Mikee-Solomon.jpg" />
               <div class="name-tag">Mikee Solomon, EIT</div>
             </div>
 
-            <div class="team-card">
+            <div class="team-card reveal reveal-up delay-2">
               <img src="images/org chart/jason-remoket.webp" />
               <div class="name-tag">Jason Remoket</div>
             </div>
 
-            <div class="team-card">
+            <div class="team-card reveal reveal-up delay-3">
               <img src="images/org chart/20240624-Rani-photo-3.jpg" />
               <div class="name-tag">Ranie Jay Ubaldo</div>
             </div>

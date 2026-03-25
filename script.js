@@ -42,10 +42,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const servicePages = [
     "services.html",
-    "pagm.html",
-    "environmental.html",
-    "cae.html",
-    "spc.html",
+    "project-and-construction-management.html",
+    "environmental-services.html",
+    "civil-and-engineering-support.html",
+    "scheduling-and-project-controls.html",
   ];
 
   /* =========================

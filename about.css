@@ -202,17 +202,6 @@
     transform: scale(1.08);
   }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .about-hero-content > *,
-  .about-hero-image-container,
-  .about-hero-image-container img {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-}
-
 /* =========================
    1400
 ========================= */

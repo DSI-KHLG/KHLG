@@ -466,21 +466,6 @@
 }
 
 /* =========================
-   ACCESSIBILITY
-========================= */
-@media (prefers-reduced-motion: reduce) {
-  .services-hero-content > *,
-  .services-hero-image-container,
-  .services-hero-image-container img,
-  .stat-item {
-    animation: none;
-    transition: none;
-    transform: none;
-    opacity: 1;
-  }
-}
-
-/* =========================
    SERVICES TABS SECTION
 ========================= */
 .services-tabs {
@@ -748,50 +733,6 @@
   font-size: 18px;
   line-height: 1.6;
   color: var(--subtitles);
-}
-
-/* =========================
-   REVEAL ANIMATION SYSTEM
-========================= */
-.reveal {
-  opacity: 0;
-  transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
-  will-change: opacity, transform;
-}
-
-.reveal-up {
-  transform: translateY(42px);
-}
-
-.reveal-left {
-  transform: translateX(-48px);
-}
-
-.reveal-right {
-  transform: translateX(48px);
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translate(0, 0);
-}
-
-.delay-1 {
-  transition-delay: 0.1s;
-}
-
-.delay-2 {
-  transition-delay: 0.2s;
-}
-
-.delay-3 {
-  transition-delay: 0.3s;
-}
-
-.delay-4 {
-  transition-delay: 0.4s;
 }
 
 /* =========================

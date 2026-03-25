@@ -180,16 +180,6 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .environmental-hero-content > *,
-  .environmental-hero-image-container,
-  .environmental-hero-image-container img {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-}
-
 /* =========================
    1400
 ========================= */

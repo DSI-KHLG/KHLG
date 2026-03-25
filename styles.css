@@ -123,6 +123,184 @@ h3 {
   text-align: center;
 }
 
+/* REVEAL SYSTEM */
+.reveal {
+  opacity: 0;
+  transition:
+    opacity 0.75s ease,
+    transform 0.75s ease;
+  will-change: opacity, transform;
+}
+
+.reveal-up {
+  transform: translateY(32px);
+}
+
+.reveal-left {
+  transform: translateX(-32px);
+}
+
+.reveal-right {
+  transform: translateX(32px);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* DELAYS */
+.delay-1 {
+  transition-delay: 0.2s;
+}
+
+.delay-2 {
+  transition-delay: 0.3s;
+}
+
+.delay-3 {
+  transition-delay: 0.4s;
+}
+
+.delay-4 {
+  transition-delay: 0.5s;
+}
+
+/* =========================
+   GLOBAL REDUCED MOTION
+========================= */
+@media (prefers-reduced-motion: reduce) {
+  .hero-img,
+  .hero-content > *,
+  .reveal,
+  .about-img,
+  .service-card,
+  .service-icon,
+  .learnmore-btn,
+  .learnmore-btn::after,
+  .primary-btn,
+  .primary-btn-projects,
+  .primary-btn::before,
+  .primary-btn-projects::before,
+  .safety-card img,
+  .safety-overlay,
+  .diff-card img,
+  .diff-content,
+  .diff-overlay,
+  .project img,
+  .project-content,
+
+  /* services hero */
+  .services-hero-content > *,
+  .services-hero-image-container,
+  .services-hero-image-container img,
+  .stat-item,
+
+  /* tabs */
+  .tabs-container a,
+
+  /* expertise */
+  .expertise-card,
+  .expertise-card i,
+
+  /* additional */
+  .additional-item span,
+  .additional-item span i,
+
+  /* tech */
+  .tech-card,
+  .tech-circle,
+  .tech-circle::before,
+  .procore-image img,
+
+  /* claims */
+  .claims-right,
+  .step,
+  .circle,
+
+  /* inspection */
+  .feature,
+  .feature .icon,
+  .info-box,
+  .info-right,
+  .progress,
+  .verified,
+
+  /* projects */
+  .projects-hero-content > *,
+  .projects-hero-image-container,
+  .projects-hero-image-container img,
+  .project-tabs-container a,
+  .project-card,
+  .project-card img,
+
+  /* environmental (old section) */
+  .env-right img,
+  .environmental-list li,
+
+  /* military */
+  .military-card,
+  .military-card img,
+
+  /* civil */
+  .civil-card,
+  .civil-cta,
+  .civil-cta a,
+
+  /* about */
+  .about-hero-content > *,
+  .about-hero-image-container,
+  .about-hero-image-container img,
+  .mission-grid img,
+  .leadership-grid img,
+  .value-card,
+  .value-card::before,
+  .value-card::after,
+  .value-card span,
+  .team-card,
+  .team-card img,
+  .name-tag,
+
+  /* cae */
+  .cae-hero-content > *,
+  .cae-hero-image-container,
+  .cae-hero-image-container img,
+  .cae-capabilities-card,
+  .cae-capabilities-card i,
+  .cae-capabilities-card-highlight,
+  .cae-capabilities-card-highlight .icon-box,
+  .cae-cta-img-container img,
+
+  /* environmental page */
+  .environmental-hero-content > *,
+  .environmental-hero-image-container,
+  .environmental-hero-image-container img,
+  .environmental-services-card,
+  .environmental-services-card i,
+  .environmental-cta-img-container img,
+
+  /* pagm */
+  .pagm-hero-content > *,
+  .pagm-hero-image-container,
+  .pagm-hero-image-container img,
+  .pagm-service-card,
+  .pagm-service-card i,
+  .pagm-cta-img-container img,
+
+  /* === NEW (SPC) === */
+  .spc-hero-content > *,
+  .spc-hero-image-container,
+  .spc-hero-image-container img,
+  .spc-item,
+  .spc-panel,
+  .spc-connector,
+  .spc-cta-img-container img {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
 /* NAVBAR */
 .navbar {
   position: fixed;
@@ -1439,50 +1617,6 @@ h3 {
 }
 
 /* =========================
-   SCROLL REVEAL
-========================= */
-.reveal {
-  opacity: 0;
-  transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
-  will-change: opacity, transform;
-}
-
-.reveal-up {
-  transform: translateY(42px);
-}
-
-.reveal-left {
-  transform: translateX(-48px);
-}
-
-.reveal-right {
-  transform: translateX(48px);
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translate(0, 0);
-}
-
-.delay-1 {
-  transition-delay: 0.1s;
-}
-
-.delay-2 {
-  transition-delay: 0.2s;
-}
-
-.delay-3 {
-  transition-delay: 0.3s;
-}
-
-.delay-4 {
-  transition-delay: 0.4s;
-}
-
-/* =========================
    1400
 ========================= */
 @media (max-width: 1400px) {
@@ -1652,18 +1786,6 @@ h3 {
     font-size: 14px;
     line-height: 1.6;
     margin-bottom: 14px;
-  }
-}
-
-/* =========================
-   ACCESSIBILITY
-========================= */
-@media (prefers-reduced-motion: reduce) {
-  .reveal,
-  .about-img {
-    transition: none;
-    transform: none;
-    opacity: 1;
   }
 }
 
@@ -1857,42 +1979,6 @@ h3 {
 }
 
 /* =========================
-   SCROLL REVEAL
-========================= */
-.reveal {
-  opacity: 0;
-  transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
-  will-change: opacity, transform;
-}
-
-.reveal-up {
-  transform: translateY(42px);
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.delay-1 {
-  transition-delay: 0.1s;
-}
-
-.delay-2 {
-  transition-delay: 0.2s;
-}
-
-.delay-3 {
-  transition-delay: 0.3s;
-}
-
-.delay-4 {
-  transition-delay: 0.4s;
-}
-
-/* =========================
    1400
 ========================= */
 @media (max-width: 1400px) {
@@ -2033,26 +2119,13 @@ h3 {
 }
 
 /* =========================
-   ACCESSIBILITY
-========================= */
-@media (prefers-reduced-motion: reduce) {
-  .reveal,
-  .service-card,
-  .service-icon,
-  .learnmore-btn,
-  .learnmore-btn::after {
-    transition: none;
-    transform: none;
-    opacity: 1;
-  }
-}
-
-/* =========================
-   SAFETY SECTION
+   SAFETY SECTION (FULL BLEED)
 ========================= */
 .safety {
-  width: 100%;
-  padding-top: 50px;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 50px 0 0;
+  background: var(--white1);
   overflow: hidden;
 }
 
@@ -2068,37 +2141,35 @@ h3 {
 .safety-card {
   position: relative;
   width: 100%;
-  height: 360px;
+  height: 420px;
   overflow: hidden;
   isolation: isolate;
-  transition: transform 0.35s ease;
 }
 
-/* IMAGE */
+/* IMAGE (same as differentiators) */
 .safety-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
-  position: relative;
-  z-index: 1;
   transform: scale(1.02);
-  transition: transform 0.7s ease;
+  transition: transform 0.8s ease;
 }
 
-/* GRADIENT OVERLAY */
+/* OVERLAYS */
 .safety-card::after {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.04) 0%,
-    rgba(0, 0, 0, 0.16) 42%,
-    rgba(0, 0, 0, 0.88) 100%
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0) 26%,
+    rgba(0, 0, 0, 0.18) 55%,
+    rgba(0, 0, 0, 0.9) 100%
   );
   z-index: 2;
-  transition: background 0.35s ease;
 }
 
 .safety-card::before {
@@ -2107,125 +2178,59 @@ h3 {
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(37, 99, 235, 0.18) 0%,
-    rgba(37, 99, 235, 0.04) 30%,
-    transparent 58%
+    rgba(37, 99, 235, 0.2) 0%,
+    rgba(16, 42, 67, 0.08) 34%,
+    transparent 62%
   );
   z-index: 2;
   pointer-events: none;
-  opacity: 0.9;
-  transition: opacity 0.35s ease;
 }
 
-/* TEXT OVERLAY */
+/* TEXT */
 .safety-overlay {
   position: absolute;
   left: 40px;
   right: 40px;
-  bottom: 20px;
-  color: #ffffff;
+  bottom: 24px;
+  color: #fff;
   z-index: 3;
   transform: translateY(10px);
   transition: transform 0.35s ease;
 }
 
-/* TITLE */
 .safety-overlay h3 {
   font-size: 24px;
-  line-height: 1.3;
   margin-bottom: 10px;
-  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.28);
 }
 
-/* BULLETS */
 .safety-overlay ul {
   padding-left: 18px;
   font-size: 18px;
   line-height: 1.5;
-  margin: 0;
 }
 
-.safety-overlay li {
-  margin-bottom: 6px;
-}
-
-.safety-overlay li:last-child {
-  margin-bottom: 0;
-}
-
-.safety-card:hover {
-  transform: translateY(-4px);
-}
-
+/* HOVER */
 .safety-card:hover img {
   transform: scale(1.08);
-}
-
-.safety-card:hover::after {
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.06) 0%,
-    rgba(0, 0, 0, 0.18) 40%,
-    rgba(0, 0, 0, 0.92) 100%
-  );
 }
 
 .safety-card:hover .safety-overlay {
   transform: translateY(0);
 }
 
-/* =========================
-   SCROLL REVEAL
-========================= */
-.reveal {
-  opacity: 0;
-  transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
-  will-change: opacity, transform;
-}
-
-.reveal-up {
-  transform: translateY(42px);
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.delay-1 {
-  transition-delay: 0.1s;
-}
-
-.delay-2 {
-  transition-delay: 0.2s;
-}
-
-.delay-3 {
-  transition-delay: 0.3s;
-}
-
-.delay-4 {
-  transition-delay: 0.4s;
-}
-
-/* =========================
-   1400
-========================= */
+/* 1400 */
 @media (max-width: 1400px) {
   .safety {
-    padding-top: 50px;
+    padding: 50px 0 0;
   }
 
   .safety-card {
-    height: 340px;
+    height: 380px;
   }
 
   .safety-overlay {
     left: 32px;
     right: 32px;
-    bottom: 18px;
   }
 
   .safety-overlay h3 {
@@ -2233,16 +2238,14 @@ h3 {
   }
 
   .safety-overlay ul {
-    font-size: 18px;
+    font-size: 17px;
   }
 }
 
-/* =========================
-   1200
-========================= */
+/* 1200 */
 @media (max-width: 1200px) {
   .safety {
-    padding-top: 50px;
+    padding: 50px 0 0; /* keep full bleed */
   }
 
   .safety-grid {
@@ -2250,13 +2253,12 @@ h3 {
   }
 
   .safety-card {
-    height: 320px;
+    height: 360px;
   }
 
   .safety-overlay {
     left: 28px;
     right: 28px;
-    bottom: 18px;
   }
 
   .safety-overlay h3 {
@@ -2265,26 +2267,22 @@ h3 {
 
   .safety-overlay ul {
     font-size: 16px;
-    line-height: 1.55;
   }
 }
 
-/* =========================
-   1024
-========================= */
+/* 1024 */
 @media (max-width: 1024px) {
   .safety {
-    padding-top: 36px;
+    padding: 36px 0 0;
   }
 
   .safety-card {
-    height: 300px;
+    height: 320px;
   }
 
   .safety-overlay {
     left: 24px;
     right: 24px;
-    bottom: 16px;
   }
 
   .safety-overlay h3 {
@@ -2292,17 +2290,14 @@ h3 {
   }
 
   .safety-overlay ul {
-    font-size: 16px;
-    line-height: 1.55;
+    font-size: 15px;
   }
 }
 
-/* =========================
-   768
-========================= */
+/* 768 */
 @media (max-width: 768px) {
   .safety {
-    padding-top: 28px;
+    padding: 28px 0 0;
   }
 
   .safety-grid {
@@ -2310,76 +2305,51 @@ h3 {
   }
 
   .safety-card {
-    height: 260px;
+    height: 300px;
   }
 
   .safety-overlay {
     left: 20px;
     right: 20px;
-    bottom: 16px;
   }
 
   .safety-overlay h3 {
     font-size: 18px;
-    margin-bottom: 8px;
   }
 
   .safety-overlay ul {
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 14px;
   }
 }
 
-/* =========================
-   480
-========================= */
+/* 480 */
 @media (max-width: 480px) {
   .safety {
-    padding-top: 28px;
+    padding: 28px 0 0;
   }
 
   .safety-card {
-    height: 220px;
+    height: 260px;
   }
 
   .safety-overlay {
     left: 16px;
     right: 16px;
-    bottom: 14px;
   }
 
   .safety-overlay h3 {
     font-size: 16px;
-    margin-bottom: 6px;
   }
 
   .safety-overlay ul {
-    padding-left: 16px;
-    font-size: 14px;
-    line-height: 1.55;
-  }
-}
-
-/* =========================
-   ACCESSIBILITY
-========================= */
-@media (prefers-reduced-motion: reduce) {
-  .reveal,
-  .safety-card,
-  .safety-card img,
-  .safety-overlay,
-  .safety-card::after,
-  .safety-card::before {
-    transition: none;
-    transform: none;
-    opacity: 1;
+    font-size: 13px;
   }
 }
 
 /* DIFFERENTIATORS */
 .differentiators {
   width: 100%;
-  padding-top: 50px;
+  padding: 50px 0 0;
   background: var(--white1);
   overflow: hidden;
 }
@@ -2412,8 +2382,9 @@ h3 {
 .diff-card img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   display: block;
+  object-fit: cover;
+  object-position: center;
   transform: scale(1.02);
   transition: transform 0.8s ease;
 }
@@ -2513,47 +2484,11 @@ h3 {
 }
 
 /* =========================
-   SCROLL REVEAL
-========================= */
-.reveal {
-  opacity: 0;
-  transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
-  will-change: opacity, transform;
-}
-
-.reveal-up {
-  transform: translateY(42px);
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.delay-1 {
-  transition-delay: 0.1s;
-}
-
-.delay-2 {
-  transition-delay: 0.2s;
-}
-
-.delay-3 {
-  transition-delay: 0.3s;
-}
-
-.delay-4 {
-  transition-delay: 0.4s;
-}
-
-/* =========================
    1400
 ========================= */
 @media (max-width: 1400px) {
   .differentiators {
-    padding-top: 50px;
+    padding: 50px 0 0;
   }
 
   .diff-header {
@@ -2561,7 +2496,7 @@ h3 {
   }
 
   .diff-card {
-    height: 320px;
+    height: 500px;
   }
 
   .diff-overlay {
@@ -2588,7 +2523,7 @@ h3 {
 ========================= */
 @media (max-width: 1200px) {
   .differentiators {
-    padding-top: 50px;
+    padding: 50px 0 0;
   }
 
   .diff-header {
@@ -2596,7 +2531,7 @@ h3 {
   }
 
   .diff-card {
-    height: 300px;
+    height: 420px;
   }
 
   .diff-overlay {
@@ -2623,7 +2558,7 @@ h3 {
 ========================= */
 @media (max-width: 1024px) {
   .differentiators {
-    padding-top: 36px;
+    padding: 36px 0 0;
   }
 
   .diff-header {
@@ -2635,7 +2570,7 @@ h3 {
   }
 
   .diff-card {
-    height: 320px;
+    height: 380px;
   }
 
   .diff-overlay {
@@ -2662,7 +2597,7 @@ h3 {
 ========================= */
 @media (max-width: 768px) {
   .differentiators {
-    padding-top: 28px;
+    padding: 28px 0 0;
   }
 
   .diff-header {
@@ -2670,8 +2605,8 @@ h3 {
   }
 
   .diff-card {
-    height: auto;
-    min-height: 320px;
+    height: 340px;
+    min-height: 340px;
   }
 
   .diff-overlay {
@@ -2700,7 +2635,7 @@ h3 {
 ========================= */
 @media (max-width: 480px) {
   .differentiators {
-    padding-top: 28px;
+    padding: 28px 0 0;
   }
 
   .diff-header {
@@ -2708,6 +2643,7 @@ h3 {
   }
 
   .diff-card {
+    height: 300px;
     min-height: 300px;
   }
 
@@ -2722,6 +2658,7 @@ h3 {
   .diff-content p,
   .diff-content ul {
     font-size: 14px;
+    line-height: 1.5;
   }
 
   .diff-content ul {
@@ -2904,42 +2841,6 @@ h3 {
     rgba(5, 20, 35, 0.6) 35%,
     rgba(5, 20, 35, 0.1) 70%
   );
-}
-
-/* =========================
-   SCROLL REVEAL
-========================= */
-.reveal {
-  opacity: 0;
-  transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
-  will-change: opacity, transform;
-}
-
-.reveal-up {
-  transform: translateY(42px);
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.delay-1 {
-  transition-delay: 0.1s;
-}
-
-.delay-2 {
-  transition-delay: 0.2s;
-}
-
-.delay-3 {
-  transition-delay: 0.3s;
-}
-
-.delay-4 {
-  transition-delay: 0.4s;
 }
 
 /* =========================
@@ -3227,42 +3128,6 @@ h3 {
 }
 
 /* =========================
-   SCROLL REVEAL
-========================= */
-.reveal {
-  opacity: 0;
-  transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
-  will-change: opacity, transform;
-}
-
-.reveal-up {
-  transform: translateY(42px);
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.delay-1 {
-  transition-delay: 0.1s;
-}
-
-.delay-2 {
-  transition-delay: 0.2s;
-}
-
-.delay-3 {
-  transition-delay: 0.3s;
-}
-
-.delay-4 {
-  transition-delay: 0.4s;
-}
-
-/* =========================
    1400
 ========================= */
 @media (max-width: 1400px) {
@@ -3512,42 +3377,6 @@ h3 {
   font-size: 18px;
   line-height: 1.7;
   margin-bottom: 20px;
-}
-
-/* =========================
-   SCROLL REVEAL
-========================= */
-.reveal {
-  opacity: 0;
-  transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
-  will-change: opacity, transform;
-}
-
-.reveal-up {
-  transform: translateY(42px);
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.delay-1 {
-  transition-delay: 0.1s;
-}
-
-.delay-2 {
-  transition-delay: 0.2s;
-}
-
-.delay-3 {
-  transition-delay: 0.3s;
-}
-
-.delay-4 {
-  transition-delay: 0.4s;
 }
 
 /* =========================
@@ -3885,42 +3714,6 @@ h3 {
 }
 
 /* =========================
-   SCROLL REVEAL
-========================= */
-.reveal {
-  opacity: 0;
-  transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
-  will-change: opacity, transform;
-}
-
-.reveal-up {
-  transform: translateY(42px);
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.delay-1 {
-  transition-delay: 0.1s;
-}
-
-.delay-2 {
-  transition-delay: 0.2s;
-}
-
-.delay-3 {
-  transition-delay: 0.3s;
-}
-
-.delay-4 {
-  transition-delay: 0.4s;
-}
-
-/* =========================
    1400
 ========================= */
 @media (max-width: 1400px) {
@@ -4128,42 +3921,6 @@ h3 {
   opacity: 1;
   filter: grayscale(0%);
   transform: translateY(-4px) scale(1.04);
-}
-
-/* =========================
-   SCROLL REVEAL
-========================= */
-.reveal {
-  opacity: 0;
-  transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
-  will-change: opacity, transform;
-}
-
-.reveal-up {
-  transform: translateY(42px);
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.delay-1 {
-  transition-delay: 0.1s;
-}
-
-.delay-2 {
-  transition-delay: 0.2s;
-}
-
-.delay-3 {
-  transition-delay: 0.3s;
-}
-
-.delay-4 {
-  transition-delay: 0.4s;
 }
 
 /* =========================
@@ -4419,42 +4176,6 @@ h3 {
 
 .primary-btn-cta:active {
   transform: translateY(0);
-}
-
-/* =========================
-   SCROLL REVEAL
-========================= */
-.reveal {
-  opacity: 0;
-  transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
-  will-change: opacity, transform;
-}
-
-.reveal-up {
-  transform: translateY(42px);
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.delay-1 {
-  transition-delay: 0.1s;
-}
-
-.delay-2 {
-  transition-delay: 0.2s;
-}
-
-.delay-3 {
-  transition-delay: 0.3s;
-}
-
-.delay-4 {
-  transition-delay: 0.4s;
 }
 
 /* =========================

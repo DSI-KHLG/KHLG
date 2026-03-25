@@ -1,330 +1,397 @@
-/* =========================
-   ELEMENTS
-========================= */
-const navbar = document.querySelector(".navbar");
-const menuToggle = document.getElementById("menuToggle");
-const mobileMenu = document.getElementById("mobileMenu");
-const mobileServicesDropdown = document.getElementById(
-  "mobileServicesDropdown",
-);
-const mobileDropdownToggle = document.getElementById("mobileDropdownToggle");
+document.addEventListener("DOMContentLoaded", () => {
+  /* =========================
+     ELEMENTS
+  ========================= */
+  const navbar = document.querySelector(".navbar");
+  const menuToggle = document.getElementById("menuToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const mobileServicesDropdown = document.getElementById(
+    "mobileServicesDropdown",
+  );
+  const mobileDropdownToggle = document.getElementById("mobileDropdownToggle");
 
-const desktopTopLinks = document.querySelectorAll(".nav-menu > a");
-const desktopDropdownToggle = document.querySelector(".dropdown-toggle");
-const desktopDropdownLinks = document.querySelectorAll(".dropdown-menu a");
+  const desktopTopLinks = document.querySelectorAll(".nav-menu > a");
+  const desktopDropdownToggle = document.querySelector(".dropdown-toggle");
+  const desktopDropdownLinks = document.querySelectorAll(".dropdown-menu a");
 
-const mobileTopLinks = document.querySelectorAll(".mobile-menu-top > a");
-const mobileServicesLink = document.querySelector(".mobile-services-link");
-const mobileDropdownLinks = document.querySelectorAll(
-  ".mobile-dropdown-menu a",
-);
+  const mobileTopLinks = document.querySelectorAll(".mobile-menu-top > a");
+  const mobileServicesLink = document.querySelector(".mobile-services-link");
+  const mobileDropdownLinks = document.querySelectorAll(
+    ".mobile-dropdown-menu a",
+  );
 
-/* =========================
-   PAGE DETECTION
-========================= */
-const currentPath = window.location.pathname.split("/").pop() || "index.html";
+  const contactModal = document.getElementById("contactModal");
+  const openContactModalBtns = document.querySelectorAll(
+    ".contact-modal-open-btn",
+  );
+  const closeContactModal = document.getElementById("closeContactModal");
 
-const servicePages = [
-  "services.html",
-  "pagm.html",
-  "environmental.html",
-  "cae.html",
-  "spc.html",
-];
+  const revealItems = document.querySelectorAll(".reveal");
 
-/* =========================
-   NAVBAR SCROLL EFFECT
-========================= */
-function updateNavbarScrollState() {
-  if (!navbar) return;
+  const spcSection = document.querySelector(".spc-services");
+  const spcItems = document.querySelectorAll(".spc-item");
+  const spcContainer = document.querySelector(".spc-services-container");
+  const spcPanel = document.querySelector(".spc-panel");
+  const spcActiveTitle = document.querySelector(".spc-panel-active-title");
+  const spcActiveDesc = document.querySelector(".spc-panel-active-desc");
 
-  if (
-    window.scrollY > 20 ||
-    (mobileMenu && mobileMenu.classList.contains("active"))
-  ) {
-    navbar.classList.add("scrolled");
-  } else {
-    navbar.classList.remove("scrolled");
-  }
-}
+  /* =========================
+     PAGE DETECTION
+  ========================= */
+  const currentPath = window.location.pathname.split("/").pop() || "index.html";
 
-updateNavbarScrollState();
-window.addEventListener("scroll", updateNavbarScrollState);
+  const servicePages = [
+    "services.html",
+    "pagm.html",
+    "environmental.html",
+    "cae.html",
+    "spc.html",
+  ];
 
-/* =========================
-   MOBILE MENU TOGGLE
-========================= */
-if (menuToggle && mobileMenu) {
-  menuToggle.addEventListener("click", () => {
-    menuToggle.classList.toggle("active");
-    mobileMenu.classList.toggle("active");
+  /* =========================
+     HELPERS
+  ========================= */
+  const clearActive = (links) => {
+    links.forEach((link) => link.classList.remove("active"));
+  };
 
-    const isOpen = mobileMenu.classList.contains("active");
-    menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    document.body.style.overflow = isOpen ? "hidden" : "";
+  const closeMobileMenu = () => {
+    if (!menuToggle || !mobileMenu) return;
+
+    menuToggle.classList.remove("active");
+    mobileMenu.classList.remove("active");
+    menuToggle.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
 
     updateNavbarScrollState();
-  });
-}
+  };
 
-/* =========================
-   MOBILE SERVICES DROPDOWN TOGGLE
-========================= */
-if (mobileDropdownToggle && mobileServicesDropdown) {
-  mobileDropdownToggle.addEventListener("click", () => {
-    mobileServicesDropdown.classList.toggle("active");
+  const openModal = () => {
+    if (!contactModal) return;
+    contactModal.classList.add("active");
+    document.body.style.overflow = "hidden";
+  };
 
-    const isExpanded = mobileServicesDropdown.classList.contains("active");
-    mobileDropdownToggle.setAttribute(
-      "aria-expanded",
-      isExpanded ? "true" : "false",
-    );
-  });
-}
+  const closeModal = () => {
+    if (!contactModal) return;
+    contactModal.classList.remove("active");
+    document.body.style.overflow = "";
+  };
 
-/* =========================
-   CLEAR ACTIVE CLASSES
-========================= */
-function clearActive(links) {
-  links.forEach((link) => link.classList.remove("active"));
-}
+  /* =========================
+     NAVBAR SCROLL EFFECT
+  ========================= */
+  function updateNavbarScrollState() {
+    if (!navbar) return;
 
-/* =========================
-   AUTO ACTIVE DESKTOP
-========================= */
-clearActive(desktopTopLinks);
-clearActive(desktopDropdownLinks);
+    const menuOpen = mobileMenu && mobileMenu.classList.contains("active");
 
-if (desktopDropdownToggle) {
-  desktopDropdownToggle.classList.remove("active");
-}
-
-desktopTopLinks.forEach((link) => {
-  const href = link.getAttribute("href");
-  if (href === currentPath) {
-    link.classList.add("active");
-  }
-});
-
-desktopDropdownLinks.forEach((link) => {
-  const href = link.getAttribute("href");
-  if (href === currentPath) {
-    link.classList.add("active");
-  }
-});
-
-if (desktopDropdownToggle && servicePages.includes(currentPath)) {
-  desktopDropdownToggle.classList.add("active");
-}
-
-/* =========================
-   AUTO ACTIVE MOBILE
-========================= */
-clearActive(mobileTopLinks);
-clearActive(mobileDropdownLinks);
-
-if (mobileServicesLink) {
-  mobileServicesLink.classList.remove("active");
-}
-
-mobileTopLinks.forEach((link) => {
-  const href = link.getAttribute("href");
-  if (href === currentPath) {
-    link.classList.add("active");
-  }
-});
-
-mobileDropdownLinks.forEach((link) => {
-  const href = link.getAttribute("href");
-  if (href === currentPath) {
-    link.classList.add("active");
-  }
-});
-
-if (mobileServicesLink && servicePages.includes(currentPath)) {
-  mobileServicesLink.classList.add("active");
-}
-
-if (
-  mobileServicesDropdown &&
-  servicePages.includes(currentPath) &&
-  currentPath !== "services.html"
-) {
-  mobileServicesDropdown.classList.add("active");
-
-  if (mobileDropdownToggle) {
-    mobileDropdownToggle.setAttribute("aria-expanded", "true");
-  }
-}
-
-/* =========================
-   CLICK FEEDBACK DESKTOP
-========================= */
-desktopTopLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    clearActive(desktopTopLinks);
-    clearActive(desktopDropdownLinks);
-
-    if (desktopDropdownToggle) {
-      desktopDropdownToggle.classList.remove("active");
+    if (window.scrollY > 20 || menuOpen) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
     }
+  }
 
-    link.classList.add("active");
-  });
-});
+  updateNavbarScrollState();
+  window.addEventListener("scroll", updateNavbarScrollState);
 
-desktopDropdownLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    clearActive(desktopTopLinks);
-    clearActive(desktopDropdownLinks);
+  /* =========================
+     MOBILE MENU TOGGLE
+  ========================= */
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener("click", () => {
+      menuToggle.classList.toggle("active");
+      mobileMenu.classList.toggle("active");
 
-    if (desktopDropdownToggle) {
-      desktopDropdownToggle.classList.add("active");
-    }
-
-    link.classList.add("active");
-  });
-});
-
-if (desktopDropdownToggle) {
-  desktopDropdownToggle.addEventListener("click", () => {
-    clearActive(desktopTopLinks);
-    clearActive(desktopDropdownLinks);
-    desktopDropdownToggle.classList.add("active");
-  });
-}
-
-/* =========================
-   CLICK FEEDBACK MOBILE
-========================= */
-mobileTopLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    clearActive(mobileTopLinks);
-    clearActive(mobileDropdownLinks);
-
-    if (mobileServicesLink) {
-      mobileServicesLink.classList.remove("active");
-    }
-
-    link.classList.add("active");
-  });
-});
-
-mobileDropdownLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    clearActive(mobileTopLinks);
-    clearActive(mobileDropdownLinks);
-
-    if (mobileServicesLink) {
-      mobileServicesLink.classList.add("active");
-    }
-
-    link.classList.add("active");
-  });
-});
-
-if (mobileServicesLink) {
-  mobileServicesLink.addEventListener("click", () => {
-    clearActive(mobileTopLinks);
-    clearActive(mobileDropdownLinks);
-    mobileServicesLink.classList.add("active");
-  });
-}
-
-/* =========================
-   CLOSE MOBILE MENU ON LINK CLICK
-========================= */
-const allMobileLinks = document.querySelectorAll(
-  ".mobile-menu a, .mobile-services-link",
-);
-
-allMobileLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    if (menuToggle && mobileMenu) {
-      menuToggle.classList.remove("active");
-      mobileMenu.classList.remove("active");
-      menuToggle.setAttribute("aria-expanded", "false");
-      document.body.style.overflow = "";
+      const isOpen = mobileMenu.classList.contains("active");
+      menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      document.body.style.overflow = isOpen ? "hidden" : "";
 
       updateNavbarScrollState();
-    }
-  });
-});
+    });
+  }
 
-/* =========================
-   RESET MENU ON RESIZE
-========================= */
-window.addEventListener("resize", () => {
-  if (window.innerWidth > 768) {
-    if (menuToggle && mobileMenu) {
-      menuToggle.classList.remove("active");
-      mobileMenu.classList.remove("active");
-      menuToggle.setAttribute("aria-expanded", "false");
-      document.body.style.overflow = "";
-    }
+  /* =========================
+     MOBILE SERVICES DROPDOWN
+  ========================= */
+  if (mobileDropdownToggle && mobileServicesDropdown) {
+    mobileDropdownToggle.addEventListener("click", () => {
+      mobileServicesDropdown.classList.toggle("active");
 
-    if (mobileServicesDropdown && !servicePages.includes(currentPath)) {
-      mobileServicesDropdown.classList.remove("active");
-    }
-
-    if (mobileDropdownToggle) {
-      const isExpanded =
-        mobileServicesDropdown &&
-        mobileServicesDropdown.classList.contains("active");
+      const isExpanded = mobileServicesDropdown.classList.contains("active");
       mobileDropdownToggle.setAttribute(
         "aria-expanded",
         isExpanded ? "true" : "false",
       );
+    });
+  }
+
+  /* =========================
+     AUTO ACTIVE - DESKTOP
+  ========================= */
+  clearActive(desktopTopLinks);
+  clearActive(desktopDropdownLinks);
+
+  if (desktopDropdownToggle) {
+    desktopDropdownToggle.classList.remove("active");
+  }
+
+  desktopTopLinks.forEach((link) => {
+    if (link.getAttribute("href") === currentPath) {
+      link.classList.add("active");
+    }
+  });
+
+  desktopDropdownLinks.forEach((link) => {
+    if (link.getAttribute("href") === currentPath) {
+      link.classList.add("active");
+    }
+  });
+
+  if (desktopDropdownToggle && servicePages.includes(currentPath)) {
+    desktopDropdownToggle.classList.add("active");
+  }
+
+  /* =========================
+     AUTO ACTIVE - MOBILE
+  ========================= */
+  clearActive(mobileTopLinks);
+  clearActive(mobileDropdownLinks);
+
+  if (mobileServicesLink) {
+    mobileServicesLink.classList.remove("active");
+  }
+
+  mobileTopLinks.forEach((link) => {
+    if (link.getAttribute("href") === currentPath) {
+      link.classList.add("active");
+    }
+  });
+
+  mobileDropdownLinks.forEach((link) => {
+    if (link.getAttribute("href") === currentPath) {
+      link.classList.add("active");
+    }
+  });
+
+  if (mobileServicesLink && servicePages.includes(currentPath)) {
+    mobileServicesLink.classList.add("active");
+  }
+
+  if (
+    mobileServicesDropdown &&
+    servicePages.includes(currentPath) &&
+    currentPath !== "services.html"
+  ) {
+    mobileServicesDropdown.classList.add("active");
+
+    if (mobileDropdownToggle) {
+      mobileDropdownToggle.setAttribute("aria-expanded", "true");
+    }
+  }
+
+  /* =========================
+     CLICK FEEDBACK - DESKTOP
+  ========================= */
+  desktopTopLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      clearActive(desktopTopLinks);
+      clearActive(desktopDropdownLinks);
+
+      if (desktopDropdownToggle) {
+        desktopDropdownToggle.classList.remove("active");
+      }
+
+      link.classList.add("active");
+    });
+  });
+
+  desktopDropdownLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      clearActive(desktopTopLinks);
+      clearActive(desktopDropdownLinks);
+
+      if (desktopDropdownToggle) {
+        desktopDropdownToggle.classList.add("active");
+      }
+
+      link.classList.add("active");
+    });
+  });
+
+  if (desktopDropdownToggle) {
+    desktopDropdownToggle.addEventListener("click", () => {
+      clearActive(desktopTopLinks);
+      clearActive(desktopDropdownLinks);
+      desktopDropdownToggle.classList.add("active");
+    });
+  }
+
+  /* =========================
+     CLICK FEEDBACK - MOBILE
+  ========================= */
+  mobileTopLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      clearActive(mobileTopLinks);
+      clearActive(mobileDropdownLinks);
+
+      if (mobileServicesLink) {
+        mobileServicesLink.classList.remove("active");
+      }
+
+      link.classList.add("active");
+    });
+  });
+
+  mobileDropdownLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      clearActive(mobileTopLinks);
+      clearActive(mobileDropdownLinks);
+
+      if (mobileServicesLink) {
+        mobileServicesLink.classList.add("active");
+      }
+
+      link.classList.add("active");
+    });
+  });
+
+  if (mobileServicesLink) {
+    mobileServicesLink.addEventListener("click", () => {
+      clearActive(mobileTopLinks);
+      clearActive(mobileDropdownLinks);
+      mobileServicesLink.classList.add("active");
+    });
+  }
+
+  /* =========================
+     CLOSE MOBILE MENU ON LINK CLICK
+  ========================= */
+  const allMobileLinks = document.querySelectorAll(
+    ".mobile-menu a, .mobile-services-link",
+  );
+
+  allMobileLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      closeMobileMenu();
+    });
+  });
+
+  /* =========================
+     RESET MENU ON RESIZE
+  ========================= */
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+      closeMobileMenu();
+
+      if (mobileServicesDropdown && !servicePages.includes(currentPath)) {
+        mobileServicesDropdown.classList.remove("active");
+      }
+
+      if (mobileDropdownToggle) {
+        const isExpanded =
+          mobileServicesDropdown &&
+          mobileServicesDropdown.classList.contains("active");
+
+        mobileDropdownToggle.setAttribute(
+          "aria-expanded",
+          isExpanded ? "true" : "false",
+        );
+      }
+    }
+  });
+
+  /* =========================
+     CONTACT MODAL
+  ========================= */
+  if (contactModal) {
+    openContactModalBtns.forEach((btn) => {
+      btn.addEventListener("click", openModal);
+    });
+
+    if (closeContactModal) {
+      closeContactModal.addEventListener("click", closeModal);
     }
 
-    updateNavbarScrollState();
-  }
-});
-const contactModal = document.getElementById("contactModal");
-const openContactModal = document.querySelectorAll(".contact-modal-open-btn");
-const closeContactModal = document.getElementById("closeContactModal");
-
-openContactModal.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    contactModal.classList.add("active");
-    document.body.style.overflow = "hidden";
-  });
-});
-
-closeContactModal.addEventListener("click", () => {
-  contactModal.classList.remove("active");
-  document.body.style.overflow = "";
-});
-
-contactModal.addEventListener("click", (e) => {
-  if (e.target === contactModal) {
-    contactModal.classList.remove("active");
-    document.body.style.overflow = "";
-  }
-});
-
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    contactModal.classList.remove("active");
-    document.body.style.overflow = "";
-  }
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const reveals = document.querySelectorAll(".reveal");
-
-  const revealOnScroll = () => {
-    const triggerBottom = window.innerHeight - 100;
-
-    reveals.forEach((item) => {
-      const rect = item.getBoundingClientRect();
-
-      if (rect.top < triggerBottom) {
-        item.classList.add("active");
+    contactModal.addEventListener("click", (e) => {
+      if (e.target === contactModal) {
+        closeModal();
       }
     });
-  };
 
-  window.addEventListener("scroll", revealOnScroll);
-  revealOnScroll();
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && contactModal.classList.contains("active")) {
+        closeModal();
+      }
+    });
+  }
+
+  /* =========================
+     REVEAL ON SCROLL
+  ========================= */
+  if (revealItems.length) {
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight - 100;
+
+      revealItems.forEach((item) => {
+        const rect = item.getBoundingClientRect();
+
+        if (rect.top < triggerBottom) {
+          item.classList.add("active");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
+  }
+
+  /* =========================
+     SPC INTERACTIVE PANEL
+  ========================= */
+  if (
+    spcSection &&
+    spcItems.length &&
+    spcContainer &&
+    spcPanel &&
+    spcActiveTitle &&
+    spcActiveDesc
+  ) {
+    const defaultTitle = spcActiveTitle.innerHTML;
+    const defaultDesc = "";
+
+    const resetSpcPanel = () => {
+      spcItems.forEach((item) => item.classList.remove("active"));
+
+      spcContainer.classList.remove("has-active");
+      spcPanel.classList.remove("active", "show-desc");
+
+      spcActiveTitle.innerHTML = defaultTitle;
+      spcActiveDesc.innerHTML = defaultDesc;
+    };
+
+    spcItems.forEach((item) => {
+      item.addEventListener("click", (e) => {
+        e.stopPropagation();
+
+        spcItems.forEach((i) => i.classList.remove("active"));
+        item.classList.add("active");
+
+        spcContainer.classList.add("has-active");
+        spcPanel.classList.add("active", "show-desc");
+
+        spcActiveTitle.innerHTML = item.dataset.title || defaultTitle;
+        spcActiveDesc.innerHTML = item.dataset.desc || "";
+      });
+    });
+
+    spcSection.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+
+    document.addEventListener("click", () => {
+      resetSpcPanel();
+    });
+  }
 });

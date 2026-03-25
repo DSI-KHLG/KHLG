@@ -15,6 +15,7 @@
   position: relative;
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
+  padding: 50px 0;
   align-items: center;
   min-height: 720px;
   margin-top: 81px;

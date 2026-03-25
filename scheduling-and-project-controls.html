@@ -110,6 +110,125 @@
         </div>
       </div>
     </div>
+
+    <!-- CONTACT MODAL -->
+    <div class="contact-modal-overlay" id="contactModal">
+      <div class="contact-modal-box">
+        <button
+          class="contact-modal-close"
+          id="closeContactModal"
+          aria-label="Close modal"
+        >
+          &times;
+        </button>
+
+        <div class="contact-modal-left">
+          <div class="contact-modal-content">
+            <h2 class="contact-modal-title">GET IN TOUCH</h2>
+
+            <p class="contact-modal-subtitle">
+              Let’s discuss how KHLG &amp; Associates, Inc. can provide the
+              engineering expertise and construction management services your
+              project requires. Contact us today for a consultation.
+            </p>
+
+            <div class="contact-modal-info">
+              <div class="contact-modal-info-item">
+                <span class="contact-modal-icon">◎</span>
+                <div>
+                  <h4>Office Location</h4>
+                  <p>
+                    Address: 718 N. Marine Corps Dr., Suite 305, Tamuning, Guam
+                    96913
+                  </p>
+                </div>
+              </div>
+
+              <div class="contact-modal-info-item">
+                <span class="contact-modal-icon">◔</span>
+                <div>
+                  <h4>Phone</h4>
+                  <p>671-478-5454</p>
+                </div>
+              </div>
+
+              <div class="contact-modal-info-item">
+                <span class="contact-modal-icon">✉</span>
+                <div>
+                  <h4>Email</h4>
+                  <p>info@khlg.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-modal-right">
+          <form class="contact-modal-form">
+            <div class="contact-form-row two-col">
+              <div class="contact-form-group">
+                <label for="firstName">FIRST NAME</label>
+                <input type="text" id="firstName" placeholder="John" />
+              </div>
+
+              <div class="contact-form-group">
+                <label for="lastName">LAST NAME</label>
+                <input type="text" id="lastName" placeholder="Doe" />
+              </div>
+            </div>
+
+            <div class="contact-form-group">
+              <label for="contactNumber">CONTACT NUMBER</label>
+              <input
+                type="text"
+                id="contactNumber"
+                placeholder="671-478-5454"
+              />
+            </div>
+
+            <div class="contact-form-group">
+              <label for="emailAddress">EMAIL ADDRESS</label>
+              <input
+                type="email"
+                id="emailAddress"
+                placeholder="john@company.com"
+              />
+            </div>
+
+            <div class="contact-form-group">
+              <label for="company">COMPANY</label>
+              <input type="text" id="company" placeholder="Company Name" />
+            </div>
+
+            <div class="contact-form-group">
+              <label for="serviceInterest">SERVICE INTEREST</label>
+              <select id="serviceInterest">
+                <option value="">Select a service...</option>
+                <option>Project & Construction Management</option>
+                <option>Environmental Services</option>
+                <option>Civil & Engineering Support</option>
+                <option>Scheduling & Project Controls</option>
+                <option>Special Inspection</option>
+                <option>Technology Solutions</option>
+              </select>
+            </div>
+
+            <div class="contact-form-group">
+              <label for="message">MESSAGE</label>
+              <textarea
+                id="message"
+                placeholder="Tell us about your request..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="contact-submit-btn">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <!-- HERO -->
     <section class="spc-hero">
       <div class="spc-hero-content">
@@ -139,16 +258,21 @@
 
     <!-- SERVICES -->
     <section class="spc-services">
-      <h2 class="section-title">SERVICES OFFERED</h2>
-      <p class="section-subtitle">
+      <h2 class="section-title reveal reveal-up">SERVICES OFFERED</h2>
+      <p class="section-subtitle reveal reveal-up delay-1">
         Leveraging Industry-Leading Tools for Precise Scheduling and Proactive
         Project Control.
       </p>
 
       <div class="spc-services-container">
-        <!-- LEFT SIDE -->
+        <!-- LEFT -->
         <div class="spc-side spc-left">
-          <div class="spc-item">
+          <div
+            class="spc-item reveal reveal-left delay-1"
+            data-title="BASELINE SCHEDULE DEVELOPMENT"
+            data-desc="We create high-quality baseline schedules to help clients track milestones and key project progress points."
+          >
+            <span class="spc-connector spc-connector-right"></span>
             <h3>BASELINE SCHEDULE DEVELOPMENT</h3>
             <p>
               We create high-quality baseline schedules to help clients track
@@ -156,33 +280,51 @@
             </p>
           </div>
 
-          <div class="spc-item">
+          <div
+            class="spc-item reveal reveal-left delay-2"
+            data-title="SCHEDULE MONITORING & CONTROLLING"
+            data-desc="We track and manage activities to keep your project on time."
+          >
+            <span class="spc-connector spc-connector-right"></span>
             <h3>SCHEDULE MONITORING & CONTROLLING</h3>
             <p>We track and manage activities to keep your project on time.</p>
           </div>
         </div>
 
-        <!-- CENTER SHAPE -->
-        <div class="spc-center">
-          <div class="spc-blob">
-            <div class="spc-core">
-              SCHEDULING AND <br />
-              PROJECT CONTROL <br />
-              SERVICES
+        <!-- CENTER -->
+        <div class="spc-center reveal reveal-up delay-2">
+          <div class="spc-panel">
+            <div class="spc-panel-top">
+              <span class="spc-panel-badge">CONTROL HUB</span>
+              <h3 class="spc-panel-title">
+                SCHEDULING &<br />
+                PROJECT CONTROLS
+              </h3>
+              <p class="spc-panel-desc">
+                Select a service to view its role in project delivery.
+              </p>
             </div>
 
-            <!-- 5 circles -->
-            <div class="spc-circle spc-c1"></div>
-            <div class="spc-circle spc-c2"></div>
-            <div class="spc-circle spc-c3"></div>
-            <div class="spc-circle spc-c4"></div>
-            <div class="spc-circle spc-c5"></div>
+            <div class="spc-panel-divider"></div>
+
+            <div class="spc-panel-active">
+              <div class="spc-panel-active-label">SELECTED SERVICE</div>
+              <div class="spc-panel-active-title">
+                SCHEDULING AND PROJECT CONTROL SERVICES
+              </div>
+              <div class="spc-panel-active-desc"></div>
+            </div>
           </div>
         </div>
 
-        <!-- RIGHT SIDE -->
+        <!-- RIGHT -->
         <div class="spc-side spc-right">
-          <div class="spc-item">
+          <div
+            class="spc-item reveal reveal-right delay-1"
+            data-title="PROGRESS UPDATE & PROJECT REPORTING"
+            data-desc="We update schedules and address concerns, providing clients with a clear view of project progress."
+          >
+            <span class="spc-connector spc-connector-left"></span>
             <h3>PROGRESS UPDATE & PROJECT REPORTING</h3>
             <p>
               We update schedules and address concerns, providing clients with a
@@ -190,7 +332,12 @@
             </p>
           </div>
 
-          <div class="spc-item">
+          <div
+            class="spc-item reveal reveal-right delay-2"
+            data-title="SCHEDULE DELAY ANALYSIS"
+            data-desc="We coordinate with all parties to resolve delays and realign schedules for timely completion."
+          >
+            <span class="spc-connector spc-connector-left"></span>
             <h3>SCHEDULE DELAY ANALYSIS</h3>
             <p>
               We coordinate with all parties to resolve delays and realign
@@ -198,7 +345,12 @@
             </p>
           </div>
 
-          <div class="spc-item">
+          <div
+            class="spc-item reveal reveal-right delay-3"
+            data-title="COST AND RESOURCE LOADING/LEVELING"
+            data-desc="We forecast and level resources and costs, helping teams make informed decisions."
+          >
+            <span class="spc-connector spc-connector-left"></span>
             <h3>COST AND RESOURCE LOADING/LEVELING</h3>
             <p>
               We forecast and level resources and costs, helping teams make
@@ -212,11 +364,15 @@
     <!-- CTA IMAGE SECTION -->
     <section class="spc-cta">
       <div class="spc-cta-left">
-        <div class="spc-cta-img-container">
-          <img src="images/KEEPING PROJECTS ON TRACK.jpg" />
+        <div class="spc-cta-img-container reveal reveal-left">
+          <img
+            src="images/KEEPING PROJECTS ON TRACK.jpg"
+            alt="Keeping Projects On Track"
+          />
         </div>
       </div>
-      <div class="spc-cta-right">
+
+      <div class="spc-cta-right reveal reveal-right">
         <h2 class="section-title">KEEPING PROJECTS ON TRACK</h2>
 
         <p class="section-subtitle">

@@ -110,6 +110,125 @@
         </div>
       </div>
     </div>
+
+    <!-- CONTACT MODAL -->
+    <div class="contact-modal-overlay" id="contactModal">
+      <div class="contact-modal-box">
+        <button
+          class="contact-modal-close"
+          id="closeContactModal"
+          aria-label="Close modal"
+        >
+          &times;
+        </button>
+
+        <div class="contact-modal-left">
+          <div class="contact-modal-content">
+            <h2 class="contact-modal-title">GET IN TOUCH</h2>
+
+            <p class="contact-modal-subtitle">
+              Let’s discuss how KHLG &amp; Associates, Inc. can provide the
+              engineering expertise and construction management services your
+              project requires. Contact us today for a consultation.
+            </p>
+
+            <div class="contact-modal-info">
+              <div class="contact-modal-info-item">
+                <span class="contact-modal-icon">◎</span>
+                <div>
+                  <h4>Office Location</h4>
+                  <p>
+                    Address: 718 N. Marine Corps Dr., Suite 305, Tamuning, Guam
+                    96913
+                  </p>
+                </div>
+              </div>
+
+              <div class="contact-modal-info-item">
+                <span class="contact-modal-icon">◔</span>
+                <div>
+                  <h4>Phone</h4>
+                  <p>671-478-5454</p>
+                </div>
+              </div>
+
+              <div class="contact-modal-info-item">
+                <span class="contact-modal-icon">✉</span>
+                <div>
+                  <h4>Email</h4>
+                  <p>info@khlg.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-modal-right">
+          <form class="contact-modal-form">
+            <div class="contact-form-row two-col">
+              <div class="contact-form-group">
+                <label for="firstName">FIRST NAME</label>
+                <input type="text" id="firstName" placeholder="John" />
+              </div>
+
+              <div class="contact-form-group">
+                <label for="lastName">LAST NAME</label>
+                <input type="text" id="lastName" placeholder="Doe" />
+              </div>
+            </div>
+
+            <div class="contact-form-group">
+              <label for="contactNumber">CONTACT NUMBER</label>
+              <input
+                type="text"
+                id="contactNumber"
+                placeholder="671-478-5454"
+              />
+            </div>
+
+            <div class="contact-form-group">
+              <label for="emailAddress">EMAIL ADDRESS</label>
+              <input
+                type="email"
+                id="emailAddress"
+                placeholder="john@company.com"
+              />
+            </div>
+
+            <div class="contact-form-group">
+              <label for="company">COMPANY</label>
+              <input type="text" id="company" placeholder="Company Name" />
+            </div>
+
+            <div class="contact-form-group">
+              <label for="serviceInterest">SERVICE INTEREST</label>
+              <select id="serviceInterest">
+                <option value="">Select a service...</option>
+                <option>Project & Construction Management</option>
+                <option>Environmental Services</option>
+                <option>Civil & Engineering Support</option>
+                <option>Scheduling & Project Controls</option>
+                <option>Special Inspection</option>
+                <option>Technology Solutions</option>
+              </select>
+            </div>
+
+            <div class="contact-form-group">
+              <label for="message">MESSAGE</label>
+              <textarea
+                id="message"
+                placeholder="Tell us about your request..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="contact-submit-btn">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <!-- HERO -->
     <section class="cae-hero">
       <div class="cae-hero-content">
@@ -140,18 +259,21 @@
         />
       </div>
     </section>
+
     <!-- SERVICES -->
     <section class="cae-capabilities">
       <div class="cae-capabilities-container">
-        <h2 class="section-title">CORE CAPABILITIES</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title reveal reveal-up">CORE CAPABILITIES</h2>
+
+        <p class="section-subtitle reveal reveal-up delay-1">
           Providing Expert Technical Support to Ensure Resilient, Constructible,
           and Code-Compliant Infrastructure.
         </p>
 
         <div class="cae-capabilities-grid">
           <!-- Left Column -->
-          <div class="cae-capabilities-card">
+          <div class="cae-capabilities-card reveal reveal-up delay-1">
+            <i class="fa-solid fa-ruler-combined" aria-hidden="true"></i>
             <h3>SITE DEVELOPMENT & GRADING SUPPORT</h3>
             <p>
               Review of topographic data, cut-in-fill concepts, and site layout
@@ -159,7 +281,8 @@
             </p>
           </div>
 
-          <div class="cae-capabilities-card">
+          <div class="cae-capabilities-card reveal reveal-up delay-2">
+            <i class="fa-solid fa-water" aria-hidden="true"></i>
             <h3>UTILITY & INFRASTRUCTURE ENGINEERING SUPPORT</h3>
             <p>
               Technical review and coordination support for water, sewer, and
@@ -168,12 +291,16 @@
             </p>
           </div>
 
-          <!-- Center Big cae-capabilities-card -->
-          <div class="cae-capabilities-card-highlight">
-            <div class="icon">🤝</div>
+          <!-- Center Big Card -->
+          <div class="cae-capabilities-card-highlight reveal reveal-up delay-2">
+            <div class="icon-box">
+              <i class="fa-solid fa-handshake" aria-hidden="true"></i>
+            </div>
+
             <h3 class="highlight-section-title">
               DRAINAGE, STORMWATER, & EROSION CONTROL SUPPORT
             </h3>
+
             <p class="highlight-section-subtitle">
               Review of hydrologic analysis, BMP selection, and erosion and
               sediment control measures to manage runoff and protect natural
@@ -182,7 +309,8 @@
           </div>
 
           <!-- Right Column -->
-          <div class="cae-capabilities-card">
+          <div class="cae-capabilities-card reveal reveal-up delay-3">
+            <i class="fa-solid fa-leaf" aria-hidden="true"></i>
             <h3>ENVIRONMENTAL IMPACT MITIGATION SUPPORT</h3>
             <p>
               Support in evaluating engineering measures intended to minimize
@@ -191,7 +319,8 @@
             </p>
           </div>
 
-          <div class="cae-capabilities-card">
+          <div class="cae-capabilities-card reveal reveal-up delay-4">
+            <i class="fa-solid fa-file-signature" aria-hidden="true"></i>
             <h3>REGULATORY PERMITTING</h3>
             <p>
               Independent review of plans, specifications, and cost estimate to
@@ -201,16 +330,18 @@
         </div>
       </div>
     </section>
+
     <!-- CTA IMAGE SECTION -->
     <section class="cae-cta">
       <div class="cae-cta-left">
-        <div class="cae-cta-img-container">
+        <div class="cae-cta-img-container reveal reveal-left">
           <img
             src="images/ENGINEERING WITH PRECISION AND RESPONSIBILITY.jpeg"
           />
         </div>
       </div>
-      <div class="cae-cta-right">
+
+      <div class="cae-cta-right reveal reveal-right">
         <h2 class="section-title">
           ENGINEERING WITH PRECISION AND RESPONSIBILITY
         </h2>

@@ -110,6 +110,125 @@
         </div>
       </div>
     </div>
+
+    <!-- CONTACT MODAL -->
+    <div class="contact-modal-overlay" id="contactModal">
+      <div class="contact-modal-box">
+        <button
+          class="contact-modal-close"
+          id="closeContactModal"
+          aria-label="Close modal"
+        >
+          &times;
+        </button>
+
+        <div class="contact-modal-left">
+          <div class="contact-modal-content">
+            <h2 class="contact-modal-title">GET IN TOUCH</h2>
+
+            <p class="contact-modal-subtitle">
+              Let’s discuss how KHLG &amp; Associates, Inc. can provide the
+              engineering expertise and construction management services your
+              project requires. Contact us today for a consultation.
+            </p>
+
+            <div class="contact-modal-info">
+              <div class="contact-modal-info-item">
+                <span class="contact-modal-icon">◎</span>
+                <div>
+                  <h4>Office Location</h4>
+                  <p>
+                    Address: 718 N. Marine Corps Dr., Suite 305, Tamuning, Guam
+                    96913
+                  </p>
+                </div>
+              </div>
+
+              <div class="contact-modal-info-item">
+                <span class="contact-modal-icon">◔</span>
+                <div>
+                  <h4>Phone</h4>
+                  <p>671-478-5454</p>
+                </div>
+              </div>
+
+              <div class="contact-modal-info-item">
+                <span class="contact-modal-icon">✉</span>
+                <div>
+                  <h4>Email</h4>
+                  <p>info@khlg.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-modal-right">
+          <form class="contact-modal-form">
+            <div class="contact-form-row two-col">
+              <div class="contact-form-group">
+                <label for="firstName">FIRST NAME</label>
+                <input type="text" id="firstName" placeholder="John" />
+              </div>
+
+              <div class="contact-form-group">
+                <label for="lastName">LAST NAME</label>
+                <input type="text" id="lastName" placeholder="Doe" />
+              </div>
+            </div>
+
+            <div class="contact-form-group">
+              <label for="contactNumber">CONTACT NUMBER</label>
+              <input
+                type="text"
+                id="contactNumber"
+                placeholder="671-478-5454"
+              />
+            </div>
+
+            <div class="contact-form-group">
+              <label for="emailAddress">EMAIL ADDRESS</label>
+              <input
+                type="email"
+                id="emailAddress"
+                placeholder="john@company.com"
+              />
+            </div>
+
+            <div class="contact-form-group">
+              <label for="company">COMPANY</label>
+              <input type="text" id="company" placeholder="Company Name" />
+            </div>
+
+            <div class="contact-form-group">
+              <label for="serviceInterest">SERVICE INTEREST</label>
+              <select id="serviceInterest">
+                <option value="">Select a service...</option>
+                <option>Project & Construction Management</option>
+                <option>Environmental Services</option>
+                <option>Civil & Engineering Support</option>
+                <option>Scheduling & Project Controls</option>
+                <option>Special Inspection</option>
+                <option>Technology Solutions</option>
+              </select>
+            </div>
+
+            <div class="contact-form-group">
+              <label for="message">MESSAGE</label>
+              <textarea
+                id="message"
+                placeholder="Tell us about your request..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="contact-submit-btn">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <!-- HERO -->
     <section class="environmental-hero">
       <div class="environmental-hero-content">
@@ -139,14 +258,16 @@
     <!-- SERVICES -->
     <section class="environmental-services">
       <div class="environmental-services-container">
-        <h2 class="section-title">KEY SERVICES</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title reveal reveal-up">KEY SERVICES</h2>
+
+        <p class="section-subtitle reveal reveal-up delay-1">
           Strategic Environmental Solutions for Responsible and Sustainable
           Project Delivery.
         </p>
 
         <div class="environmental-services-grid">
-          <div class="environmental-services-card">
+          <div class="environmental-services-card reveal reveal-up delay-1">
+            <i class="fa-solid fa-clipboard-check"></i>
             <h3>ENVIRONMENTAL COMPLIANCE AND PERMITTING</h3>
             <p>
               Identifying regulations, permit requirements, and compliance
@@ -154,7 +275,8 @@
             </p>
           </div>
 
-          <div class="environmental-services-card">
+          <div class="environmental-services-card reveal reveal-up delay-2">
+            <i class="fa-solid fa-map-location-dot"></i>
             <h3>ENVIRONMENTAL MANAGEMENT PLANNING</h3>
             <p>
               Developing pollution prevention, waste management, spill response,
@@ -162,7 +284,8 @@
             </p>
           </div>
 
-          <div class="environmental-services-card">
+          <div class="environmental-services-card reveal reveal-up delay-3">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
             <h3>REMEDIATION AND RESTORATION PLANNING*</h3>
             <p>
               Includes assessing environmental impacts, developing strategies to
@@ -171,7 +294,8 @@
             </p>
           </div>
 
-          <div class="environmental-services-card">
+          <div class="environmental-services-card reveal reveal-up delay-1">
+            <i class="fa-solid fa-seedling"></i>
             <h3>NATURAL AND CULTURAL RESOURCES*</h3>
             <p>
               Assesses, protects, and manages natural habitats and cultural
@@ -180,7 +304,8 @@
             </p>
           </div>
 
-          <div class="environmental-services-card">
+          <div class="environmental-services-card reveal reveal-up delay-2">
+            <i class="fa-solid fa-recycle"></i>
             <h3>SUSTAINABILITY & RESOURCE EFFICIENCY ADVISORY</h3>
             <p>
               Integrating energy efficiency, waste reduction, and sustainable
@@ -188,7 +313,8 @@
             </p>
           </div>
 
-          <div class="environmental-services-card">
+          <div class="environmental-services-card reveal reveal-up delay-3">
+            <i class="fa-solid fa-triangle-exclamation"></i>
             <h3>
               ENVIRONMENTAL RISK ASSESSMENT & MITIGATION STRATEGY DEVELOPMENT
             </h3>
@@ -204,13 +330,14 @@
     <!-- CTA IMAGE SECTION -->
     <section class="environmental-cta">
       <div class="environmental-cta-left">
-        <div class="environmental-cta-img-container">
+        <div class="environmental-cta-img-container reveal reveal-left">
           <img
             src="images/EXPERT CONSULTING FOR COMPLIANCE AND EFFICIENCY.jpg"
           />
         </div>
       </div>
-      <div class="environmental-cta-right">
+
+      <div class="environmental-cta-right reveal reveal-right">
         <h2 class="section-title">
           EXPERT CONSULTING FOR COMPLIANCE AND EFFICIENCY
         </h2>
@@ -223,6 +350,7 @@
         </p>
       </div>
     </section>
+
     <!-- FOOTER -->
     <footer class="footer">
       <div class="footer-main">

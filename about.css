@@ -172,6 +172,7 @@
   will-change: transform;
 }
 
+/* ANIMATIONS */
 @keyframes aboutHeroFadeUp {
   from {
     opacity: 0;
@@ -202,6 +203,7 @@
     transform: scale(1.08);
   }
 }
+
 /* =========================
    1400
 ========================= */
@@ -212,7 +214,11 @@
   }
 
   .about-eyebrow {
-    font-size: 28px;
+    font-size: 18px;
+  }
+
+  .about-hero-subtitle {
+    font-size: 18px;
   }
 
   .about-hero-image-container img {
@@ -235,11 +241,11 @@
   }
 
   .about-eyebrow {
-    font-size: 24px;
+    font-size: 18px;
   }
 
   .about-hero-subtitle {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .about-hero-image-container {
@@ -253,7 +259,7 @@
 }
 
 /* =========================
-   1024
+   1024 (FIXED)
 ========================= */
 @media (max-width: 1024px) {
   .about-hero {
@@ -262,24 +268,37 @@
     padding: 36px 40px;
   }
 
+  .about-hero-image-container {
+    order: 1;
+    min-height: 360px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    box-shadow: none;
+  }
+
+  .about-hero-image-container img {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+  }
+
   .about-hero-content {
+    order: 2;
     padding: 0;
   }
 
   .about-eyebrow {
-    font-size: 22px;
+    font-size: 16px;
   }
 
   .about-hero-subtitle {
+    font-size: 16px;
     margin-bottom: 28px;
   }
 
-  .about-hero-image-container {
-    min-height: 360px;
-  }
-
-  .about-hero-image-container img {
-    border-radius: 50px;
+  .divider {
+    max-width: 90px;
   }
 }
 
@@ -292,7 +311,7 @@
   }
 
   .about-eyebrow {
-    font-size: 20px;
+    font-size: 14px;
     padding: 6px 12px;
   }
 
@@ -300,12 +319,19 @@
     font-size: 15px;
   }
 
+  .divider {
+    max-width: 72px;
+  }
+
   .about-hero-image-container {
     min-height: 280px;
+    border-bottom-left-radius: 36px;
+    border-bottom-right-radius: 36px;
   }
 
   .about-hero-image-container img {
-    border-radius: 36px;
+    border-bottom-left-radius: 36px;
+    border-bottom-right-radius: 36px;
   }
 }
 
@@ -318,19 +344,26 @@
   }
 
   .about-eyebrow {
-    font-size: 18px;
+    font-size: 13px;
   }
 
   .about-hero-subtitle {
     font-size: 14px;
   }
 
+  .divider {
+    max-width: 56px;
+  }
+
   .about-hero-image-container {
     min-height: 220px;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
   }
 
   .about-hero-image-container img {
-    border-radius: 28px;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
   }
 }
 /* MISSION */

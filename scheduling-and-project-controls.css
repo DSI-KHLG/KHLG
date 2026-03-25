@@ -148,7 +148,7 @@
   will-change: transform;
 }
 
-/* ANIMATIONS */
+/* ANIMATIONS (UNCHANGED) */
 @keyframes spcHeroFadeUp {
   from {
     opacity: 0;
@@ -189,6 +189,10 @@
     padding-right: 40px;
   }
 
+  .spc-hero-subtitle {
+    font-size: 18px; /* FIX */
+  }
+
   .spc-hero-image-container img {
     border-top-left-radius: 70px;
     border-bottom-left-radius: 70px;
@@ -209,7 +213,7 @@
   }
 
   .spc-hero-subtitle {
-    font-size: 16px;
+    font-size: 18px; /* FIX */
   }
 
   .spc-hero-image-container {
@@ -223,7 +227,7 @@
 }
 
 /* =========================
-   1024
+   1024 (FIXED)
 ========================= */
 @media (max-width: 1024px) {
   .spc-hero {
@@ -232,21 +236,34 @@
     padding: 36px 40px;
   }
 
+  .spc-hero-image-container {
+    order: 1;
+    min-height: 360px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    box-shadow: none;
+  }
+
+  .spc-hero-image-container img {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+  }
+
   .spc-hero-content {
+    order: 2;
     padding: 0;
     max-width: 100%;
   }
 
   .spc-hero-subtitle {
+    font-size: 16px;
     margin-bottom: 28px;
   }
 
-  .spc-hero-image-container {
-    min-height: 360px;
-  }
-
-  .spc-hero-image-container img {
-    border-radius: 50px;
+  .divider {
+    max-width: 90px;
   }
 }
 
@@ -264,12 +281,19 @@
     line-height: 1.6;
   }
 
+  .divider {
+    max-width: 72px;
+  }
+
   .spc-hero-image-container {
     min-height: 280px;
+    border-bottom-left-radius: 36px;
+    border-bottom-right-radius: 36px;
   }
 
   .spc-hero-image-container img {
-    border-radius: 36px;
+    border-bottom-left-radius: 36px;
+    border-bottom-right-radius: 36px;
   }
 }
 
@@ -286,12 +310,19 @@
     font-size: 14px;
   }
 
+  .divider {
+    max-width: 56px;
+  }
+
   .spc-hero-image-container {
     min-height: 220px;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
   }
 
   .spc-hero-image-container img {
-    border-radius: 28px;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
   }
 }
 /* SERVICES */
@@ -339,12 +370,9 @@
   height: 3px;
   background: linear-gradient(90deg, var(--accent1), rgba(37, 99, 235, 0.3));
   opacity: 0.8;
-  border-radius: 18px 18px 0 0;
 }
 
 .spc-side .spc-item:hover {
-  transform: translateY(-6px);
-  border-color: rgba(37, 99, 235, 0.22);
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 1),
@@ -760,7 +788,6 @@
     font-size: 18px;
   }
 }
-
 
 /* CTA IMAGE */
 .spc-cta {

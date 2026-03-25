@@ -84,7 +84,7 @@
   animation-delay: 0.34s;
 }
 
-/* DIVIDER (match system) */
+/* DIVIDER */
 .divider {
   width: 100%;
   max-width: 120px;
@@ -151,7 +151,7 @@
   animation: caeHeroZoom 9s ease-out forwards;
 }
 
-/* ANIMATIONS */
+/* ANIMATIONS (UNCHANGED) */
 @keyframes caeHeroFadeUp {
   from {
     opacity: 0;
@@ -192,6 +192,10 @@
     padding-right: 40px;
   }
 
+  .cae-hero-subtitle {
+    font-size: 18px; /* FIX */
+  }
+
   .cae-hero-image-container img {
     border-top-left-radius: 70px;
     border-bottom-left-radius: 70px;
@@ -212,7 +216,7 @@
   }
 
   .cae-hero-subtitle {
-    font-size: 16px;
+    font-size: 18px; /* FIX (was 16) */
   }
 
   .cae-hero-image-container {
@@ -226,7 +230,7 @@
 }
 
 /* =========================
-   1024
+   1024 (FIXED PROPERLY)
 ========================= */
 @media (max-width: 1024px) {
   .cae-hero {
@@ -235,21 +239,34 @@
     padding: 36px 40px;
   }
 
+  .cae-hero-image-container {
+    order: 1;
+    min-height: 360px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    box-shadow: none;
+  }
+
+  .cae-hero-image-container img {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+  }
+
   .cae-hero-content {
+    order: 2;
     padding: 0;
     max-width: 100%;
   }
 
   .cae-hero-subtitle {
+    font-size: 16px;
     margin-bottom: 28px;
   }
 
-  .cae-hero-image-container {
-    min-height: 360px;
-  }
-
-  .cae-hero-image-container img {
-    border-radius: 50px;
+  .divider {
+    max-width: 90px;
   }
 }
 
@@ -267,12 +284,19 @@
     line-height: 1.6;
   }
 
+  .divider {
+    max-width: 72px;
+  }
+
   .cae-hero-image-container {
     min-height: 280px;
+    border-bottom-left-radius: 36px;
+    border-bottom-right-radius: 36px;
   }
 
   .cae-hero-image-container img {
-    border-radius: 36px;
+    border-bottom-left-radius: 36px;
+    border-bottom-right-radius: 36px;
   }
 }
 
@@ -289,12 +313,19 @@
     font-size: 14px;
   }
 
+  .divider {
+    max-width: 56px;
+  }
+
   .cae-hero-image-container {
     min-height: 220px;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
   }
 
   .cae-hero-image-container img {
-    border-radius: 28px;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
   }
 }
 /* SERVICES */
@@ -346,7 +377,11 @@
 }
 
 .cae-capabilities-card:hover {
-  border-color: rgba(37, 99, 235, 0.25);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1),
+    rgba(248, 251, 255, 0.96)
+  );
   box-shadow:
     0 18px 40px rgba(0, 0, 0, 0.12),
     0 1px 0 rgba(255, 255, 255, 0.9) inset;
@@ -383,6 +418,9 @@
   line-height: 1.4;
   font-weight: 700;
   color: #222;
+}
+.cae-capabilities-card h3:hover {
+  color: var(--accent1);
 }
 
 .cae-capabilities-card p {

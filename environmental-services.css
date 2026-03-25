@@ -74,7 +74,7 @@
 
 .environmental-hero-subtitle {
   margin-bottom: 34px;
-  font-size: 24px;
+  font-size: 24px; /* keep base */
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.9);
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.18);
@@ -148,7 +148,7 @@
   will-change: transform;
 }
 
-/* ANIMATIONS */
+/* ANIMATIONS (UNCHANGED) */
 @keyframes environmentalHeroFadeUp {
   from {
     opacity: 0;
@@ -189,6 +189,10 @@
     padding-right: 40px;
   }
 
+  .environmental-hero-subtitle {
+    font-size: 18px; /* 🔥 fix */
+  }
+
   .environmental-hero-image-container img {
     border-top-left-radius: 70px;
     border-bottom-left-radius: 70px;
@@ -209,7 +213,7 @@
   }
 
   .environmental-hero-subtitle {
-    font-size: 16px;
+    font-size: 18px; /* 🔥 fixed from 16 → consistency */
   }
 
   .environmental-hero-image-container {
@@ -223,7 +227,7 @@
 }
 
 /* =========================
-   1024
+   1024 (FIXED PROPERLY)
 ========================= */
 @media (max-width: 1024px) {
   .environmental-hero {
@@ -232,21 +236,34 @@
     padding: 36px 40px;
   }
 
+  .environmental-hero-image-container {
+    order: 1;
+    min-height: 360px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    box-shadow: none;
+  }
+
+  .environmental-hero-image-container img {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+  }
+
   .environmental-hero-content {
+    order: 2;
     padding: 0;
     max-width: 100%;
   }
 
   .environmental-hero-subtitle {
+    font-size: 16px;
     margin-bottom: 28px;
   }
 
-  .environmental-hero-image-container {
-    min-height: 360px;
-  }
-
-  .environmental-hero-image-container img {
-    border-radius: 50px;
+  .divider {
+    max-width: 90px;
   }
 }
 
@@ -264,12 +281,19 @@
     line-height: 1.6;
   }
 
+  .divider {
+    max-width: 72px;
+  }
+
   .environmental-hero-image-container {
     min-height: 280px;
+    border-bottom-left-radius: 36px;
+    border-bottom-right-radius: 36px;
   }
 
   .environmental-hero-image-container img {
-    border-radius: 36px;
+    border-bottom-left-radius: 36px;
+    border-bottom-right-radius: 36px;
   }
 }
 
@@ -286,12 +310,19 @@
     font-size: 14px;
   }
 
+  .divider {
+    max-width: 56px;
+  }
+
   .environmental-hero-image-container {
     min-height: 220px;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
   }
 
   .environmental-hero-image-container img {
-    border-radius: 28px;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
   }
 }
 
@@ -343,7 +374,11 @@
 
 /* HOVER */
 .environmental-services-card:hover {
-  border-color: rgba(37, 99, 235, 0.25);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1),
+    rgba(248, 251, 255, 0.96)
+  );
   box-shadow:
     0 18px 40px rgba(0, 0, 0, 0.12),
     0 1px 0 rgba(255, 255, 255, 0.9) inset;
@@ -389,12 +424,16 @@
   color: #222;
 }
 
+.environmental-services-card h3:hover {
+  color: var(--accent1);
+}
 /* TEXT */
 .environmental-services-card p {
   font-size: 18px;
   line-height: 1.6;
   color: var(--subtitles);
 }
+
 /* =========================
    1400
 ========================= */

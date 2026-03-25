@@ -154,20 +154,26 @@
     </section>
 
     <!-- TABS -->
-    <section class="project-tabs">
-      <div class="project-tabs-container">
-        <a href="#">Expanded Project Experience</a>
-
-        <a href="#" class="active"> Project and Construction Management </a>
-
-        <a href="#">Environmental Projects</a>
-
-        <a href="#">Civil Engineering Support</a>
+    <section class="tabs-section">
+      <div class="tabs-container">
+        <a href="#project-management-construction-projects">
+          Project and Construction Management
+        </a>
+        <a href="#environmental-services-projects"
+          >Environmental Services Projects</a
+        >
+        <a href="#military-projects">Military Projects</a>
+        <a href="#civil-engineering-projects"
+          >Civil Engineering Support Projects</a
+        >
       </div>
     </section>
 
     <!-- PROJECT GRID -->
-    <section class="projects-main">
+    <section
+      class="projects-main"
+      id="project-management-construction-projects"
+    >
       <div class="project-construction-container reveal reveal-up">
         <h2 class="section-title">PROJECT AND CONSTRUCTION MANAGEMENT</h2>
         <p class="section-subtitle">
@@ -189,7 +195,19 @@
               Security Program, Security directives, Emergency Amendments, and
               FAA regulations.
             </p>
-            <a class="learnmore-btn">Learn More</a>
+            <div class="learnmore-content" id="giaaarff-project">
+              <p class="service-desc">
+                The construction activities included but were not limited to the
+                construction of a new, regulatory, compliant ARFF Facility to
+                acctommodate: 1. The station’s apparatus bays; 2. Living and
+                working quarters to accommodate the corresponding number of
+                personnel to operate the ARFF apparatuses; 3. Ancillary
+                facilities, and 4. A 20k gallon steel water tank.
+              </p>
+            </div>
+            <a class="learnmore-btn" data-target="giaaarff-project"
+              >Learn More</a
+            >
           </div>
         </div>
 
@@ -203,14 +221,23 @@
               A USTA-designed facility featuring 11 full-sized and 4 mini-sized
               tennis courts.
             </p>
-            <a class="learnmore-btn">Learn More</a>
+            <div class="learnmore-content" id="gntf-project">
+              <p class="service-desc">
+                In addition to the tennis courts, the Guam National Tennis
+                Center, (GNTC) building, includes restrooms, with lockers and
+                shower facilities, an office, covered common area spaces,
+                storage rooms, and upper deck rooftop seating for 360◦ views of
+                the facility.
+              </p>
+            </div>
+            <a class="learnmore-btn" data-target="gntf-project">Learn More</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ENVIRONMENTAL -->
-    <section class="environmental">
+    <section class="environmental" id="environmental-services-projects">
       <div class="environmental-container">
         <div class="env-left reveal reveal-left">
           <h2 class="section-title">ENVIRONMENTAL SERVICES</h2>
@@ -273,7 +300,7 @@
     </section>
 
     <!-- MILITARY -->
-    <section class="military">
+    <section class="military" id="military-projects">
       <h2 class="section-title reveal reveal-up">US MILITARY PROJECTS</h2>
 
       <div class="military-card reveal reveal-up delay-1">
@@ -291,7 +318,6 @@
             knowledge is transferred, while simultaneously expanding Guam’s pool
             of qualified engineering experts.
           </p>
-          <button class="primary-btn">LEARN MORE</button>
         </div>
       </div>
 
@@ -310,13 +336,12 @@
             knowledge is transferred, while simultaneously expanding Guam’s pool
             of qualified engineering experts.
           </p>
-          <button class="primary-btn">LEARN MORE</button>
         </div>
       </div>
     </section>
 
     <!-- CIVIL -->
-    <section class="civil">
+    <section class="civil" id="civil-engineering-projects">
       <h2 class="section-title reveal reveal-up">CIVIL ENGINEERING SUPPORT</h2>
 
       <p class="section-subtitle reveal reveal-up delay-1">
@@ -402,7 +427,7 @@
                 <span class="contact-modal-icon">✉</span>
                 <div>
                   <h4>Email</h4>
-                  <p>info@khlg.com</p>
+                  <p>info@khlgassociates.com</p>
                 </div>
               </div>
             </div>
@@ -500,11 +525,9 @@
           <h4>Quick Links</h4>
 
           <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Safety</a></li>
-            <li><a href="#">Careers</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
           </ul>
         </div>
 
@@ -530,5 +553,9 @@
       </div>
     </footer>
     <script src="script.js"></script>
+
+    <button id="scrollTopBtn" aria-label="Scroll to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
   </body>
 </html>

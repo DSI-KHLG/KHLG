@@ -394,4 +394,69 @@ document.addEventListener("DOMContentLoaded", () => {
       resetSpcPanel();
     });
   }
+
+  /**Learnmore */
+  const learnMoreButtons = document.querySelectorAll(".learnmore-btn");
+
+  learnMoreButtons.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      const targetId = btn.dataset.target;
+      const targetContent = document.getElementById(targetId);
+
+      if (!targetContent) return;
+
+      const isActive = targetContent.classList.contains("active");
+
+      // Close all
+      document.querySelectorAll(".learnmore-content").forEach((content) => {
+        content.classList.remove("active");
+      });
+
+      document.querySelectorAll(".learnmore-btn").forEach((button) => {
+        button.classList.remove("active");
+        button.textContent = "Learn More";
+      });
+
+      // Open selected
+      if (!isActive) {
+        targetContent.classList.add("active");
+        btn.classList.add("active");
+        btn.textContent = "Show Less";
+      }
+    });
+  });
+
+  /**Projects tab */
+  const tabGroups = document.querySelectorAll(".tabs-container");
+
+  tabGroups.forEach((group) => {
+    const tabs = group.querySelectorAll("a");
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", (e) => {
+        // Remove active from all tabs in THIS group only
+        tabs.forEach((t) => t.classList.remove("active"));
+
+        // Add active to clicked tab
+        tab.classList.add("active");
+      });
+    });
+  });
+
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      scrollTopBtn.classList.add("show");
+    } else {
+      scrollTopBtn.classList.remove("show");
+    }
+  });
+
+  scrollTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
 });

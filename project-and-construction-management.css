@@ -189,6 +189,10 @@
     padding-right: 40px;
   }
 
+  .pagm-hero-subtitle {
+    font-size: 18px;
+  }
+
   .pagm-hero-image-container img {
     border-top-left-radius: 70px;
     border-bottom-left-radius: 70px;
@@ -209,7 +213,7 @@
   }
 
   .pagm-hero-subtitle {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .pagm-hero-image-container {
@@ -232,20 +236,33 @@
     padding: 36px 40px;
   }
 
+  .pagm-hero-image-container {
+    order: 1;
+    min-height: 360px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    box-shadow: none;
+  }
+
+  .pagm-hero-image-container img {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+  }
+
   .pagm-hero-content {
+    order: 2;
     padding: 0;
   }
 
   .pagm-hero-subtitle {
+    font-size: 16px;
     margin-bottom: 28px;
   }
 
-  .pagm-hero-image-container {
-    min-height: 360px;
-  }
-
-  .pagm-hero-image-container img {
-    border-radius: 50px;
+  .divider {
+    max-width: 90px;
   }
 }
 
@@ -261,12 +278,19 @@
     font-size: 15px;
   }
 
+  .divider {
+    max-width: 72px;
+  }
+
   .pagm-hero-image-container {
     min-height: 280px;
+    border-bottom-left-radius: 36px;
+    border-bottom-right-radius: 36px;
   }
 
   .pagm-hero-image-container img {
-    border-radius: 36px;
+    border-bottom-left-radius: 36px;
+    border-bottom-right-radius: 36px;
   }
 }
 
@@ -282,12 +306,19 @@
     font-size: 14px;
   }
 
+  .divider {
+    max-width: 56px;
+  }
+
   .pagm-hero-image-container {
     min-height: 220px;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
   }
 
   .pagm-hero-image-container img {
-    border-radius: 28px;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
   }
 }
 
@@ -300,12 +331,10 @@
 .pagm-services-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 28px;
-  align-items: stretch;
-  padding-top: 20px;
+  gap: 25px;
 }
 
-/* CARD */
+/* CARD (ENVIRONMENTAL STYLE APPLIED) */
 .pagm-service-card {
   position: relative;
   padding: 25px;
@@ -314,16 +343,18 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease,
     border-color 0.3s ease;
+
   box-shadow:
     0 8px 20px rgba(0, 0, 0, 0.06),
     0 1px 0 rgba(255, 255, 255, 0.8) inset;
 }
 
-/* TOP LINE */
+/* TOP ACCENT LINE */
 .pagm-service-card::before {
   content: "";
   position: absolute;
@@ -335,8 +366,11 @@
 
 /* HOVER */
 .pagm-service-card:hover {
-  border-color: rgba(37, 99, 235, 0.25);
-  transform: translateY(-6px);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1),
+    rgba(248, 251, 255, 0.96)
+  );
   box-shadow:
     0 18px 40px rgba(0, 0, 0, 0.12),
     0 1px 0 rgba(255, 255, 255, 0.9) inset;
@@ -347,17 +381,22 @@
   width: 44px;
   height: 44px;
   margin-bottom: 15px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-size: 18px;
   color: var(--accent1);
+
   background: linear-gradient(
     180deg,
     rgba(37, 99, 235, 0.08),
     rgba(37, 99, 235, 0.03)
   );
+
   border-radius: 8px;
+
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -375,9 +414,11 @@
   line-height: 1.4;
   font-weight: 700;
   color: #222;
-  font-family: Oswald, sans-serif;
 }
 
+.pagm-service-card h3:hover{
+  color: var(--accent1);
+}
 /* TEXT */
 .pagm-service-card p {
   font-size: 18px;
@@ -394,23 +435,8 @@
   }
 
   .pagm-services-grid {
-    gap: 24px;
-  }
-
-  .pagm-service-card {
-    padding: 74px 24px 28px;
-    min-height: 345px;
-  }
-
-  .pagm-service-card::before {
-    left: 24px;
-  }
-
-  .pagm-service-card .pagm-icon {
-    left: 24px;
-    width: 74px;
-    height: 74px;
-    font-size: 26px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
   }
 
   .pagm-service-card h3 {
@@ -418,7 +444,7 @@
   }
 
   .pagm-service-card p {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
@@ -432,12 +458,14 @@
 
   .pagm-services-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 22px;
   }
 
-  .pagm-service-card {
-    min-height: 320px;
-    padding: 72px 24px 26px;
+  .pagm-service-card h3 {
+    font-size: 20px;
+  }
+
+  .pagm-service-card p {
+    font-size: 16px;
   }
 }
 
@@ -451,36 +479,19 @@
 
   .pagm-services-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 18px;
   }
 
   .pagm-service-card {
-    min-height: 300px;
-    padding: 68px 22px 24px;
-    border-radius: 22px;
-  }
-
-  .pagm-service-card::before {
-    left: 22px;
-    width: 56px;
-  }
-
-  .pagm-service-card .pagm-icon {
-    top: -22px;
-    left: 22px;
-    width: 70px;
-    height: 70px;
-    font-size: 24px;
-    border-radius: 20px;
+    min-height: 170px;
   }
 
   .pagm-service-card h3 {
-    font-size: 21px;
+    font-size: 20px;
   }
 
   .pagm-service-card p {
     font-size: 16px;
-    line-height: 1.65;
   }
 }
 
@@ -494,37 +505,21 @@
 
   .pagm-services-grid {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 16px;
   }
 
   .pagm-service-card {
     min-height: auto;
-    padding: 64px 20px 22px;
-    border-radius: 20px;
-  }
-
-  .pagm-service-card::before {
-    left: 20px;
-  }
-
-  .pagm-service-card .pagm-icon {
-    left: 20px;
-    width: 66px;
-    height: 66px;
-    font-size: 22px;
-    border-radius: 18px;
-    box-shadow:
-      0 12px 24px rgba(37, 99, 235, 0.22),
-      0 0 0 6px #f8fbff;
+    padding: 18px;
   }
 
   .pagm-service-card h3 {
-    font-size: 20px;
-    margin-bottom: 12px;
+    font-size: 18px;
   }
 
   .pagm-service-card p {
     font-size: 15px;
+    line-height: 1.6;
   }
 }
 
@@ -537,31 +532,15 @@
   }
 
   .pagm-service-card {
-    padding: 60px 18px 20px;
-    border-radius: 18px;
-  }
-
-  .pagm-service-card::before {
-    left: 18px;
-    width: 50px;
-  }
-
-  .pagm-service-card .pagm-icon {
-    top: -20px;
-    left: 18px;
-    width: 60px;
-    height: 60px;
-    font-size: 20px;
-    border-radius: 16px;
+    padding: 16px;
   }
 
   .pagm-service-card h3 {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .pagm-service-card p {
     font-size: 14px;
-    line-height: 1.6;
   }
 }
 /* CTA IMAGE */

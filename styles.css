@@ -1239,34 +1239,23 @@ section[id] {
 /* TABLET LANDSCAPE */
 @media (max-width: 1024px) {
   .nav-container {
-    padding: 0 40px;
+    padding: 0 20px;
+    gap: 12px;
   }
 
   .nav-left {
-    gap: 24px;
+    gap: 0;
+    flex: unset;
   }
 
-  .nav-menu {
-    gap: 18px;
-  }
-
-  .nav-menu > a,
-  .dropdown-toggle {
-    font-size: 16px;
-  }
-
+  .nav-menu,
+  .search-box,
   .contact-btn {
-    padding: 0 14px;
-    font-size: 13px;
+    display: none;
   }
 
-  .search-box {
-    min-width: 130px;
-    padding: 7px 10px;
-  }
-
-  .dropdown-menu {
-    min-width: 290px;
+  .menu-toggle {
+    display: block;
   }
 }
 
@@ -4223,7 +4212,7 @@ section[id] {
 
 .partners-bottom img {
   height: 110px; /* 🔥 MUCH BIGGER */
-  width: auto;
+  width: 200px;
   max-width: 200px;
   object-fit: contain;
   opacity: 0.75;

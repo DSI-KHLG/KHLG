@@ -4224,6 +4224,7 @@ section[id] {
 .partners-bottom img {
   height: 110px; /* 🔥 MUCH BIGGER */
   width: auto;
+  max-width: 200px;
   object-fit: contain;
   opacity: 0.75;
 

@@ -20,6 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
     ".mobile-dropdown-menu a",
   );
 
+  const desktopSearchInput = document.querySelector(".search-box input");
+  const mobileSearchInput = document.querySelector(".mobile-search-box input");
+
   const contactModal = document.getElementById("contactModal");
   const openContactModalBtns = document.querySelectorAll(
     ".contact-modal-open-btn",
@@ -79,6 +82,65 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   /* =========================
+     NAV SEARCH HELPERS
+  ========================= */
+  const allDesktopSearchLinks = [
+    ...desktopTopLinks,
+    ...(desktopDropdownToggle ? [desktopDropdownToggle] : []),
+    ...desktopDropdownLinks,
+  ];
+
+  const allMobileSearchLinks = [
+    ...mobileTopLinks,
+    ...(mobileServicesLink ? [mobileServicesLink] : []),
+    ...mobileDropdownLinks,
+  ];
+
+  const syncSearchInputs = (value, source) => {
+    if (source !== "desktop" && desktopSearchInput) {
+      desktopSearchInput.value = value;
+    }
+
+    if (source !== "mobile" && mobileSearchInput) {
+      mobileSearchInput.value = value;
+    }
+  };
+
+  const filterSearchLinks = (value, links) => {
+    links.forEach((link) => {
+      const text = link.textContent.toLowerCase().trim();
+      link.style.display = text.includes(value) || value === "" ? "" : "none";
+    });
+  };
+
+  const getFirstSearchMatch = (value, links) => {
+    return links.find((link) => {
+      const text = link.textContent.toLowerCase().trim();
+      return text.includes(value);
+    });
+  };
+
+  const handleNavSearch = (value, source) => {
+    const normalizedValue = value.toLowerCase().trim();
+
+    syncSearchInputs(value, source);
+    filterSearchLinks(normalizedValue, allDesktopSearchLinks);
+    filterSearchLinks(normalizedValue, allMobileSearchLinks);
+  };
+
+  const handleSearchEnter = (value, links) => {
+    const normalizedValue = value.toLowerCase().trim();
+
+    if (!normalizedValue) return;
+
+    const match = getFirstSearchMatch(normalizedValue, links);
+
+    if (match && match.getAttribute("href")) {
+      window.location.href = match.getAttribute("href");
+    }
+  };
+
+  /* =========================
      NAVBAR SCROLL EFFECT
   ========================= */
   function updateNavbarScrollState() {
@@ -124,6 +186,33 @@ document.addEventListener("DOMContentLoaded", () => {
         "aria-expanded",
         isExpanded ? "true" : "false",
       );
+    });
+  }
+
+  /* =========================
+     NAV SEARCH
+  ========================= */
+  if (desktopSearchInput) {
+    desktopSearchInput.addEventListener("input", () => {
+      handleNavSearch(desktopSearchInput.value, "desktop");
+    });
+
+    desktopSearchInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        handleSearchEnter(desktopSearchInput.value, allDesktopSearchLinks);
+      }
+    });
+  }
+
+  if (mobileSearchInput) {
+    mobileSearchInput.addEventListener("input", () => {
+      handleNavSearch(mobileSearchInput.value, "mobile");
+    });
+
+    mobileSearchInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        handleSearchEnter(mobileSearchInput.value, allMobileSearchLinks);
+      }
     });
   }
 

@@ -145,6 +145,7 @@ section[id] {
 #additional {
   scroll-margin-top: 230px;
 }
+
 /* =========================
    TABS SECTION
 ========================= */
@@ -155,7 +156,7 @@ section[id] {
   position: sticky;
   top: 81px;
   z-index: 100;
-  border-bottom: 1px solid transparent; /* avoid harsh line when transparent */
+  border-bottom: 1px solid transparent;
 }
 
 /* ALIGN WITH SITE */
@@ -179,7 +180,6 @@ section[id] {
   min-height: 60px;
   padding: 15px 10px;
 
-  /* 🔥 UPDATED (from services-tabs) */
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.98),
@@ -230,12 +230,13 @@ section[id] {
     0 18px 40px rgba(37, 99, 235, 0.25),
     inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
+
 /* =========================
    1400
 ========================= */
 @media (max-width: 1400px) {
-  .project-tabs {
-    padding: 50px 0;
+  .tabs-section {
+    padding: 20px 0;
   }
 
   .tabs-container {
@@ -252,8 +253,8 @@ section[id] {
    1200
 ========================= */
 @media (max-width: 1200px) {
-  .project-tabs {
-    padding: 50px 0;
+  .tabs-section {
+    padding: 20px 0;
   }
 
   .tabs-container {
@@ -269,21 +270,49 @@ section[id] {
 }
 
 /* =========================
-   1024
+   1024 (FORCE ONE ROW SCROLL)
 ========================= */
 @media (max-width: 1024px) {
-  .project-tabs {
-    padding: 36px 0;
+  .tabs-section {
+    padding: 16px 0;
   }
 
   .tabs-container {
     padding: 0 40px;
-    grid-template-columns: repeat(2, 1fr);
+
+    display: flex !important;
+    flex-wrap: nowrap !important;
+
+    gap: 10px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+  }
+
+  .tabs-container::-webkit-scrollbar {
+    display: none;
   }
 
   .tabs-container a {
-    font-size: 16px;
+    flex: 0 0 auto;
+    min-width: 220px;
+    max-width: 220px;
+
     min-height: 56px;
+    padding: 14px 16px;
+
+    font-size: 15px;
+    line-height: 1.3;
+    white-space: normal;
+  }
+
+  .tabs-container a:hover {
+    transform: none;
   }
 }
 
@@ -291,20 +320,22 @@ section[id] {
    768
 ========================= */
 @media (max-width: 768px) {
-  .project-tabs {
-    padding: 28px 0;
+  .tabs-section {
+    padding: 14px 0;
   }
 
   .tabs-container {
     padding: 0 20px;
-    grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 8px;
   }
 
   .tabs-container a {
-    font-size: 15px;
+    min-width: 200px;
+    max-width: 200px;
+
     min-height: 54px;
-    padding: 13px 16px;
+    font-size: 14px;
+    padding: 13px 14px;
   }
 }
 
@@ -312,8 +343,8 @@ section[id] {
    480
 ========================= */
 @media (max-width: 480px) {
-  .project-tabs {
-    padding: 28px 0;
+  .tabs-section {
+    padding: 12px 0;
   }
 
   .tabs-container {
@@ -321,9 +352,13 @@ section[id] {
   }
 
   .tabs-container a {
-    font-size: 14px;
+    min-width: 180px;
+    max-width: 180px;
+
     min-height: 52px;
+    font-size: 13px;
     padding: 12px 14px;
+    border-radius: 5px;
   }
 }
 

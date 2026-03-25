@@ -20,30 +20,49 @@
     <header class="navbar">
       <div class="nav-container">
         <div class="nav-left">
-          <div class="nav-logo">
-            <img src="images/khlg-logo.png" alt="KHLG Logo" />
-          </div>
+          <a href="index.html" class="nav-logo">
+            <img src="images/khlg-logo-white.png" alt="KHLG Logo" />
+          </a>
 
-          <nav class="nav-menu" id="navMenu">
+          <nav class="nav-menu">
             <a href="index.html">HOME</a>
-            <a class="active" href="services.html">SERVICES</a>
+
+            <div class="nav-dropdown">
+              <a href="services.html" class="dropdown-toggle">SERVICES</a>
+
+              <div class="dropdown-menu">
+                <a href="project-and-construction-management.html"
+                  >PROJECT & CONSTRUCTION MANAGEMENT</a
+                >
+                <a href="environmental-services.html">ENVIRONMENTAL SERVICES</a>
+                <a href="civil-and-engineering-support.html"
+                  >CIVIL & ENGINEERING SUPPORT</a
+                >
+                <a href="scheduling-and-project-controls.html"
+                  >SCHEDULING & PROJECT CONTROLS</a
+                >
+              </div>
+            </div>
+
             <a href="projects.html">PROJECTS</a>
             <a href="about.html">ABOUT</a>
           </nav>
         </div>
 
         <div class="nav-right">
-          <a class="contact-btn" href="#">CONTACT</a>
+          <a class="contact-btn contact-modal-open-btn">CONTACT</a>
 
           <div class="search-box">
-            <i
-              class="fa-solid fa-magnifying-glass search-icon"
-              aria-hidden="true"
-            ></i>
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
             <input type="text" placeholder="Search" />
           </div>
 
-          <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open menu"
+            aria-expanded="false"
+          >
             <span></span>
             <span></span>
             <span></span>
@@ -51,6 +70,46 @@
         </div>
       </div>
     </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-top">
+        <a href="index.html">HOME</a>
+
+        <div class="mobile-dropdown" id="mobileServicesDropdown">
+          <div class="mobile-dropdown-header">
+            <a href="services.html" class="mobile-services-link">SERVICES</a>
+
+            <button
+              class="mobile-dropdown-toggle"
+              id="mobileDropdownToggle"
+              aria-label="Toggle services menu"
+              aria-expanded="false"
+              type="button"
+            >
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+
+          <div class="mobile-dropdown-menu">
+            <a href="pagm.html">PROJECT & CONSTRUCTION MANAGEMENT</a>
+            <a href="environmental.html">ENVIRONMENTAL SERVICES</a>
+            <a href="cae.html">CIVIL & ENGINEERING SUPPORT</a>
+            <a href="spc.html">SCHEDULING & PROJECT CONTROLS</a>
+          </div>
+        </div>
+
+        <a href="projects.html">PROJECTS</a>
+        <a href="about.html">ABOUT</a>
+
+        <a class="mobile-contact-btn contact-modal-open-btn">CONTACT</a>
+
+        <div class="mobile-search-box">
+          <i class="fa-solid fa-magnifying-glass mobile-search-icon"></i>
+          <input type="text" placeholder="Search" />
+        </div>
+      </div>
+    </div>
     <!-- HERO -->
     <section class="cae-hero">
       <div class="cae-hero-content">

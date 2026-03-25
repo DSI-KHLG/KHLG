@@ -3976,8 +3976,8 @@ section[id] {
 
 /* LOGO */
 .insight-logo {
-  width: 80px;
-  height: 80px;
+  width: 150px;
+  height: 150px;
   object-fit: contain;
   flex-shrink: 0;
   transition:
@@ -4102,8 +4102,8 @@ section[id] {
   }
 
   .insight-logo {
-    width: 64px;
-    height: 64px;
+    width: 80px;
+    height: 80px;
   }
 
   .insight-text p {
@@ -4133,8 +4133,8 @@ section[id] {
   }
 
   .insight-logo {
-    width: 56px;
-    height: 56px;
+    width: 70px;
+    height: 70px;
   }
 
   .insight-text p {

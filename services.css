@@ -17,7 +17,6 @@
   grid-template-columns: 1.05fr 0.95fr;
   padding: 50px 0;
   align-items: center;
-  min-height: 720px;
   margin-top: 81px;
   overflow: hidden;
   background:
@@ -56,7 +55,7 @@
 .services-hero-content {
   position: relative;
   z-index: 2;
-  padding: 50px 80px 50px 160px;
+  padding: 0 60px 0 160px;
   color: var(--white1);
 }
 
@@ -99,11 +98,11 @@
 }
 
 .services-hero-subtitle {
-  max-width: 760px;
   margin-bottom: 24px;
   color: rgba(255, 255, 255, 0.9);
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.18);
   animation-delay: 0.38s;
+  text-align: justify;
 }
 
 .divider {
@@ -177,8 +176,7 @@
 .services-hero-image-container {
   position: relative;
   z-index: 2;
-  height: 100%;
-  min-height: 620px;
+  height: 620px;
   overflow: hidden;
   border-top-left-radius: 180px;
   border-bottom-left-radius: 180px;
@@ -213,7 +211,6 @@
 .services-hero-image-container img {
   width: 100%;
   height: 100%;
-  min-height: 720px;
   object-fit: cover;
   display: block;
   transform: scale(1.03);
@@ -267,12 +264,8 @@
     padding: 50px 60px 50px 100px;
   }
 
-  .services-hero-image-container,
-  .services-hero-image-container img {
-    min-height: 680px;
-  }
-
   .services-hero-image-container {
+    height: 560px;
     border-top-left-radius: 150px;
     border-bottom-left-radius: 150px;
   }
@@ -300,12 +293,8 @@
     letter-spacing: 1.4px;
   }
 
-  .services-hero-image-container,
-  .services-hero-image-container img {
-    min-height: 640px;
-  }
-
   .services-hero-image-container {
+    height: 500px;
     border-top-left-radius: 130px;
     border-bottom-left-radius: 130px;
   }
@@ -332,15 +321,11 @@
 
   .services-hero-image-container {
     order: 1;
-    min-height: 420px;
+    height: 420px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 80px;
     box-shadow: none;
-  }
-
-  .services-hero-image-container img {
-    min-height: 420px;
   }
 
   .services-title {
@@ -378,12 +363,8 @@
   }
 
   .services-hero-image-container {
-    min-height: 320px;
+    height: 320px;
     border-bottom-right-radius: 56px;
-  }
-
-  .services-hero-image-container img {
-    min-height: 320px;
   }
 
   .services-eyebrow {
@@ -435,12 +416,8 @@
   }
 
   .services-hero-image-container {
-    min-height: 260px;
+    height: 260px;
     border-bottom-right-radius: 40px;
-  }
-
-  .services-hero-image-container img {
-    min-height: 260px;
   }
 
   .services-eyebrow {
@@ -464,7 +441,6 @@
     font-size: 12px;
   }
 }
-
 /* =========================
    SERVICES TABS SECTION
 ========================= */
@@ -1589,6 +1565,7 @@
   font-size: 18px;
   line-height: 1.6;
   color: var(--subtitles);
+  text-align: justify;
 }
 /* =========================
    1400

@@ -1495,12 +1495,12 @@ section[id] {
 /* TEXT */
 .hero-content p {
   margin: 0;
-  max-width: 760px;
   color: var(--white1);
   font-size: 24px;
   line-height: 1.7;
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.2);
   animation-delay: 0.45s;
+  text-align: justify;
 }
 
 /* BUTTONS */
@@ -2257,6 +2257,7 @@ section[id] {
   line-height: 1.6;
   color: #444;
   flex-grow: 1;
+  text-align: justify;
 }
 
 .learnmore-btn,
@@ -3458,11 +3459,10 @@ section[id] {
 
 /* TEXT */
 .innovation-content p {
-  max-width: 600px;
   margin-bottom: 16px;
   font-size: 18px;
   line-height: 1.7;
-  color: #d1d9e2;
+  color: var(--white1);
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.18);
 }
 
@@ -3617,6 +3617,7 @@ section[id] {
   text-align: left;
   font-size: 18px;
   line-height: 1.7;
+  text-align: justify;
 }
 
 .mentorship-logos {
@@ -3716,6 +3717,7 @@ section[id] {
   font-size: 18px;
   line-height: 1.7;
   margin-bottom: 20px;
+  text-align: justify;
 }
 
 /* =========================

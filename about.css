@@ -12,7 +12,6 @@
   position: relative;
   display: grid;
   grid-template-columns: 1.15fr 1fr;
-  min-height: 620px;
   align-items: center;
   overflow: hidden;
   margin-top: 81px;
@@ -62,6 +61,7 @@
   animation: aboutHeroFadeUp 0.85s ease forwards;
 }
 
+/* TYPOGRAPHY */
 .about-eyebrow {
   display: inline-flex;
   align-items: center;
@@ -103,6 +103,7 @@
   color: rgba(255, 255, 255, 0.9);
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.16);
   animation-delay: 0.38s;
+  text-align: justify;
 }
 
 /* DIVIDER */
@@ -113,11 +114,10 @@
   border-radius: 999px;
   background: linear-gradient(
     90deg,
-    rgba(37, 99, 235, 1) 0%,
-    rgba(255, 255, 255, 0.45) 100%
+    rgba(37, 99, 235, 1),
+    rgba(255, 255, 255, 0.45)
   );
   box-shadow: 0 0 18px rgba(37, 99, 235, 0.16);
-  animation-delay: 0.5s;
 }
 
 /* IMAGE */
@@ -125,8 +125,7 @@
   position: relative;
   z-index: 2;
   width: 100%;
-  height: 100%;
-  min-height: 620px;
+  height: 320px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -147,29 +146,26 @@
   background:
     linear-gradient(
       90deg,
-      rgba(16, 42, 67, 0.12) 0%,
-      rgba(16, 42, 67, 0.03) 28%,
-      rgba(16, 42, 67, 0) 100%
+      rgba(16, 42, 67, 0.12),
+      rgba(16, 42, 67, 0.03),
+      transparent
     ),
     linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.04) 0%,
-      rgba(255, 255, 255, 0) 25%,
-      rgba(0, 0, 0, 0.08) 100%
+      rgba(255, 255, 255, 0.04),
+      transparent,
+      rgba(0, 0, 0, 0.08)
     );
   z-index: 1;
-  pointer-events: none;
 }
 
 .about-hero-image-container img {
   width: 100%;
   height: 100%;
-  min-height: 620px;
   object-fit: cover;
   display: block;
   transform: scale(1.03);
   animation: aboutHeroImageZoom 9s ease-out forwards;
-  will-change: transform;
 }
 
 /* ANIMATIONS */
@@ -204,32 +200,23 @@
   }
 }
 
-/* =========================
-   1400
-========================= */
+/* ========================= 1400 ========================= */
 @media (max-width: 1400px) {
   .about-hero-content {
     padding-left: 100px;
     padding-right: 40px;
   }
 
-  .about-eyebrow {
-    font-size: 18px;
-  }
-
   .about-hero-subtitle {
     font-size: 18px;
   }
 
-  .about-hero-image-container img {
-    border-top-left-radius: 70px;
-    border-bottom-left-radius: 70px;
+  .about-hero-image-container {
+    height: 300px;
   }
 }
 
-/* =========================
-   1200
-========================= */
+/* ========================= 1200 ========================= */
 @media (max-width: 1200px) {
   .about-hero {
     grid-template-columns: 1fr 1fr;
@@ -240,27 +227,16 @@
     padding-right: 32px;
   }
 
-  .about-eyebrow {
-    font-size: 18px;
-  }
-
   .about-hero-subtitle {
     font-size: 18px;
   }
 
   .about-hero-image-container {
-    min-height: 420px;
-  }
-
-  .about-hero-image-container img {
-    border-top-left-radius: 56px;
-    border-bottom-left-radius: 56px;
+    height: 360px;
   }
 }
 
-/* =========================
-   1024 (FIXED)
-========================= */
+/* ========================= 1024 ========================= */
 @media (max-width: 1024px) {
   .about-hero {
     grid-template-columns: 1fr;
@@ -270,17 +246,9 @@
 
   .about-hero-image-container {
     order: 1;
-    min-height: 360px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+    height: 320px;
+    border-radius: 0 0 50px 50px;
     box-shadow: none;
-  }
-
-  .about-hero-image-container img {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
   }
 
   .about-hero-content {
@@ -288,82 +256,41 @@
     padding: 0;
   }
 
-  .about-eyebrow {
-    font-size: 16px;
-  }
-
   .about-hero-subtitle {
     font-size: 16px;
     margin-bottom: 28px;
   }
-
-  .divider {
-    max-width: 90px;
-  }
 }
 
-/* =========================
-   768
-========================= */
+/* ========================= 768 ========================= */
 @media (max-width: 768px) {
   .about-hero {
     padding: 28px 20px;
-  }
-
-  .about-eyebrow {
-    font-size: 14px;
-    padding: 6px 12px;
   }
 
   .about-hero-subtitle {
     font-size: 15px;
   }
 
-  .divider {
-    max-width: 72px;
-  }
-
   .about-hero-image-container {
-    min-height: 280px;
-    border-bottom-left-radius: 36px;
-    border-bottom-right-radius: 36px;
-  }
-
-  .about-hero-image-container img {
-    border-bottom-left-radius: 36px;
-    border-bottom-right-radius: 36px;
+    height: 260px;
+    border-radius: 0 0 36px 36px;
   }
 }
 
-/* =========================
-   480
-========================= */
+/* ========================= 480 ========================= */
 @media (max-width: 480px) {
   .about-hero {
     padding: 28px 16px;
-  }
-
-  .about-eyebrow {
-    font-size: 13px;
   }
 
   .about-hero-subtitle {
     font-size: 14px;
   }
 
-  .divider {
-    max-width: 56px;
-  }
-
   .about-hero-image-container {
-    min-height: 220px;
-    border-bottom-left-radius: 28px;
-    border-bottom-right-radius: 28px;
-  }
-
-  .about-hero-image-container img {
-    border-bottom-left-radius: 28px;
-    border-bottom-right-radius: 28px;
+    height: 220px;
+    border-radius: 0 0 28px 28px;
   }
 }
 /* MISSION */
@@ -387,7 +314,9 @@
     transform 0.7s ease,
     box-shadow 0.3s ease;
 }
-
+.mission-grid p{
+  text-align: justify;
+}
 .mission-grid img:hover {
   transform: scale(1.05);
   box-shadow: 0 18px 36px rgba(0, 0, 0, 0.14);
@@ -469,7 +398,9 @@
   grid-template-columns: 1fr 1fr;
   gap: 30px;
 }
-
+.leadership-grid p{
+  text-align: justify;
+}
 .leadership-grid img {
   width: 100%;
   display: block;

@@ -13,12 +13,10 @@
   position: relative;
   display: grid;
   grid-template-columns: 1.15fr 1fr;
-  min-height: 620px;
   align-items: center;
   margin-top: 81px;
   padding: 50px 0;
   overflow: hidden;
-
   background:
     radial-gradient(
       circle at 12% 18%,
@@ -32,7 +30,6 @@
       transparent 30%
     ),
     linear-gradient(135deg, #0f2f4a 0%, var(--accent2) 55%, #153d5f 100%);
-
   isolation: isolate;
 }
 
@@ -48,6 +45,7 @@
     rgba(0, 0, 0, 0.14) 100%
   );
   z-index: 1;
+  pointer-events: none;
 }
 
 /* CONTENT */
@@ -82,6 +80,7 @@
   color: rgba(255, 255, 255, 0.9);
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.18);
   animation-delay: 0.34s;
+  text-align: justify;
 }
 
 /* DIVIDER */
@@ -90,9 +89,7 @@
   max-width: 120px;
   height: 3px;
   border-radius: 999px;
-
   background: linear-gradient(90deg, var(--accent1), rgba(255, 255, 255, 0.45));
-
   box-shadow: 0 0 18px rgba(37, 99, 235, 0.16);
   animation-delay: 0.5s;
 }
@@ -102,19 +99,15 @@
   position: relative;
   z-index: 2;
   width: 100%;
-  height: 100%;
-  min-height: 620px;
-
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-
+  height: 320px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  justify-content: stretch;
   overflow: hidden;
   border-top-left-radius: 80px;
   border-bottom-left-radius: 80px;
-
   box-shadow: -24px 0 50px rgba(0, 0, 0, 0.16);
-
   opacity: 0;
   transform: translateX(36px) scale(1.02);
   animation: caeHeroImageIn 1s ease forwards;
@@ -139,16 +132,22 @@
       rgba(0, 0, 0, 0.12)
     );
   z-index: 1;
+  pointer-events: none;
 }
 
 .cae-hero-image-container img {
   width: 100%;
   height: 100%;
-  min-height: 620px;
   object-fit: cover;
-
+  display: block;
   transform: scale(1.03);
   animation: caeHeroZoom 9s ease-out forwards;
+  will-change: transform;
+}
+
+.cae-hero-image-container img:first-child {
+  border-top-left-radius: 80px;
+  border-bottom-left-radius: 80px;
 }
 
 /* ANIMATIONS (UNCHANGED) */
@@ -193,10 +192,14 @@
   }
 
   .cae-hero-subtitle {
-    font-size: 18px; /* FIX */
+    font-size: 18px;
   }
 
-  .cae-hero-image-container img {
+  .cae-hero-image-container {
+    height: 300px;
+  }
+
+  .cae-hero-image-container img:first-child {
     border-top-left-radius: 70px;
     border-bottom-left-radius: 70px;
   }
@@ -216,21 +219,21 @@
   }
 
   .cae-hero-subtitle {
-    font-size: 18px; /* FIX (was 16) */
+    font-size: 18px;
   }
 
   .cae-hero-image-container {
-    min-height: 420px;
+    height: 360px;
   }
 
-  .cae-hero-image-container img {
+  .cae-hero-image-container img:first-child {
     border-top-left-radius: 56px;
     border-bottom-left-radius: 56px;
   }
 }
 
 /* =========================
-   1024 (FIXED PROPERLY)
+   1024
 ========================= */
 @media (max-width: 1024px) {
   .cae-hero {
@@ -241,7 +244,7 @@
 
   .cae-hero-image-container {
     order: 1;
-    min-height: 360px;
+    height: 320px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
@@ -249,8 +252,14 @@
   }
 
   .cae-hero-image-container img {
-    border-top-left-radius: 0;
+    border-radius: 0;
+  }
+
+  .cae-hero-image-container img:first-child {
     border-bottom-left-radius: 50px;
+  }
+
+  .cae-hero-image-container img:last-child {
     border-bottom-right-radius: 50px;
   }
 
@@ -289,13 +298,20 @@
   }
 
   .cae-hero-image-container {
-    min-height: 280px;
+    height: 260px;
     border-bottom-left-radius: 36px;
     border-bottom-right-radius: 36px;
   }
 
   .cae-hero-image-container img {
+    border-radius: 0;
+  }
+
+  .cae-hero-image-container img:first-child {
     border-bottom-left-radius: 36px;
+  }
+
+  .cae-hero-image-container img:last-child {
     border-bottom-right-radius: 36px;
   }
 }
@@ -318,16 +334,24 @@
   }
 
   .cae-hero-image-container {
-    min-height: 220px;
+    height: 220px;
     border-bottom-left-radius: 28px;
     border-bottom-right-radius: 28px;
   }
 
   .cae-hero-image-container img {
+    border-radius: 0;
+  }
+
+  .cae-hero-image-container img:first-child {
     border-bottom-left-radius: 28px;
+  }
+
+  .cae-hero-image-container img:last-child {
     border-bottom-right-radius: 28px;
   }
 }
+
 /* SERVICES */
 .cae-capabilities {
   background: #f4f4f4;
@@ -780,6 +804,7 @@
 
 .cae-cta-right .section-subtitle {
   color: rgba(255, 255, 255, 0.9);
+  text-align: justify;
 }
 
 .cae-cta-overlay h2 {

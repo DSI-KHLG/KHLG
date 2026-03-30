@@ -100,10 +100,7 @@
   z-index: 2;
   width: 100%;
   height: 320px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: stretch;
-  justify-content: stretch;
+  display: block;
   overflow: hidden;
   border-top-left-radius: 80px;
   border-bottom-left-radius: 80px;
@@ -143,9 +140,6 @@
   transform: scale(1.03);
   animation: caeHeroZoom 9s ease-out forwards;
   will-change: transform;
-}
-
-.cae-hero-image-container img:first-child {
   border-top-left-radius: 80px;
   border-bottom-left-radius: 80px;
 }
@@ -199,7 +193,7 @@
     height: 300px;
   }
 
-  .cae-hero-image-container img:first-child {
+  .cae-hero-image-container img {
     border-top-left-radius: 70px;
     border-bottom-left-radius: 70px;
   }
@@ -226,7 +220,7 @@
     height: 360px;
   }
 
-  .cae-hero-image-container img:first-child {
+  .cae-hero-image-container img {
     border-top-left-radius: 56px;
     border-bottom-left-radius: 56px;
   }
@@ -253,13 +247,7 @@
 
   .cae-hero-image-container img {
     border-radius: 0;
-  }
-
-  .cae-hero-image-container img:first-child {
     border-bottom-left-radius: 50px;
-  }
-
-  .cae-hero-image-container img:last-child {
     border-bottom-right-radius: 50px;
   }
 
@@ -305,13 +293,7 @@
 
   .cae-hero-image-container img {
     border-radius: 0;
-  }
-
-  .cae-hero-image-container img:first-child {
     border-bottom-left-radius: 36px;
-  }
-
-  .cae-hero-image-container img:last-child {
     border-bottom-right-radius: 36px;
   }
 }
@@ -341,13 +323,7 @@
 
   .cae-hero-image-container img {
     border-radius: 0;
-  }
-
-  .cae-hero-image-container img:first-child {
     border-bottom-left-radius: 28px;
-  }
-
-  .cae-hero-image-container img:last-child {
     border-bottom-right-radius: 28px;
   }
 }

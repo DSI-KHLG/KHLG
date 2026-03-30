@@ -1500,7 +1500,6 @@ section[id] {
   line-height: 1.7;
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.2);
   animation-delay: 0.45s;
-  text-align: justify;
 }
 
 /* BUTTONS */
@@ -3986,11 +3985,7 @@ section[id] {
   align-items: flex-start;
   gap: 20px;
   padding: 30px;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.98) 0%,
-    rgba(248, 251, 255, 0.97) 100%
-  );
+  background: var(--white1);
   color: var(--subtitles);
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.14);

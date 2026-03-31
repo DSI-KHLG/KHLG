@@ -178,8 +178,8 @@
   z-index: 2;
   height: 620px;
   overflow: hidden;
-  border-top-left-radius: 180px;
-  border-bottom-left-radius: 180px;
+  border-top-left-radius: 80px;
+  border-bottom-left-radius: 80px;
   box-shadow: -24px 0 50px rgba(0, 0, 0, 0.16);
   opacity: 0;
   transform: translateX(36px) scale(1.02);

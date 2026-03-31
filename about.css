@@ -12,7 +12,7 @@
   position: relative;
   display: grid;
   grid-template-columns: 1.15fr 1fr;
-  align-items: center;
+  align-items: start; /* ✅ applied */
   overflow: hidden;
   margin-top: 81px;
   padding: 50px 0;
@@ -88,6 +88,7 @@
 }
 
 .about-title {
+  margin-top: 0;
   margin-bottom: 20px;
   color: var(--white1);
   letter-spacing: -1px;
@@ -97,6 +98,7 @@
 }
 
 .about-hero-subtitle {
+  margin-top: 0;
   margin-bottom: 34px;
   font-size: 24px;
   line-height: 1.7;
@@ -125,14 +127,15 @@
   position: relative;
   z-index: 2;
   width: 100%;
-  height: 320px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  height: 100%; /* ✅ added */
+  min-height: 100%; /* ✅ added */
+  align-self: stretch; /* ✅ added */
+
   overflow: hidden;
   border-top-left-radius: 80px;
   border-bottom-left-radius: 80px;
   box-shadow: -24px 0 50px rgba(0, 0, 0, 0.14);
+
   opacity: 0;
   transform: translateX(36px) scale(1.02);
   animation: aboutHeroImageIn 1s ease forwards;
@@ -160,6 +163,8 @@
 }
 
 .about-hero-image-container img {
+  position: absolute; /* ✅ your system */
+  inset: 0; /* ✅ your system */
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -201,7 +206,8 @@
   }
 }
 
-/* ========================= 1400 ========================= */
+/* ========================= RESPONSIVE ========================= */
+
 @media (max-width: 1400px) {
   .about-hero-content {
     padding-left: 100px;
@@ -211,13 +217,8 @@
   .about-hero-subtitle {
     font-size: 18px;
   }
-
-  .about-hero-image-container {
-    height: 300px;
-  }
 }
 
-/* ========================= 1200 ========================= */
 @media (max-width: 1200px) {
   .about-hero {
     grid-template-columns: 1fr 1fr;
@@ -231,13 +232,8 @@
   .about-hero-subtitle {
     font-size: 18px;
   }
-
-  .about-hero-image-container {
-    height: 360px;
-  }
 }
 
-/* ========================= 1024 ========================= */
 @media (max-width: 1024px) {
   .about-hero {
     grid-template-columns: 1fr;
@@ -246,14 +242,12 @@
   }
 
   .about-hero-image-container {
-    order: 1;
     height: 320px;
     border-radius: 0 0 50px 50px;
     box-shadow: none;
   }
 
   .about-hero-content {
-    order: 2;
     padding: 0;
   }
 
@@ -263,7 +257,6 @@
   }
 }
 
-/* ========================= 768 ========================= */
 @media (max-width: 768px) {
   .about-hero {
     padding: 28px 20px;
@@ -279,7 +272,6 @@
   }
 }
 
-/* ========================= 480 ========================= */
 @media (max-width: 480px) {
   .about-hero {
     padding: 28px 16px;
@@ -294,6 +286,7 @@
     border-radius: 0 0 28px 28px;
   }
 }
+
 /* MISSION */
 .mission {
   padding: 50px 160px;

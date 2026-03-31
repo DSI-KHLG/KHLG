@@ -13,7 +13,7 @@
   position: relative;
   display: grid;
   grid-template-columns: 1.15fr 1fr;
-  align-items: center;
+  align-items: start; /* ✅ applied */
   margin-top: 81px;
   padding: 50px 0;
   overflow: hidden;
@@ -57,7 +57,6 @@
   color: var(--white1);
 }
 
-/* STAGGER LOAD */
 .cae-hero-content > * {
   opacity: 0;
   transform: translateY(28px);
@@ -65,6 +64,7 @@
 }
 
 .cae-hero-content h1 {
+  margin-top: 0;
   margin-bottom: 20px;
   color: var(--white1);
   letter-spacing: -1px;
@@ -74,6 +74,7 @@
 }
 
 .cae-hero-subtitle {
+  margin-top: 0;
   margin-bottom: 34px;
   font-size: 24px;
   line-height: 1.7;
@@ -99,12 +100,15 @@
   position: relative;
   z-index: 2;
   width: 100%;
-  height: 320px;
-  display: block;
+  height: 100%; /* ✅ added */
+  min-height: 100%; /* ✅ added */
+  align-self: stretch; /* ✅ added */
+
   overflow: hidden;
   border-top-left-radius: 80px;
   border-bottom-left-radius: 80px;
   box-shadow: -24px 0 50px rgba(0, 0, 0, 0.16);
+
   opacity: 0;
   transform: translateX(36px) scale(1.02);
   animation: caeHeroImageIn 1s ease forwards;
@@ -133,6 +137,8 @@
 }
 
 .cae-hero-image-container img {
+  position: absolute; /* ✅ your system */
+  inset: 0; /* ✅ your system */
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -140,6 +146,7 @@
   transform: scale(1.03);
   animation: caeHeroZoom 9s ease-out forwards;
   will-change: transform;
+
   border-top-left-radius: 80px;
   border-bottom-left-radius: 80px;
 }
@@ -176,9 +183,7 @@
   }
 }
 
-/* =========================
-   1400
-========================= */
+/* ========================= 1400 ========================= */
 @media (max-width: 1400px) {
   .cae-hero-content {
     padding-left: 100px;
@@ -189,19 +194,14 @@
     font-size: 18px;
   }
 
-  .cae-hero-image-container {
-    height: 300px;
-  }
-
+  .cae-hero-image-container,
   .cae-hero-image-container img {
     border-top-left-radius: 70px;
     border-bottom-left-radius: 70px;
   }
 }
 
-/* =========================
-   1200
-========================= */
+/* ========================= 1200 ========================= */
 @media (max-width: 1200px) {
   .cae-hero {
     grid-template-columns: 1fr 1fr;
@@ -216,19 +216,14 @@
     font-size: 18px;
   }
 
-  .cae-hero-image-container {
-    height: 360px;
-  }
-
+  .cae-hero-image-container,
   .cae-hero-image-container img {
     border-top-left-radius: 56px;
     border-bottom-left-radius: 56px;
   }
 }
 
-/* =========================
-   1024
-========================= */
+/* ========================= 1024 ========================= */
 @media (max-width: 1024px) {
   .cae-hero {
     grid-template-columns: 1fr;
@@ -237,22 +232,16 @@
   }
 
   .cae-hero-image-container {
-    order: 1;
     height: 320px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+    border-radius: 0 0 50px 50px;
     box-shadow: none;
   }
 
   .cae-hero-image-container img {
-    border-radius: 0;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+    border-radius: 0 0 50px 50px;
   }
 
   .cae-hero-content {
-    order: 2;
     padding: 0;
     max-width: 100%;
   }
@@ -267,9 +256,7 @@
   }
 }
 
-/* =========================
-   768
-========================= */
+/* ========================= 768 ========================= */
 @media (max-width: 768px) {
   .cae-hero {
     gap: 28px;
@@ -287,20 +274,15 @@
 
   .cae-hero-image-container {
     height: 260px;
-    border-bottom-left-radius: 36px;
-    border-bottom-right-radius: 36px;
+    border-radius: 0 0 36px 36px;
   }
 
   .cae-hero-image-container img {
-    border-radius: 0;
-    border-bottom-left-radius: 36px;
-    border-bottom-right-radius: 36px;
+    border-radius: 0 0 36px 36px;
   }
 }
 
-/* =========================
-   480
-========================= */
+/* ========================= 480 ========================= */
 @media (max-width: 480px) {
   .cae-hero {
     gap: 24px;
@@ -317,17 +299,13 @@
 
   .cae-hero-image-container {
     height: 220px;
-    border-bottom-left-radius: 28px;
-    border-bottom-right-radius: 28px;
+    border-radius: 0 0 28px 28px;
   }
 
   .cae-hero-image-container img {
-    border-radius: 0;
-    border-bottom-left-radius: 28px;
-    border-bottom-right-radius: 28px;
+    border-radius: 0 0 28px 28px;
   }
 }
-
 /* SERVICES */
 .cae-capabilities {
   background: #f4f4f4;

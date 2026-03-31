@@ -168,7 +168,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top;
+  object-position: top center;
   display: block;
   transform: scale(1.03);
   animation: aboutHeroImageZoom 9s ease-out forwards;
@@ -295,7 +295,7 @@
 .mission-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  gap: 60px;
   align-items: start; /* ✅ same system */
 }
 
@@ -319,7 +319,7 @@
   object-fit: cover;
   display: block;
   border-radius: 8px;
-
+object-position: top center;
   transition:
     transform 0.7s ease,
     box-shadow 0.3s ease;
@@ -423,7 +423,7 @@
 .leadership-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  gap: 60px;
   align-items: start;
 }
 

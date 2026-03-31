@@ -1082,17 +1082,42 @@
 
 .civil-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
+  align-items: stretch;
 }
 
+.civil-card,
+.civil-cta {
+  height: 100%;
+  min-height: 280px;
+}
+
+/* CARD */
 .civil-card {
+  position: relative;
   background: rgba(255, 255, 255, 0.1);
-  padding: 20px;
+  padding: 40px 20px 20px; /* ✅ top offset */
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease,
     background 0.3s ease;
+}
+
+.civil-card::after {
+  content: "";
+  margin-top: auto;
+  width: 72px;
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.35);
+  display: block;
 }
 
 .civil-card:hover {
@@ -1104,7 +1129,7 @@
 .civil-card h4 {
   font-size: 36px;
   line-height: 1.2;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
   color: var(--white1);
 }
 
@@ -1112,11 +1137,18 @@
   font-size: 18px;
   line-height: 1.6;
   color: var(--white1);
+  margin-bottom: 20px;
 }
 
+/* CTA CARD */
 .civil-cta {
   background: var(--accent1);
-  padding: 50px;
+  padding: 40px 50px 50px; /* ✅ same top offset */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -1130,14 +1162,14 @@
 .civil-cta h3 {
   font-size: 36px;
   line-height: 1.2;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
   color: white;
 }
 
 .civil-cta p {
   font-size: 18px;
   line-height: 1.6;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   color: white;
 }
 
@@ -1150,6 +1182,8 @@
   text-decoration: none;
   font-weight: bold;
   text-align: center;
+  margin-top: auto;
+
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease,
@@ -1167,6 +1201,15 @@
 @media (max-width: 1400px) {
   .civil {
     padding: 50px 100px;
+  }
+
+  .civil-grid {
+    gap: 18px;
+  }
+
+  .civil-card,
+  .civil-cta {
+    min-height: 260px;
   }
 
   .civil-card h4,
@@ -1189,25 +1232,36 @@
   }
 
   .civil-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .civil-card,
+  .civil-cta {
+    min-height: 240px;
+  }
+
+  .civil-card {
+    padding: 36px 18px 18px; /* ✅ adjusted */
   }
 
   .civil-card h4,
   .civil-cta h3 {
-    font-size: 28px;
+    font-size: 24px;
   }
 
   .civil-card p,
   .civil-cta p {
     font-size: 16px;
+    line-height: 1.55;
   }
 
   .civil-cta {
-    padding: 36px;
+    padding: 36px 28px 28px; /* ✅ adjusted */
   }
 
   .civil-cta a {
-    padding: 18px;
+    padding: 16px;
   }
 }
 
@@ -1224,26 +1278,32 @@
     gap: 18px;
   }
 
+  .civil-card,
+  .civil-cta {
+    min-height: 230px;
+  }
+
   .civil-card {
-    padding: 18px;
+    padding: 32px 18px 18px;
   }
 
   .civil-card h4,
   .civil-cta h3 {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .civil-card p,
   .civil-cta p {
-    font-size: 16px;
+    font-size: 15px;
+    line-height: 1.55;
   }
 
   .civil-cta {
-    padding: 28px;
+    padding: 32px 24px 24px;
   }
 
   .civil-cta a {
-    padding: 16px;
+    padding: 15px;
   }
 }
 
@@ -1260,8 +1320,14 @@
     gap: 16px;
   }
 
+  .civil-card,
+  .civil-cta {
+    min-height: 0;
+    height: auto;
+  }
+
   .civil-card {
-    padding: 18px;
+    padding: 28px 18px 18px;
   }
 
   .civil-card h4,
@@ -1276,7 +1342,7 @@
   }
 
   .civil-cta {
-    padding: 24px 20px;
+    padding: 28px 20px 20px;
   }
 
   .civil-cta a {
@@ -1293,7 +1359,7 @@
   }
 
   .civil-card {
-    padding: 16px;
+    padding: 24px 16px 16px;
   }
 
   .civil-card h4,
@@ -1307,7 +1373,7 @@
   }
 
   .civil-cta {
-    padding: 20px 16px;
+    padding: 24px 16px 16px;
   }
 
   .civil-cta a {

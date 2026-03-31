@@ -296,22 +296,40 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
+  align-items: start; /* ✅ same system */
 }
 
-.mission-grid img {
+/* IMAGE CONTAINER */
+.mission-image-container {
+  position: relative;
   width: 100%;
+  height: 100%;
+  min-height: 100%;
+  align-self: stretch;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/* IMAGE (controlled, not affecting height) */
+.mission-image-container img {
+  position: absolute; /* ✅ same system */
+  inset: 0; /* ✅ same system */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
   border-radius: 8px;
-  max-height: 500px;
-  object-fit: cover;
+
   transition:
     transform 0.7s ease,
     box-shadow 0.3s ease;
 }
+
 .mission-grid p {
   text-align: justify;
 }
-.mission-grid img:hover {
+
+.mission-image-container:hover img {
   transform: scale(1.05);
   box-shadow: 0 18px 36px rgba(0, 0, 0, 0.14);
 }
@@ -354,6 +372,11 @@
     grid-template-columns: 1fr;
     gap: 24px;
   }
+
+  .mission-image-container {
+    height: 320px;
+    min-height: 320px;
+  }
 }
 
 /* =========================
@@ -367,6 +390,11 @@
   .mission-grid {
     gap: 20px;
   }
+
+  .mission-image-container {
+    height: 260px;
+    min-height: 260px;
+  }
 }
 
 /* =========================
@@ -379,6 +407,11 @@
 
   .mission-grid {
     gap: 16px;
+  }
+
+  .mission-image-container {
+    height: 220px;
+    min-height: 220px;
   }
 }
 
@@ -391,23 +424,37 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
+  align-items: start;
 }
+
 .leadership-grid p {
   text-align: justify;
 }
-.leadership-grid img {
+
+.leadership-image-container {
+  position: relative;
   width: 100%;
+  height: 100%;
+  min-height: 100%;
+  align-self: stretch;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.leadership-image-container img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   display: block;
   border-radius: 8px;
-  max-height: 500px;
   object-fit: cover;
-
   transition:
     transform 0.7s ease,
     box-shadow 0.3s ease;
 }
 
-.leadership-grid img:hover {
+.leadership-image-container:hover img {
   transform: scale(1.05);
   box-shadow: 0 18px 36px rgba(0, 0, 0, 0.14);
 }
@@ -450,6 +497,11 @@
     grid-template-columns: 1fr;
     gap: 24px;
   }
+
+  .leadership-image-container {
+    height: 320px;
+    min-height: 320px;
+  }
 }
 
 /* =========================
@@ -463,6 +515,11 @@
   .leadership-grid {
     gap: 20px;
   }
+
+  .leadership-image-container {
+    height: 260px;
+    min-height: 260px;
+  }
 }
 
 /* =========================
@@ -475,6 +532,11 @@
 
   .leadership-grid {
     gap: 16px;
+  }
+
+  .leadership-image-container {
+    height: 220px;
+    min-height: 220px;
   }
 }
 

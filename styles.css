@@ -1880,7 +1880,6 @@ section[id] {
   transition: transform 0.7s ease;
 }
 
-
 /* RIGHT CONTENT */
 .about-content {
   padding: 50px 160px 50px 50px;
@@ -2488,7 +2487,7 @@ section[id] {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: right center;
   display: block;
   transform: scale(1.02);
   transition: transform 0.8s ease;

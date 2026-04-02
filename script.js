@@ -84,19 +84,122 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =========================
      NAV SEARCH HELPERS
   ========================= */
-  const allDesktopSearchLinks = [
-    ...desktopTopLinks,
-    ...(desktopDropdownToggle ? [desktopDropdownToggle] : []),
-    ...desktopDropdownLinks,
+  const searchItems = [
+    {
+      title: "Home",
+      keywords: ["home", "landing", "main", "index"],
+      url: "index.html",
+    },
+    {
+      title: "About",
+      keywords: ["about", "company", "who we are", "team", "mission"],
+      url: "about.html",
+    },
+    {
+      title: "Projects",
+      keywords: ["projects", "work", "portfolio", "featured projects"],
+      url: "projects.html",
+    },
+    {
+      title: "Services",
+      keywords: ["services", "what we do", "solutions"],
+      url: "services.html",
+    },
+    {
+      title: "Project & Construction Management",
+      keywords: ["project management", "construction management", "pcm"],
+      url: "project-and-construction-management.html",
+    },
+    {
+      title: "Environmental Services",
+      keywords: [
+        "environmental",
+        "environmental services",
+        "hazardous waste",
+        "air permit",
+      ],
+      url: "environmental-services.html",
+    },
+    {
+      title: "Civil & Engineering Support",
+      keywords: [
+        "civil",
+        "engineering support",
+        "technical review",
+        "constructability",
+      ],
+      url: "civil-and-engineering-support.html",
+    },
+    {
+      title: "Scheduling & Project Controls",
+      keywords: ["scheduling", "project controls", "primavera", "p6", "cpm"],
+      url: "scheduling-and-project-controls.html",
+    },
+    {
+      title: "Special Inspection",
+      keywords: ["special inspection", "inspection", "quality control"],
+      url: "special-inspection.html",
+    },
+    {
+      title: "Technology Solutions",
+      keywords: [
+        "technology",
+        "technology solutions",
+        "procore",
+        "bim",
+        "digital tools",
+      ],
+      url: "technology-solutions.html",
+    },
+    {
+      title: "Additional Services",
+      keywords: [
+        "additional services",
+        "claims",
+        "dispute resolution",
+        "consulting",
+      ],
+      url: "services.html#additional",
+    },
+    {
+      title: "Contact",
+      keywords: ["contact", "get in touch", "consultation", "email", "phone"],
+      url: "#contactModal",
+      action: "modal",
+    },
   ];
 
-  const allMobileSearchLinks = [
-    ...mobileTopLinks,
-    ...(mobileServicesLink ? [mobileServicesLink] : []),
-    ...mobileDropdownLinks,
-  ];
+  const desktopSearchWrapper = desktopSearchInput
+    ? desktopSearchInput.closest(".nav-search")
+    : null;
 
-  const syncSearchInputs = (value, source) => {
+  const mobileSearchWrapper = mobileSearchInput
+    ? mobileSearchInput.closest(".nav-search")
+    : null;
+
+  function createSuggestionsBox(wrapper, type) {
+    if (!wrapper) return null;
+
+    let box = wrapper.querySelector(`.search-suggestions.${type}`);
+    if (box) return box;
+
+    box = document.createElement("div");
+    box.className = `search-suggestions ${type}`;
+    wrapper.appendChild(box);
+
+    return box;
+  }
+
+  const desktopSuggestionsBox = createSuggestionsBox(
+    desktopSearchWrapper,
+    "desktop",
+  );
+  const mobileSuggestionsBox = createSuggestionsBox(
+    mobileSearchWrapper,
+    "mobile",
+  );
+
+  function syncSearchInputs(value, source) {
     if (source !== "desktop" && desktopSearchInput) {
       desktopSearchInput.value = value;
     }
@@ -104,41 +207,175 @@ document.addEventListener("DOMContentLoaded", () => {
     if (source !== "mobile" && mobileSearchInput) {
       mobileSearchInput.value = value;
     }
-  };
+  }
 
-  const filterSearchLinks = (value, links) => {
-    links.forEach((link) => {
-      const text = link.textContent.toLowerCase().trim();
-      link.style.display = text.includes(value) || value === "" ? "" : "none";
-    });
-  };
+  function normalizeText(text) {
+    return text.toLowerCase().trim();
+  }
 
-  const getFirstSearchMatch = (value, links) => {
-    return links.find((link) => {
-      const text = link.textContent.toLowerCase().trim();
-      return text.includes(value);
-    });
-  };
+  function scoreSearchItem(item, query) {
+    const normalizedQuery = normalizeText(query);
+    const title = normalizeText(item.title);
+    const keywords = item.keywords.map(normalizeText);
 
-  const handleNavSearch = (value, source) => {
-    const normalizedValue = value.toLowerCase().trim();
+    let score = 0;
+
+    if (title === normalizedQuery) score += 100;
+    if (keywords.includes(normalizedQuery)) score += 90;
+    if (title.startsWith(normalizedQuery)) score += 70;
+    if (keywords.some((keyword) => keyword.startsWith(normalizedQuery)))
+      score += 60;
+    if (title.includes(normalizedQuery)) score += 40;
+    if (keywords.some((keyword) => keyword.includes(normalizedQuery)))
+      score += 30;
+
+    return score;
+  }
+
+  function getSearchSuggestions(query) {
+    const normalizedQuery = normalizeText(query);
+    if (!normalizedQuery) return [];
+
+    return searchItems
+      .map((item) => ({
+        ...item,
+        score: scoreSearchItem(item, normalizedQuery),
+      }))
+      .filter((item) => item.score > 0)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 6);
+  }
+
+  function renderSuggestions(box, suggestions) {
+    if (!box) return;
+
+    if (!suggestions.length) {
+      box.innerHTML = "";
+      box.classList.remove("active");
+      return;
+    }
+
+    box.innerHTML = suggestions
+      .map(
+        (item) => `
+        <button
+          type="button"
+          class="search-suggestion-item"
+          data-url="${item.url}"
+          data-action="${item.action || "link"}"
+        >
+          <span class="search-suggestion-title">${item.title}</span>
+          <span class="search-suggestion-url">${item.url}</span>
+        </button>
+      `,
+      )
+      .join("");
+
+    box.classList.add("active");
+  }
+
+  function hideSuggestions() {
+    if (desktopSuggestionsBox) {
+      desktopSuggestionsBox.innerHTML = "";
+      desktopSuggestionsBox.classList.remove("active");
+    }
+
+    if (mobileSuggestionsBox) {
+      mobileSuggestionsBox.innerHTML = "";
+      mobileSuggestionsBox.classList.remove("active");
+    }
+  }
+
+  function openSearchResult(item) {
+    if (!item) return;
+
+    if (item.action === "modal" && item.url === "#contactModal") {
+      const contactModal = document.getElementById("contactModal");
+      if (contactModal) {
+        contactModal.classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+      return;
+    }
+
+    window.location.href = item.url;
+  }
+
+  function handleNavSearch(value, source) {
+    const suggestions = getSearchSuggestions(value);
 
     syncSearchInputs(value, source);
-    filterSearchLinks(normalizedValue, allDesktopSearchLinks);
-    filterSearchLinks(normalizedValue, allMobileSearchLinks);
-  };
 
-  const handleSearchEnter = (value, links) => {
-    const normalizedValue = value.toLowerCase().trim();
-
-    if (!normalizedValue) return;
-
-    const match = getFirstSearchMatch(normalizedValue, links);
-
-    if (match && match.getAttribute("href")) {
-      window.location.href = match.getAttribute("href");
+    if (source === "desktop") {
+      renderSuggestions(desktopSuggestionsBox, suggestions);
+      renderSuggestions(mobileSuggestionsBox, suggestions);
+    } else {
+      renderSuggestions(mobileSuggestionsBox, suggestions);
+      renderSuggestions(desktopSuggestionsBox, suggestions);
     }
-  };
+  }
+
+  function handleSearchEnter(value) {
+    const suggestions = getSearchSuggestions(value);
+    if (!suggestions.length) return;
+
+    openSearchResult(suggestions[0]);
+  }
+
+  function bindSearchInput(input, source) {
+    if (!input) return;
+
+    input.addEventListener("input", function () {
+      handleNavSearch(this.value, source);
+    });
+
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        handleSearchEnter(this.value);
+      }
+    });
+
+    input.addEventListener("focus", function () {
+      if (this.value.trim() !== "") {
+        handleNavSearch(this.value, source);
+      }
+    });
+  }
+
+  bindSearchInput(desktopSearchInput, "desktop");
+  bindSearchInput(mobileSearchInput, "mobile");
+
+  document.addEventListener("click", function (e) {
+    const suggestionButton = e.target.closest(".search-suggestion-item");
+
+    if (suggestionButton) {
+      const matchedItem = searchItems.find(
+        (item) =>
+          item.url === suggestionButton.dataset.url &&
+          (item.action || "link") === suggestionButton.dataset.action,
+      );
+
+      if (matchedItem) {
+        openSearchResult(matchedItem);
+        hideSuggestions();
+
+        if (desktopSearchInput) desktopSearchInput.value = matchedItem.title;
+        if (mobileSearchInput) mobileSearchInput.value = matchedItem.title;
+      }
+
+      return;
+    }
+
+    const clickedInsideDesktop =
+      desktopSearchWrapper && desktopSearchWrapper.contains(e.target);
+    const clickedInsideMobile =
+      mobileSearchWrapper && mobileSearchWrapper.contains(e.target);
+
+    if (!clickedInsideDesktop && !clickedInsideMobile) {
+      hideSuggestions();
+    }
+  });
 
   /* =========================
      NAVBAR SCROLL EFFECT

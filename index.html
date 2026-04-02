@@ -51,9 +51,13 @@
         <div class="nav-right">
           <a class="contact-btn contact-modal-open-btn">CONTACT</a>
 
-          <div class="search-box">
+          <div class="search-box nav-search">
             <i class="fa-solid fa-magnifying-glass search-icon"></i>
-            <input type="text" placeholder="Search" />
+            <input
+              type="text"
+              class="nav-search-input desktop-search"
+              placeholder="Search"
+            />
           </div>
 
           <button
@@ -123,6 +127,7 @@
           class="contact-modal-close"
           id="closeContactModal"
           aria-label="Close modal"
+          type="button"
         >
           &times;
         </button>
@@ -169,16 +174,32 @@
         </div>
 
         <div class="contact-modal-right">
-          <form class="contact-modal-form">
+          <form class="contact-modal-form" id="contactForm" novalidate>
+            <input type="hidden" name="form_source" value="contact-modal" />
+            <input type="hidden" name="page_source" id="pageSource" value="" />
+            <input type="hidden" name="hero_source" id="heroSource" value="" />
+
             <div class="contact-form-row two-col">
               <div class="contact-form-group">
                 <label for="firstName">FIRST NAME</label>
-                <input type="text" id="firstName" placeholder="John" />
+                <input
+                  type="text"
+                  id="firstName"
+                  name="first_name"
+                  placeholder="John"
+                />
+                <small class="field-error" id="firstNameError"></small>
               </div>
 
               <div class="contact-form-group">
                 <label for="lastName">LAST NAME</label>
-                <input type="text" id="lastName" placeholder="Doe" />
+                <input
+                  type="text"
+                  id="lastName"
+                  name="last_name"
+                  placeholder="Doe"
+                />
+                <small class="field-error" id="lastNameError"></small>
               </div>
             </div>
 
@@ -187,8 +208,10 @@
               <input
                 type="text"
                 id="contactNumber"
+                name="contact_number"
                 placeholder="671-478-5454"
               />
+              <small class="field-error" id="contactNumberError"></small>
             </div>
 
             <div class="contact-form-group">
@@ -196,37 +219,64 @@
               <input
                 type="email"
                 id="emailAddress"
+                name="email_address"
                 placeholder="john@company.com"
               />
+              <small class="field-error" id="emailAddressError"></small>
             </div>
 
             <div class="contact-form-group">
               <label for="company">COMPANY (OPTIONAL)</label>
-              <input type="text" id="company" placeholder="Company Name" />
+              <input
+                type="text"
+                id="company"
+                name="company"
+                placeholder="Company Name"
+              />
+              <small class="field-error" id="companyError"></small>
             </div>
 
             <div class="contact-form-group">
               <label for="serviceInterest">SERVICE INTEREST</label>
-              <select id="serviceInterest">
+              <select id="serviceInterest" name="service_interest">
                 <option value="">Select a service...</option>
-                <option>Project & Construction Management</option>
-                <option>Environmental Services</option>
-                <option>Civil & Engineering Support</option>
-                <option>Scheduling & Project Controls</option>
-                <option>Special Inspection</option>
-                <option>Technology Solutions</option>
+                <option value="Project & Construction Management">
+                  Project & Construction Management
+                </option>
+                <option value="Environmental Services">
+                  Environmental Services
+                </option>
+                <option value="Civil & Engineering Support">
+                  Civil & Engineering Support
+                </option>
+                <option value="Scheduling & Project Controls">
+                  Scheduling & Project Controls
+                </option>
+                <option value="Special Inspection">Special Inspection</option>
+                <option value="Technology Solutions">
+                  Technology Solutions
+                </option>
               </select>
+              <small class="field-error" id="serviceInterestError"></small>
             </div>
 
             <div class="contact-form-group">
               <label for="message">MESSAGE</label>
               <textarea
                 id="message"
+                name="message"
                 placeholder="Tell us about your request..."
               ></textarea>
+              <small class="field-error" id="messageError"></small>
             </div>
 
-            <button type="submit" class="contact-submit-btn">
+            <div class="form-status-message" id="formStatusMessage"></div>
+
+            <button
+              type="submit"
+              class="contact-submit-btn"
+              id="contactSubmitBtn"
+            >
               Send Message
             </button>
           </form>
@@ -907,10 +957,11 @@
         </div>
       </div>
     </footer>
-    <script src="script.js"></script>
 
     <button id="scrollTopBtn" aria-label="Scroll to top">
       <i class="fa-solid fa-arrow-up"></i>
     </button>
+    <script src="script.js"></script>
+    <script src="backend.js"></script>
   </body>
 </html>

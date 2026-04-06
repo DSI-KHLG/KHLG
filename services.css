@@ -1952,3 +1952,243 @@
     padding: 6px 10px;
   }
 }
+/*quality management*/
+.quality-management {
+  padding: 50px 160px;
+  background: var(--white1);
+}
+
+.quality-management-container {
+  width: 100%;
+}
+
+.quality-management-intro {
+  max-width: 950px;
+  margin-bottom: 40px;
+}
+
+.quality-plan {
+  background: #f8fafc;
+  border: 1px solid rgba(16, 42, 67, 0.1);
+  border-radius: 20px;
+  padding: 32px;
+  margin-bottom: 30px;
+}
+
+.quality-framework-card h3,
+.quality-bottom-card h3 {
+  font-family: Oswald, sans-serif;
+  font-size: 28px;
+  line-height: 1.2;
+  color: var(--accent2);
+  margin-bottom: 12px;
+}
+
+.quality-plan-text p,
+.quality-framework-card p,
+.quality-bottom-card p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #334155;
+}
+
+.quality-pillars {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.quality-pillar {
+  background: #ffffff;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: 14px;
+  padding: 18px 14px;
+  text-align: center;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+.quality-pillar span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  background: var(--accent1);
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.quality-pillar p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--accent2);
+  margin: 0;
+}
+
+.quality-framework-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.quality-framework-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 28px 24px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+  border-top: 4px solid var(--accent1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.quality-framework-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.12);
+}
+
+.quality-framework-number {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(37, 99, 235, 0.12);
+  color: var(--accent1);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.quality-bottom-card {
+  background: linear-gradient(
+    135deg,
+    rgba(16, 42, 67, 0.98) 0%,
+    rgba(21, 61, 95, 0.96) 100%
+  );
+  border-radius: 20px;
+  padding: 32px;
+}
+
+.quality-bottom-card h3,
+.quality-bottom-card p {
+  color: #fff;
+}
+
+/* =========================
+   1400
+========================= */
+@media (max-width: 1400px) {
+  .quality-management {
+    padding: 50px 100px;
+  }
+
+  .quality-pillars {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .quality-framework-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================
+   1200
+========================= */
+@media (max-width: 1200px) {
+  .quality-management {
+    padding: 50px 60px;
+  }
+
+  .quality-framework-card h3,
+  .quality-bottom-card h3 {
+    font-size: 24px;
+  }
+  .quality-framework-card p,
+  .quality-bottom-card p {
+    font-size: 16px;
+  }
+
+  .quality-pillars {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* =========================
+   1024
+========================= */
+@media (max-width: 1024px) {
+  .quality-management {
+    padding: 36px 40px;
+  }
+
+  .quality-plan,
+  .quality-bottom-card {
+    padding: 24px;
+  }
+
+  .quality-framework-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .quality-pillars {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================
+   768
+========================= */
+@media (max-width: 768px) {
+  .quality-management {
+    padding: 28px 20px;
+  }
+
+  .quality-framework-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quality-pillars {
+    grid-template-columns: 1fr;
+  }
+
+  .quality-framework-card h3,
+  .quality-bottom-card h3 {
+    font-size: 22px;
+  }
+  .quality-framework-card p,
+  .quality-bottom-card p {
+    font-size: 15px;
+  }
+}
+
+/* =========================
+   480
+========================= */
+@media (max-width: 480px) {
+  .quality-management {
+    padding: 28px 16px;
+  }
+
+  .quality-plan,
+  .quality-framework-card,
+  .quality-bottom-card {
+    padding: 20px;
+  }
+
+  .quality-framework-card h3,
+  .quality-bottom-card h3 {
+    font-size: 20px;
+  }
+  .quality-framework-card p,
+  .quality-bottom-card p,
+  .quality-pillar p {
+    font-size: 14px;
+  }
+}

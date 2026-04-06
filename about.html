@@ -389,7 +389,13 @@
           <h3>PRINCIPALS</h3>
 
           <div class="principals-grid">
-            <div class="team-card large reveal reveal-up delay-1">
+            <div
+              class="team-card principals-card large reveal reveal-up delay-1"
+              data-name="Kent Hsieh, P.E."
+              data-role="PRINCIPAL"
+              data-img="images/org chart/Kent-Hsieh-r2-sm.jpeg"
+              data-desc="Mr. Hsieh has over 40 years of experience in engineering with emphasis on construction management and contract administration for various airport, government, and private industry projects. He is knowledgeable and very familiar with the FAA Airport Improvement Program as well FAA Advisory Circulars, as he has been working on FAA projects since 1985. Mr. Hsieh had engineering oversight of the existing GIAA Terminal Building as the previous Chief Engineer of the Guam Airport Authority and was the Principal-In-Charge/Construction Manager of the recently completed $136M GIAA Terminal Building Structural Upgrade and Concourse Isolation Project. He is also very knowledgeable in the U.S. Navy Construction Quality Management program, computer-aided design and GIS programs, Primavera Project Scheduling, and planning, and is a subject matter expert in the Procore Project Management and Control software."
+            >
               <img
                 src="images/org chart/Kent-Hsieh-r2-sm.jpeg"
                 alt="Kent Hsieh"
@@ -397,12 +403,38 @@
               <div class="name-tag">Kent Hsieh, P.E.</div>
             </div>
 
-            <div class="team-card large reveal reveal-up delay-2">
+            <div
+              class="team-card large principals-card reveal reveal-up delay-2"
+              data-name="Vicente Ada II, P.E., CES"
+              data-role="PRINCIPAL"
+              data-img="images/org chart/vicente-ada-1.jpg"
+              data-desc="As a Professional Engineer, Mr. Ada has 13 years of project management and engineer experience with NAVFAC Marianas and KHLG for various environmental projects. Mr. Ada has worked under the Environmental Restoration Program, with a focus on Munition Response Sites in Guam (Andersen Air Force Base & Naval Base Guam), Tinian, and the CNMI. Some key restoration projects Mr. Ada contributed toward are the Tinian Mortar Range, Chiget Beach Non-Time Critical Removal Action, Former EOD Disposal Range AAFB, and the Spanish Steps Trap and Skeet Range in Naval Base Guam. Mr. Ada also has extensive experience on contract negotiation, government scope development, and cost analysis/estimation for various environmental projects."
+            >
               <img
                 src="images/org chart/vicente-ada-1.jpg"
                 alt="Vicente Ada II"
               />
               <div class="name-tag">Vicente Ada II, P.E., CES</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-modal" id="teamModal">
+          <div class="team-modal-overlay"></div>
+
+          <div class="team-modal-content">
+            <button class="team-modal-close">&times;</button>
+
+            <div class="team-modal-grid">
+              <div class="team-modal-image">
+                <img id="modalImg" src="" alt="" />
+              </div>
+
+              <div class="team-modal-text">
+                <p class="team-modal-eyebrow" id="modalRole"></p>
+                <h3 id="modalName"></h3>
+                <p id="modalDesc"></p>
+              </div>
             </div>
           </div>
         </div>
@@ -569,4 +601,40 @@
       <i class="fa-solid fa-arrow-up"></i>
     </button>
   </body>
+
+  <script>
+    const modal = document.getElementById("teamModal");
+    const modalImg = document.getElementById("modalImg");
+    const modalName = document.getElementById("modalName");
+    const modalRole = document.getElementById("modalRole");
+    const modalDesc = document.getElementById("modalDesc");
+    const closeBtn = document.querySelector(".team-modal-close");
+    const overlay = document.querySelector(".team-modal-overlay");
+
+    // OPEN MODAL
+    document.querySelectorAll(".principals-card").forEach((card) => {
+      card.addEventListener("click", () => {
+        modalImg.src = card.dataset.img;
+        modalName.textContent = card.dataset.name;
+        modalRole.textContent = card.dataset.role;
+        modalDesc.textContent = card.dataset.desc;
+
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+      });
+    });
+
+    // CLOSE MODAL
+    const closeModal = () => {
+      modal.classList.remove("active");
+      document.body.style.overflow = "";
+    };
+
+    closeBtn.addEventListener("click", closeModal);
+    overlay.addEventListener("click", closeModal);
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeModal();
+    });
+  </script>
 </html>

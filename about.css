@@ -41,7 +41,7 @@
   object-fit: cover;
   display: block;
   border-radius: 8px;
-  object-position: top center;
+  object-position: center;
   transition:
     transform 0.7s ease,
     box-shadow 0.3s ease;
@@ -170,6 +170,7 @@
   height: 100%;
   display: block;
   border-radius: 8px;
+  object-position: center;
   object-fit: cover;
   transition:
     transform 0.7s ease,
